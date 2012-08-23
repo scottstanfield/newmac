@@ -42,6 +42,9 @@ Other Extensions
 
 XCODE
 =====
+Note: for Mountain Lion, you may need to follow some extra steps. The
+version of XCode is now 4.4. Read this first: https://gist.github.com/1860902
+
 Most of the homebrew packages need the compiler (and header and libraries)
 previously only available after a full 4GB Xcode install from AppStore, then
 choosing the optional Command Line Tools from the preference pane. 
