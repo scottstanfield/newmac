@@ -13,6 +13,17 @@ We used the little chip thing that you get from Apple to rebuild an older Mac.
 Make sure your account is setup with admin privilages.  
 After install, fully apply patches then continue.
 
+Rename Computer
+===============
+By default, your computer probably has a name like John Smith's
+Computer. Rename it easily from Terminal:
+
+	$ scutil --set HostName new_hostname
+
+I use my initials then some indicator of the machine type, like ss-mbp17
+for a 17" MacBook Pro. 
+
+
 Desktop
 =======
 
