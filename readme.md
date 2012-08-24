@@ -36,7 +36,11 @@ Desktop
 Chrome
 ======
 
-	$ curl -O https://dl.google.com/chrome/mac/stable/GGRM/googlechrome.dmg ~/tmp/chrome.dmg
+	$ mkdir ~/tmp && cd tmp
+	$ curl -O https://dl.google.com/chrome/mac/stable/GGRM/googlechrome.dmg 
+	$ open googlechrome.dmg
+	$ diskutil unmount "Google Chrome"
+	$ rm googlechrome.dmg
 
 * Make it the default browser
 * Add it to the dock, under Finder
