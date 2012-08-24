@@ -23,6 +23,13 @@ Computer. Rename it easily from Terminal:
 I use my initials then some indicator of the machine type, like ss-mbp17
 for a 17" MacBook Pro. 
 
+Do the same for your Bonjour name...hit Fn+F6 to bring up the System
+Preferences panel (didn't know you could do that with a keyboard
+shortcut huh?), and type Sharing. Enter your new Computer Name here.
+
+Setup option-command-, as a shortcut to launch System Preferences, since
+you'll be doing it a lot in the future: http://goo.gl/CvEIA
+
 
 Desktop
 =======
