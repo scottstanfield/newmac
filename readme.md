@@ -4,8 +4,7 @@ Date:   5/16/2012
 
 ---
 
-
-Trick out your Mac, old-school Unix style
+Step-by-Step New Mac Config for Web Development
 -----------------------------------------
 The steps below assume you have a clean, fully patched Mac with Lion (10.7.4)
 We used the little chip thing that you get from Apple to rebuild an older Mac.
