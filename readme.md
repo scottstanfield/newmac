@@ -191,8 +191,8 @@ for now. But if you go down that path, start with Step 6 at
 [10]:
 (http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/)
 
-PYTHON
-======
+PYTHON (optional)
+=================
 Sooner or later, you will need python, another fine language.
 Install as "framework" per http://docs.python-guide.org/en/latest/starting/install/osx/
 
