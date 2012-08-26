@@ -52,14 +52,8 @@ Chrome
 * Add it to the dock, under Finder
 * Install vimium extension (just Google for "vimium")
 
-Other Extensions
-	1Password
-	AdBlock
-	dotjs (remove)
-	Google +1 Button
-	JoinTabs (optional)
-	SessionBuddy
-	Syntaxtic
+Other Extensions: 1Password, AdBlock, dotjs (remove), Google +1 Button,
+	JoinTabs (optional), SessionBuddy, Syntaxtic
 
 XCODE
 =====
@@ -104,7 +98,8 @@ Do all this from Terminal.app; we'll swap out to iTerm2 later.
 	$ rehash
 	$ cowsay "brew install worked!"
 
-To satisfy the xcode-select "error" reported by brew doctor, see
+[I did not need this step in Mountain Lion] To satisfy the xcode-select 
+"error" reported by brew doctor, see
 https://github.com/mxcl/homebrew/issues/10245 and run
 
 	$ sudo xcode-select -switch /usr/bin
