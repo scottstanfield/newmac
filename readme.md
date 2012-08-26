@@ -204,18 +204,23 @@ todo: maybe not install virtualenv
 
 VIM
 ===
-Install new version of vim (with +clipboard)
+Install new version of vim that enables system clipboard access for the
+Mac. You'll need to edit the build formula for vim and add a single line
+to the configuration section.
 
-	$ md ~/tmp
-	$ curl https://raw.github.com/gist/2581041 > ~/tmp/vim.rb
-	$ brew install ~/tmp/vim.rb
+	$ brew edit vim
+
+Now add the following line somewhere around line 30:
+
+	"--enable-clipboard",
+
+	$ brew install vim
 	$ ln -s /usr/local/bin/vim /usr/local/bin/vi  # I still call it vi
 
-join.me
-=======
+TODO: I should submit the above change as a pull request to homebrew.
 
-
-# NODE
+NODE
+====
 	$ brew install node
 	$ curl http://npmjs.org/install.sh | sh		# install npm
 
