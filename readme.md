@@ -221,6 +221,15 @@ TODO: I should submit the above change as a pull request to homebrew.
 
 NODE
 ====
+With the Command Line Tools-only option from earlier steps (i.e., you
+don't install Xcode), I found that with Mountain Lion I had to first run
+the following command before node would successfully build. 
+
+	$ sudo xcode-select -switch /usr/bin
+
+I get conflicting reports on how the above line should be handled when
+you don't install XCode. 
+
 	$ brew install node
 	$ curl http://npmjs.org/install.sh | sh		# install npm
 
