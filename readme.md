@@ -179,9 +179,17 @@ Brew does not install duplicates by default, so work with an alt fork
 
 RUBY
 ====
-Lion comes with ruby 1.8.7. This will get at least version 1.9.3
+Lion comes with ruby 1.8.7. If you plan on using brew to install the
+latest version (1.9.3 as of this writing), then it's easy to do.
+However, I strongly recommend using RVM to manage multiple Ruby
+installations.
 
-	% brew install ruby
+Since this is more about using Node, I'll skip Ruby, RVM and any gems
+for now. But if you go down that path, start with Step 6 at 
+[Mouncef Belyamani's][10] tutorial.
+
+[10]:
+(http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/)
 
 PYTHON
 ======
