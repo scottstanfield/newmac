@@ -12,6 +12,10 @@ We used the little chip thing that you get from Apple to rebuild an older Mac.
 Make sure your account is setup with admin privilages.  
 After install, fully apply patches then continue.
 
+I'm not the only one to do this:
+http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/
+
+
 Rename Computer
 ===============
 By default, your computer probably has a name like John Smith's
@@ -52,7 +56,7 @@ Chrome
 * Add it to the dock, under Finder
 * Install vimium extension (just Google for "vimium")
 
-Other Extensions
+Other good extensions include
 	1Password
 	AdBlock
 	dotjs (remove)
@@ -84,8 +88,8 @@ Note: If you have Xcode already and want to remove, uninstall with:
 
 Full story at http://kennethreitz.com/xcode-gcc-and-homebrew.html
 
-BREW
-====
+HOMEBREW
+========
 Install brew before changing shells since it requires /bin/sh.
 
 Instructions located at http://mxcl.github.com/homebrew/. MacPorts users
@@ -93,22 +97,37 @@ should read [why they should switch to brew][3].
 
 [3]: http://lostincode.net/blog/homebrew
 
-Also, to make it easier to type, http://goo.gl/M3FcV maps to 
-https://raw.github.com/mxcl/homebrew/master/Library/Contributions/install_homebrew.rb
-
 Do all this from Terminal.app; we'll swap out to iTerm2 later.
 
-	$ /usr/bin/ruby -e "$(/usr/bin/curl -fsSL http://goo.gl/M3FcV)"
+	$ ruby <(curl -fsSkL raw.github.com/mxcl/homebrew/go)
 	$ brew doctor
 	$ brew install cowsay
 	$ rehash
 	$ cowsay "brew install worked!"
 
+You might need to do the following. I did not on a clean Mt. Lion build.
 To satisfy the xcode-select "error" reported by brew doctor, see
 https://github.com/mxcl/homebrew/issues/10245 and run
 
 	$ sudo xcode-select -switch /usr/bin
 
+/usr/local/bin vs /usr/bin in path
+==================================
+Now that brew thinks it is working, try installing a utility that was
+already installed by the Command Line Tools, namely "git" (and a few
+other useful utilities).
+
+	$ brew install git hub wget mercurial
+	$ brew doctor
+
+Although 'brew doctor' didn't report any problems in the previous step,
+it probably does now. Basically, you need /usr/local/bin in your path
+before /usr/bin. That's why the Apple-installed /usr/bin/git is being
+run before /usr/local/bin/git, the version installed by brew (the most
+up-to-date version).
+
+This will be fixed shortly, when we use a new .cshrc file pulled from my
+dotfiles.
 
 Change default shell
 ====================
@@ -116,22 +135,14 @@ Change your shell from bash to tcsh (temporary).
 	
     $ chsh -s /bin/tcsh
 
-Log out, then back in. We'll change 
+Log out, then back in.
 
-GIT and HUB (and Hg for vim compile)
-====================================
-Although Xcode tools come with git, we prefer to "get" the latest. Git
-it?
+Use my .dotfiles
+================
+Follow instructions at http://github.com/rm8t/dotfiles. It uses tcsh
+(most people are using zsh now, but I have old habits), so it installs a
+.cshrc and a pretty custom .vimrc. 
 
-	$ brew install git
-	$ brew install wget
-	$ brew install ack
-
-These two are optional. Hub is a wrapper for git when talking to github. 
-Mercurial might be needed for brew formulas that use Mercurial.
-
-	$ brew install hub
-	$ brew install mercurial
 
 Solarized
 =========
@@ -143,7 +154,7 @@ Solarized
 Then follow instructions under iterm2-colors-solarized folder to add the color
 profiles to iTerm 2. I create two named profiles called "solarized-dark" and 
 "solarized-light", each set to the corresponding color profile and Monoco 18pt.
-Light is my default.
+Light is my default. Keep minimum color contrast set to low.
 
 iTerm 2
 =======
