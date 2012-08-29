@@ -15,6 +15,8 @@ After install, fully apply patches then continue.
 I'm not the only one to do this:
 http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/
 
+Added for Paul
+
 
 Rename Computer
 ===============
