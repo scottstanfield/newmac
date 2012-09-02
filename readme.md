@@ -15,8 +15,8 @@ After install, fully apply patches then continue.
 I'm not the only one to do this:
 http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/
 
-Added for Paul
-
+This gist will help you get X11 working with Mountain Lion since it's no
+longer installed with OS X: https://gist.github.com/1860902
 
 Rename Computer
 ===============
