@@ -163,7 +163,7 @@ Light is my default. Keep minimum color contrast set to low.
 iTerm 2
 -------
 
-* Install [iTerm2](www.iTerm2.com) - beta version is fine.
+* Install [iTerm2](http://www.iTerm2.com) - beta version is fine.
 * Add two new profiles: "solarized-light" and "solarized-dark".  
   Set the color contrast profile to *low*, otherwise colors will be
   washed out.
