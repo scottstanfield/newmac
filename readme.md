@@ -65,7 +65,7 @@ Then:
 * Add it to the dock, under Finder
 * Install vimium extension (just Google for "vimium")
 
-Other groovey extensions: 1Password, AdBlock, dotjs (remove), Google +1 Button,
+Other groovy extensions: 1Password, AdBlock, dotjs (remove), Google +1 Button,
     JoinTabs (optional), SessionBuddy, Syntaxtic
 
 XCODE
@@ -295,7 +295,7 @@ ON FIXING IT OR REMOVING IT EVENTUALLY.
 Using node/express/jade
 http://dandean.com/nodejs-npm-express-osx/
 
-Then send it off to herokU
+Then send it off to [Heroku](http://heroku.com).
 
 Install hub (teaches git about github)
 http://defunkt.io/hub/
@@ -354,7 +354,7 @@ NOTE: DON'T INSTALL ZSH YET.
 zsh (pronounced zee-shell) might be a good replacement for tcsh (tenix c shell).
 It has better TAB completion than tcsh, but the syntax is kinda weird.
 
-TODO: resarch ZSH more.
+TODO: research ZSH more.
 
     $ ps -p $$      # see your current shell
     $ brew install zsh
