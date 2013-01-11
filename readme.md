@@ -24,6 +24,8 @@ By default, your computer probably has a name like John Smith's
 Computer. Rename it easily from Terminal:
 
 	$ scutil --set HostName new_hostname
+	$ scutil --set ComputerName new_hostname
+	$ scutil --set LocalHostName new_hostname
 
 I use my initials then some indicator of the machine type, like ss-mbp17
 for a 17" MacBook Pro. 
@@ -32,13 +34,14 @@ Do the same for your Bonjour name...hit Fn+F6 to bring up the System
 Preferences panel (didn't know you could do that with a keyboard
 shortcut huh?), and type Sharing. Enter your new Computer Name here.
 
+Keyboard Shortcut
+=================
 Setup option-command-, as a shortcut to launch System Preferences, since
 you'll be doing it a lot in the future: http://goo.gl/CvEIA
 
 
 Desktop
 =======
-
 * Check for updates
 * Turn off Scroll direction:natural
 * Dock on the left, remove unused icons
@@ -240,6 +243,37 @@ http://www.andymcintosh.com/?p=33
 http://gitguru.com/2009/02/22/integrating-git-with-a-visual-merge-tool/
 Install app from DMG. Add two 2 line sh scripts. Modify .gitconfig
 
+GNU utilities TCSH
+==================
+The 'ls' version built in to tcsh will display folders and files in
+color when you use the flag "-G". But it sorts the folders along with
+the files. I wanted the folders displayed first, then the files. Turns
+out the GNU 'coreutils' package includes 'gls', that does just that.
+
+But to enable color, it requires you to set a variable 'LS_COLOR' that
+is strangely set by running another utility, gdircolors. And that
+returns a string that is incompatible with tcsh LS_COLOR. 
+
+The solution is to give gdircolors an initialization file, which is
+pulled from a https://github.com/seebi/dircolors-solarized. Thank you
+seebi for bringing Solarized colors to GNU utilities!
+
+	$ brew install coreutils
+	$ cd ~/projects/repo
+	$ hub clone seebi/dircolors-solarized
+
+Now edit your .cshrc to put the coreutils in the path, and to initialize
+the LS_COLOR variable with the output of dircolors using the solarized
+version. This is a lot of work to get color *and* sorting. Basically
+tcsh is put together with so much string and tape. I'm guessing you
+don't have to do this with zsh. 
+
+	eval `gdircolors -c ~/projects/repos/dircolors-solarized/dircolors.ansi-universal`
+	setenv LS_OPTIONS "--color=auto --group-directories-first -F"
+	alias ls 'gls $LS_OPTIONS'
+
+
+
 CloudApp (optional)
 ===================
 
@@ -247,6 +281,9 @@ Makes sharing screenshots and links trivial.
 (Enable autoupload of screenshots)
 SHIFT-COMMAND-4
 
+# THE REST OF THIS IS UNTESTED
+# IT IS HERE FOR FUTURE REFERENCE. 
+# I PLAN ON FIXING IT OR REMOVING IT EVENTUALLY.
 
 
 # PARTY ON NODE/EXPRESS/JADE
