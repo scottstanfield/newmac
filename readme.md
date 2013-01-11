@@ -1,6 +1,6 @@
 Title: Vertigo developer setup on Mac
 Author: Scott Stanfield
-Date:   December 2012
+Date:   January 2013
 
 ---
 
@@ -11,7 +11,7 @@ Tested for *Mountain Lion* (OSX 10.8).
 The steps below assume you have a clean, fully patched Mac with Mt Lion (10.8.x).
 We used the little chip thing that you get from Apple to rebuild an older Mac.
 
-Make sure your account is setup with admin privilages.  
+Make sure your account is setup with admin priveleges.  
 After install, fully apply patches then continue.
 
 This gist will help you get X11 working with Mountain Lion since it's no
