@@ -1,6 +1,6 @@
 Title: Vertigo developer setup on Mac
 Author: Scott Stanfield
-Date:   5/16/2012
+Date:   December 2012
 
 ---
 
