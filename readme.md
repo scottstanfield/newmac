@@ -87,6 +87,7 @@ download.
 As of this writing, Command Line Tools for Xcode - Late March 2012 is current.
 
 Note: If you have Xcode already and want to remove, uninstall with:
+
     $ sudo /Developer/Library/uninstall-devtools --mode=all
 
 Full story at http://kennethreitz.com/xcode-gcc-and-homebrew.html
