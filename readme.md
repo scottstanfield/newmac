@@ -143,8 +143,9 @@ Log out, then back in.
 
 Use my .dotfiles
 ----------------
-Follow instructions at http://github.com/rm8t/dotfiles. It uses tcsh
-(most people are using zsh now, but I have old habits), so it installs a
+Follow instructions at
+[rm8t/dotfiles](http://github.com/rm8t/dotfiles). It uses tcsh (most
+people are using zsh now, but I have old habits), so it installs a
 .cshrc and a pretty custom .vimrc. 
 
 
