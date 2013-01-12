@@ -172,6 +172,9 @@ iTerm 2
 * Set both color schemes to the appropriate Solarized files from previous step.
 * I use 18 pt. Menlo for font. Window: columns=100, rows=35
 
+When finished, your profile seetings dialog box should look like the one
+in this [github comment](https://github.com/rm8t/newmac/issues/2).
+
 
 SSH for GitHub
 --------------
