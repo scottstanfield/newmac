@@ -82,7 +82,7 @@ But Apple now allows the installation of the Command Line Tools
 download the CLT. After that, head to [Apple Developer Tools][1] to
 download. 
 
-[1]: http://https://developer.apple.com/downloads/index.action
+[1]: https://developer.apple.com/downloads/index.action
 
 As of this writing, Command Line Tools for Xcode - Late March 2012 is current.
 
