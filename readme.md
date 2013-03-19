@@ -244,8 +244,9 @@ the following command before node would successfully build.
 I get conflicting reports on how the above line should be handled when
 you don't install XCode. 
 
+Node (as of version 0.8?) will install npm for you.
+
     $ brew install node
-    $ curl http://npmjs.org/install.sh | sh     # install npm
 
 # Setup Perforce Visual Merge as gits visual tool (Mac OS only)
 http://www.andymcintosh.com/?p=33
