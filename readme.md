@@ -255,8 +255,17 @@ to the configuration section.
     $ brew edit vim
 
 Now add the following line somewhere around line 30:
+Find the code around line 35 that looks like this:
 
-    "--enable-clipboard",
+`
+	opts = language_opts
+`
+
+Add this line below:
+
+`
+	opts << "--enable-clipboard"
+`
 
     $ brew install vim
     $ ln -s /usr/local/bin/vim /usr/local/bin/vi  # I still call it vi
