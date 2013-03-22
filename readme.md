@@ -139,6 +139,36 @@ Change your shell from bash to tcsh (temporary).
     
     $ chsh -s /bin/tcsh
 
+
+GNU utilities TCSH
+------------------
+The 'ls' version built in to tcsh will display folders and files in
+color when you use the flag "-G". But it sorts the folders along with
+the files. I wanted the folders displayed first, then the files. Turns
+out the GNU 'coreutils' package includes 'gls', that does just that.
+
+But to enable color, it requires you to set a variable 'LS_COLOR' that
+is strangely set by running another utility, gdircolors. And that
+returns a string that is incompatible with tcsh LS_COLOR. 
+
+The solution is to give gdircolors an initialization file, which is
+pulled from a https://github.com/seebi/dircolors-solarized. Thank you
+seebi for bringing Solarized colors to GNU utilities!
+
+    $ brew install coreutils
+    $ cd ~/projects/repo
+    $ hub clone seebi/dircolors-solarized
+
+Now edit your .cshrc to put the coreutils in the path, and to initialize
+the LS_COLOR variable with the output of dircolors using the solarized
+version. This is a lot of work to get color *and* sorting. Basically
+tcsh is put together with so much string and tape. I'm guessing you
+don't have to do this with zsh. 
+
+    eval `gdircolors -c ~/projects/repos/dircolors-solarized/dircolors.ansi-universal`
+    setenv LS_OPTIONS "--color=auto --group-directories-first -F"
+    alias ls 'gls $LS_OPTIONS'
+
 Log out, then back in.
 
 Use my .dotfiles
@@ -252,34 +282,5 @@ Node (as of version 0.8?) will install npm for you.
 http://www.andymcintosh.com/?p=33
 http://gitguru.com/2009/02/22/integrating-git-with-a-visual-merge-tool/
 Install app from DMG. Add two 2 line sh scripts. Modify .gitconfig
-
-GNU utilities TCSH
-------------------
-The 'ls' version built in to tcsh will display folders and files in
-color when you use the flag "-G". But it sorts the folders along with
-the files. I wanted the folders displayed first, then the files. Turns
-out the GNU 'coreutils' package includes 'gls', that does just that.
-
-But to enable color, it requires you to set a variable 'LS_COLOR' that
-is strangely set by running another utility, gdircolors. And that
-returns a string that is incompatible with tcsh LS_COLOR. 
-
-The solution is to give gdircolors an initialization file, which is
-pulled from a https://github.com/seebi/dircolors-solarized. Thank you
-seebi for bringing Solarized colors to GNU utilities!
-
-    $ brew install coreutils
-    $ cd ~/projects/repo
-    $ hub clone seebi/dircolors-solarized
-
-Now edit your .cshrc to put the coreutils in the path, and to initialize
-the LS_COLOR variable with the output of dircolors using the solarized
-version. This is a lot of work to get color *and* sorting. Basically
-tcsh is put together with so much string and tape. I'm guessing you
-don't have to do this with zsh. 
-
-    eval `gdircolors -c ~/projects/repos/dircolors-solarized/dircolors.ansi-universal`
-    setenv LS_OPTIONS "--color=auto --group-directories-first -F"
-    alias ls 'gls $LS_OPTIONS'
 
 
