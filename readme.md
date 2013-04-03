@@ -194,7 +194,16 @@ Light is my default. Keep minimum color contrast set to low.
 iTerm 2
 -------
 
-* Install [iTerm2](http://www.iTerm2.com) - beta version is fine.
+iTerm is a full-featured replacement for the anemic Terminal.app that
+ships with the Mac. It's also referred to as iTerm 2.
+
+* Download the latest stable ZIP of the binary from [iTerm2
+  downloads](https://code.google.com/p/iterm2/downloads/list?q=label:Featured).
+* Open the zip to extract 'iTerm.app', then drag it to your Applications
+  folder.
+* Run the app (it should be available now from Spotlight).
+* Right click on the icon and choose Options | Keep in Dock
+
 * Add two new profiles: "solarized-light" and "solarized-dark".  
   Set the color contrast profile to *low*, otherwise colors will be
   washed out.
@@ -286,6 +295,8 @@ you don't install XCode.
 Node (as of version 0.8?) will install npm for you.
 
     $ brew install node
+	$ npm install grunt-cli -g
+	$ npm install nws -g
 
 # Setup Perforce Visual Merge as gits visual tool (Mac OS only)
 http://www.andymcintosh.com/?p=33
