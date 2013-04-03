@@ -191,8 +191,8 @@ profiles to iTerm 2. I create two named profiles called "solarized-dark" and
 "solarized-light", each set to the corresponding color profile and Monoco 18pt.
 Light is my default. Keep minimum color contrast set to low.
 
-iTerm 2
--------
+iTerm 
+-----
 
 iTerm is a full-featured replacement for the anemic Terminal.app that
 ships with the Mac. It's also referred to as iTerm 2.
@@ -203,6 +203,12 @@ ships with the Mac. It's also referred to as iTerm 2.
   folder.
 * Run the app (it should be available now from Spotlight).
 * Right click on the icon and choose Options | Keep in Dock
+
+If you installed my .dotfiles, you have the preference file already.
+Bring up the preferences for iTerm and enter `~/.dotfiles/lib` for the
+option at the bottom "Load preferences from a custom folder".
+
+Otherwise, do it by hand:
 
 * Add two new profiles: "solarized-light" and "solarized-dark".  
   Set the color contrast profile to *low*, otherwise colors will be
