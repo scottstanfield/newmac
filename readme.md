@@ -228,16 +228,16 @@ you plan on using SSH anywhere. Instructions at [github][2].
 
 [2]: (http://help.github.com/mac-set-up-git/
 
-LESS
-----
+LESS (optional)
+---------------
 Brew does not install duplicates by default, so work with an alt fork
 
     $ brew tap homebrew/dupes
     $ brew install less 
 
 
-RUBY
-----
+RUBY (optional)
+---------------
 Lion comes with ruby 1.8.7. If you plan on using brew to install the
 latest version (1.9.3 as of this writing), then it's easy to do.
 However, I strongly recommend using RVM to manage multiple Ruby
