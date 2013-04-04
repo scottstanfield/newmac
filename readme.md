@@ -197,7 +197,7 @@ iTerm
 iTerm is a full-featured replacement for the anemic Terminal.app that
 ships with the Mac. It's also referred to as iTerm 2.
 
-* Download the latest stable ZIP of the binary from [iTerm2
+* Download the iTerm2 beta (20130319 build or later) from [iTerm2
   downloads](https://code.google.com/p/iterm2/downloads/list?q=label:Featured).
 * Open the zip to extract 'iTerm.app', then drag it to your Applications
   folder.
