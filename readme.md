@@ -121,7 +121,7 @@ Now that brew thinks it is working, try installing a utility that was
 already installed by the Command Line Tools, namely "git" (and a few
 other useful utilities).
 
-    $ brew install git hub wget mercurial
+    $ brew install git wget mercurial
     $ brew doctor
 
 Although 'brew doctor' didn't report any problems in the previous step,
@@ -157,7 +157,7 @@ seebi for bringing Solarized colors to GNU utilities!
 
     $ brew install coreutils
     $ cd ~/projects/repo
-    $ hub clone seebi/dircolors-solarized
+    $ git clone git://github.com/seebi/dircolors-solarized.git
 
 Now edit your .cshrc to put the coreutils in the path, and to initialize
 the LS_COLOR variable with the output of dircolors using the solarized
@@ -184,7 +184,7 @@ Solarized
 
     $ mkdir -p ~/projects/repos
     $ cd ~/projects/repos
-    $ hub clone altercation/solarized
+    $ git clone git://github.com/altercation/solarized.git
 
 Then follow instructions under iterm2-colors-solarized folder to add the color
 profiles to iTerm 2. I create two named profiles called "solarized-dark" and 
