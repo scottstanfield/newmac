@@ -174,7 +174,7 @@ Log out, then back in.
 Use my .dotfiles
 ----------------
 Follow instructions at
-[rm8t/dotfiles](http://github.com/rm8t/dotfiles). It uses tcsh (most
+[scottstanfield/dotfiles](http://github.com/scottstanfield/dotfiles). It uses tcsh (most
 people are using zsh now, but I have old habits), so it installs a
 .cshrc and a pretty custom .vimrc. 
 
@@ -218,7 +218,7 @@ Otherwise, do it by hand:
 * I use 18 pt. Menlo for font. Window: columns=100, rows=35
 
 When finished, your profile seetings dialog box should look like the one
-in this [github comment](https://github.com/rm8t/newmac/issues/2).
+in this [github comment](https://github.com/scottstanfield/newmac/issues/2).
 
 
 SSH for GitHub
