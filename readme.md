@@ -20,8 +20,9 @@ longer installed with OS X: https://gist.github.com/1860902
 This guide was inspired by Mr Belyamani's 
 [Ruby focused guide](http://bit.ly/VQsHy1).
 
-Rename Computer
----------------
+1. Rename Computer
+------------------
+
 By default, your computer probably has a name like John Smith's
 Computer. Rename it easily from Terminal:
 
@@ -36,21 +37,24 @@ Do the same for your Bonjour name...hit Fn+F6 to bring up the System
 Preferences panel (didn't know you could do that with a keyboard
 shortcut huh?), and type Sharing. Enter your new Computer Name here.
 
-Keyboard Shortcut
------------------
+2. Keyboard Shortcut
+--------------------
+
 Setup option-command-, as a shortcut to launch System Preferences, since
 you'll be doing it a lot in the future: http://goo.gl/CvEIA
 
-Desktop
--------
+3. Desktop
+----------
+
 * Check for updates
 * Turn off Scroll direction:natural
 * Dock on the left, remove unused icons
 * Tweak keyboard repeat rate (key repeat=fast, delay=short)
 * Turn on Firewall (Security & Preferences)
 
-Chrome
-------
+4. Chrome
+---------
+
 Baller way to install:
 
     $ mkdir ~/tmp && cd tmp
@@ -68,8 +72,8 @@ Then:
 Other groovy extensions: 1Password, AdBlock, dotjs (remove), Google +1 Button,
     JoinTabs (optional), SessionBuddy, Syntaxtic
 
-XCODE
------
+5. XCODE
+--------
 Note: for Mountain Lion, you may need to follow some extra steps. The
 version of XCode is now 4.4. Read this first: https://gist.github.com/1860902
 
@@ -92,8 +96,8 @@ Note: If you have Xcode already and want to remove, uninstall with:
 
 Full story at http://kennethreitz.com/xcode-gcc-and-homebrew.html
 
-HOMEBREW
---------
+6. HOMEBREW
+-----------
 Install brew before changing shells since it requires /bin/sh.
 
 Instructions located at http://mxcl.github.com/homebrew/. MacPorts users
@@ -115,13 +119,13 @@ https://github.com/mxcl/homebrew/issues/10245 and run
 
     $ sudo xcode-select -switch /usr/bin
 
-/usr/local/bin vs /usr/bin in path
-----------------------------------
+7. /usr/local/bin before /usr/bin in path
+-----------------------------------------
 Now that brew thinks it is working, try installing a utility that was
 already installed by the Command Line Tools, namely "git" (and a few
 other useful utilities).
 
-    $ brew install git wget mercurial
+    $ brew install git wget 
     $ brew doctor
 
 Although 'brew doctor' didn't report any problems in the previous step,
@@ -133,15 +137,14 @@ up-to-date version).
 This will be fixed shortly, when we use a new .cshrc file pulled from my
 dotfiles.
 
-Change default shell
---------------------
+8. Change default shell
+-----------------------
 Change your shell from bash to tcsh (temporary).
     
     $ chsh -s /bin/tcsh
 
-
-GNU utilities TCSH
-------------------
+9. GNU utilities TCSH
+---------------------
 The 'ls' version built in to tcsh will display folders and files in
 color when you use the flag "-G". But it sorts the folders along with
 the files. I wanted the folders displayed first, then the files. Turns
@@ -171,18 +174,20 @@ don't have to do this with zsh.
 
 Log out, then back in.
 
-Use my .dotfiles
-----------------
+10. Use my .dotfiles
+--------------------
 Follow instructions at
 [scottstanfield/dotfiles](http://github.com/scottstanfield/dotfiles). It uses tcsh (most
 people are using zsh now, but I have old habits), so it installs a
 .cshrc and a pretty custom .vimrc. 
 
 
-Solarized
----------
+11. Solarized
+-------------
+Solarized is a well-known common color scheme that works across vim,
+iTerm, my custom prompt and the GNU utilities.
 
-    $ mkdir -p ~/projects/repos
+    $ mkdir -p ~/projects/repos 
     $ cd ~/projects/repos
     $ git clone git://github.com/altercation/solarized.git
 
@@ -191,8 +196,8 @@ profiles to iTerm 2. I create two named profiles called "solarized-dark" and
 "solarized-light", each set to the corresponding color profile and Monoco 18pt.
 Light is my default. Keep minimum color contrast set to low.
 
-iTerm 
------
+12. iTerm 
+----------
 
 iTerm is a full-featured replacement for the anemic Terminal.app that
 ships with the Mac. It's also referred to as iTerm 2.
@@ -220,8 +225,8 @@ Otherwise, do it by hand:
 When finished, your profile seetings dialog box should look like the one
 in this [github comment](https://github.com/scottstanfield/newmac/issues/2).
 
-Setup Git
----------
+13. Setup Git for github
+------------------------
 Assuming you have a github.com account, tell your Mac about it. Follow
 [these instructions](https://help.github.com/articles/set-up-git).
 
@@ -234,41 +239,23 @@ the SSH repo, then follow [this guide](2) to setup your SSH keys.
 
 [2]: (https://help.github.com/articles/generating-ssh-keys)
 
-LESS (optional)
----------------
-Brew does not install duplicates by default, so work with an alt fork
+14. LESS (optional)
+-------------------
+`less` is a terminal pager program used to look at text files. It's
+similar to `more` but improved, allowing both forward and backwards
+navigation in a file. 
+
+Version 418 comes with Mt Lion, but there are features in the latest
+stable (451) that are nice to have.
+
+But brew does not install system duplicates by default, so work with an alt fork.
 
     $ brew tap homebrew/dupes
     $ brew install less 
 
 
-RUBY (optional)
----------------
-Lion comes with ruby 1.8.7. If you plan on using brew to install the
-latest version (1.9.3 as of this writing), then it's easy to do.
-However, I strongly recommend using RVM to manage multiple Ruby
-installations.
-
-Since this is more about using Node, I'll skip Ruby, RVM and any gems
-for now. But if you go down that path, start with Step 6 at 
-[Mouncef Belyamani's][10] tutorial.
-
-[10]:
-(http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/)
-
-PYTHON (optional)
------------------
-Sooner or later, you will need python, another fine language.
-Install as "framework" per http://docs.python-guide.org/en/latest/starting/install/osx/
-
-    % brew install python --framework
-
-todo: install pip
-todo: maybe not install virtualenv 
-    http://kev.inburke.com/kevin/virtualenv-is-an-anti-pattern-for-beginners/
-
-VIM (optional)
---------------
+15. VIM (optional)
+------------------
 Install new version of vim that enables system *clipboard access* for the
 Mac. You'll need to edit the build formula for vim and add a single line
 to the configuration section.
@@ -293,8 +280,8 @@ Add this line below:
 
 TODO: I should submit the above change as a pull request to homebrew.
 
-NODE
-----
+16. NODE
+--------
 With the Command Line Tools-only option from earlier steps (i.e., you
 don't install Xcode), I found that with Mountain Lion I had to first run
 the following command before node would successfully build. 
