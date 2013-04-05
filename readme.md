@@ -220,13 +220,19 @@ Otherwise, do it by hand:
 When finished, your profile seetings dialog box should look like the one
 in this [github comment](https://github.com/scottstanfield/newmac/issues/2).
 
+Setup Git
+---------
+Assuming you have a github.com account, tell your Mac about it. Follow
+[these instructions](https://help.github.com/articles/set-up-git).
 
-SSH for GitHub
---------------
-You only need this step if you'll be pushing repos back to github, or if
-you plan on using SSH anywhere. Instructions at [github][2].
+	$ git config --global user.name "your name here"
+	$ git config --global user.emal "your@email.com"
+	$ git config --global credential.helper osxkeychain
 
-[2]: (http://help.github.com/mac-set-up-git/
+When you clone a repo, use the HTTPS URL instead of SSH. If you must use
+the SSH repo, then follow [this guide](2) to setup your SSH keys.
+
+[2]: (https://help.github.com/articles/generating-ssh-keys)
 
 LESS (optional)
 ---------------
@@ -261,9 +267,9 @@ todo: install pip
 todo: maybe not install virtualenv 
     http://kev.inburke.com/kevin/virtualenv-is-an-anti-pattern-for-beginners/
 
-VIM
----
-Install new version of vim that enables system clipboard access for the
+VIM (optional)
+--------------
+Install new version of vim that enables system *clipboard access* for the
 Mac. You'll need to edit the build formula for vim and add a single line
 to the configuration section.
 
@@ -303,10 +309,4 @@ Node (as of version 0.8?) will install npm for you.
     $ brew install node
 	$ npm install grunt-cli -g
 	$ npm install nws -g
-
-# Setup Perforce Visual Merge as gits visual tool (Mac OS only)
-http://www.andymcintosh.com/?p=33
-http://gitguru.com/2009/02/22/integrating-git-with-a-visual-merge-tool/
-Install app from DMG. Add two 2 line sh scripts. Modify .gitconfig
-
 
