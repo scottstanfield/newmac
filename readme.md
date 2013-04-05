@@ -1,6 +1,5 @@
-Title:  Mac developer setup
-Author: Scott Stanfield
-Date:   April 2013
+Scott Stanfield  
+Last updated: April 2013
 
 ---
 
@@ -9,13 +8,6 @@ Mac Config for Web Development
 Tested for *Mountain Lion* (OSX 10.8).
 
 The steps below assume you have a clean, fully patched Mac with Mt Lion (10.8.x).
-We used the little chip thing that you get from Apple to rebuild an older Mac.
-
-Make sure your account is setup with admin priveleges.  
-After install, fully apply patches then continue.
-
-This gist will help you get X11 working with Mountain Lion since it's no
-longer installed with OS X: https://gist.github.com/1860902
 
 This guide was inspired by Mr Belyamani's 
 [Ruby focused guide](http://bit.ly/VQsHy1).
@@ -41,7 +33,7 @@ shortcut huh?), and type Sharing. Enter your new Computer Name here.
 --------------------
 
 Setup option-command-, as a shortcut to launch System Preferences, since
-you'll be doing it a lot in the future: http://goo.gl/CvEIA
+you'll be doing it a lot in the future: http://goo.gl/CvElA
 
 3. Desktop
 ----------
@@ -239,7 +231,24 @@ the SSH repo, then follow [this guide](2) to setup your SSH keys.
 
 [2]: (https://help.github.com/articles/generating-ssh-keys)
 
-14. LESS (optional)
+14. NODE
+--------
+With the Command Line Tools-only option from earlier steps (i.e., you
+don't install Xcode), I found that with Mountain Lion I had to first run
+the following command before node would successfully build. 
+
+    $ sudo xcode-select -switch /usr/bin
+
+I get conflicting reports on how the above line should be handled when
+you don't install XCode. 
+
+Node (as of version 0.8?) will install npm for you.
+
+    $ brew install node
+	$ npm install grunt-cli -g
+	$ npm install nws -g
+
+15. LESS (optional)
 -------------------
 `less` is a terminal pager program used to look at text files. It's
 similar to `more` but improved, allowing both forward and backwards
@@ -254,7 +263,7 @@ But brew does not install system duplicates by default, so work with an alt fork
     $ brew install less 
 
 
-15. VIM (optional)
+16. VIM (optional)
 ------------------
 Install new version of vim that enables system *clipboard access* for the
 Mac. You'll need to edit the build formula for vim and add a single line
@@ -280,20 +289,9 @@ Add this line below:
 
 TODO: I should submit the above change as a pull request to homebrew.
 
-16. NODE
---------
-With the Command Line Tools-only option from earlier steps (i.e., you
-don't install Xcode), I found that with Mountain Lion I had to first run
-the following command before node would successfully build. 
+17. X11 (optional)
+------------------
+This [gist](https://gist.github.com/1860902) will help you get X11
+working with Mountain Lion since it's no longer installed with OS X. 
 
-    $ sudo xcode-select -switch /usr/bin
-
-I get conflicting reports on how the above line should be handled when
-you don't install XCode. 
-
-Node (as of version 0.8?) will install npm for you.
-
-    $ brew install node
-	$ npm install grunt-cli -g
-	$ npm install nws -g
 
