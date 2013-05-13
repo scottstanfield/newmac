@@ -117,7 +117,7 @@ Now that brew thinks it is working, try installing a utility that was
 already installed by the Command Line Tools, namely "git" (and a few
 other useful utilities).
 
-    $ brew install git wget 
+    $ brew install git wget gist
     $ brew doctor
 
 Although 'brew doctor' didn't report any problems in the previous step,
