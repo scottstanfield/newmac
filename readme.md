@@ -12,6 +12,11 @@ The steps below assume you have a clean, fully patched Mac with Mt Lion (10.8.x)
 This guide was inspired by Mr Belyamani's 
 [Ruby focused guide](http://bit.ly/VQsHy1).
 
+0. Unpack the Computer
+---------------------
+This step was probably pretty obvious.
+
+
 1. Rename Computer
 ------------------
 
@@ -213,6 +218,7 @@ Otherwise, do it by hand:
 * Delete the default profile.
 * Set both color schemes to the appropriate Solarized files from previous step.
 * I use 18 pt. Menlo for font. Window: columns=100, rows=35
+* Use the same font for both 'Regular Font' and 'Non-ASCII Font'
 
 When finished, your profile seetings dialog box should look like the one
 in this [github comment](https://github.com/scottstanfield/newmac/issues/2).
