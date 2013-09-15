@@ -12,6 +12,9 @@ The steps below assume you have a clean, fully patched Mac with Mt Lion (10.8.x)
 This guide was inspired by Mr Belyamani's 
 [Ruby focused guide](http://bit.ly/VQsHy1).
 
+[Another guide](http://johanbrook.com/development/web-dev-environment/)
+from John Brook.
+
 0. Unpack the Computer
 ---------------------
 This step was probably pretty obvious.
