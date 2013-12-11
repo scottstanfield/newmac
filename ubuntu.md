@@ -88,7 +88,7 @@ Disable logging in as root.
 
 Change from port 22 to something else:
 
-		Port XXXX				<- change to something besides 22
+		Port 2222
 
 Add this line to the bottom of the file:
 
@@ -98,7 +98,7 @@ Save and restart with `reload ssh`.
 
 Important! Keep this shell open and test with a new shell:
 
-		ssh scott@0.0.0.0 -p 3939
+		ssh scott@0.0.0.0 -p 2222
 
 Once you've confirmed that works, add a helper to your ~/.ssh/config
 file:
@@ -106,7 +106,7 @@ file:
 		Host foo
 			Hostname 0.0.0.0
 			User scott
-			Port XXXX
+			Port 2222
 
 ## Recap
 
@@ -114,6 +114,40 @@ At this point, you have one user, whose name is not well known, that is
 allowed ssh access to your system on a non-standard ssh port. Only that
 user can sudo. And only the group sshlogin is even allowed to use ssh.
 
+Log back in as `root`
+
+## Let Ubuntu upgrade itself automatically
+From https://help.ubuntu.com/community/AutomaticSecurityUpdates
+Using the "unattended-upgrades" package:
+
+		dpkg-reconfigure -plow unattended-upgrades
+
+## Setup log monitoring
+
+		aptitude install logwatch
+		logwatch
+
+## Firewall
+Use the simple firewall `ufw`
+
+		ufw enable
+
+Create a custom ufw "application":
+
+		cat > /etc/ufw/applications.d/ssh-custom << EOF
+		[ssh-custom]
+		title=SSH on custom port
+		description=OpenSSH custom port
+		ports=3939/tcp
+		EOF
+
+		ufw logging on
+		ufw allow 2222
+		ufw status
+
+
+Edit the file `/etc/ufw/applications.d/openssh-server` to reflect the
+new port 2222.
 
 # Resources
 
