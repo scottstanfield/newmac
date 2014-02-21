@@ -102,7 +102,7 @@ Full story at http://kennethreitz.com/xcode-gcc-and-homebrew.html
 
 6. HOMEBREW
 -----------
-Install [brew][http://brew.sh] before changing shells since it requires /bin/sh.
+Install [brew](http://brew.sh) before changing shells since it requires /bin/sh.
 
 Instructions located at http://mxcl.github.com/homebrew/. MacPorts users
 should read [why they should switch to brew][3].
