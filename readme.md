@@ -1,5 +1,5 @@
 Scott Stanfield  
-Last updated: April 2013
+Last updated: Feb 21,  2014
 
 ---
 
@@ -98,7 +98,7 @@ Full story at http://kennethreitz.com/xcode-gcc-and-homebrew.html
 
 6. HOMEBREW
 -----------
-Install brew before changing shells since it requires /bin/sh.
+Install [brew][http://brew.sh] before changing shells since it requires /bin/sh.
 
 Instructions located at http://mxcl.github.com/homebrew/. MacPorts users
 should read [why they should switch to brew][3].
@@ -106,8 +106,8 @@ should read [why they should switch to brew][3].
 [3]: http://lostincode.net/blog/homebrew
 
 Do all this from Terminal.app; we'll swap out to iTerm2 later.
-
-    $ ruby <(curl -fsSkL raw.github.com/mxcl/homebrew/go)
+	
+	$ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
     $ brew doctor
     $ brew install cowsay
     $ rehash
