@@ -74,6 +74,10 @@ Other groovy extensions: 1Password, AdBlock, dotjs (remove), Google +1 Button,
 
 5. XCODE
 --------
+Note: for Mavericks, you can skip directly to step 6 since brew can now
+bootstrap the installation of the command line tools. We think that's
+triggered by the use of gcc or make.
+
 Note: for Mountain Lion, you may need to follow some extra steps. The
 version of XCode is now 4.4. Read this first: https://gist.github.com/1860902
 
