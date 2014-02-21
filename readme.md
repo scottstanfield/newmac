@@ -5,7 +5,7 @@ Last updated: April 2013
 
 Mac Config for Web Development
 ==============================
-Tested for *Mountain Lion* (OSX 10.8).
+Currently in testing for Mavericks OS 10.9...
 
 The steps below assume you have a clean, fully patched Mac with Mt Lion (10.8.x).
 
