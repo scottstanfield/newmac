@@ -7,7 +7,7 @@ Date:   5/16/2012
 
 Trick out your Mac, old-school Unix style
 -----------------------------------------
-The steps below assume you have a clean, fully patched Mac with Lion (10.7.4)
+The steps below assume you have a clean, fully patched Mac with Mavericks (10.9.2)
 We used the little chip thing that you get from Apple to rebuild an older Mac.
 
 Make sure your account is setup with admin privilages.  
