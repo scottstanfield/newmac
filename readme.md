@@ -1,13 +1,16 @@
-Scott Stanfield  
-Last updated: Feb 21,  2014
-
----
-
 Mac Config for Web Development
 ==============================
-Currently in testing for Mavericks OS 10.9...
+Tested for Mavericks OS 10.9.2
+Last updated on May 12, 2014
 
-The steps below assume you have a clean, fully patched Mac with Mt Lion (10.8.x).
+The steps below assume you have a clean, fully patched Mac.
+
+Thoughtbot's laptop setup:
+https://github.com/thoughtbot/laptop/blob/master/mac
+
+Great understanding of ZSH from two sources:
+http://zanshin.net/2013/02/02/zsh-configuration-from-the-ground-up/
+https://github.com/myfreeweb/zshuery/blob/master/zshuery.sh
 
 This guide was inspired by Mr Belyamani's 
 [Ruby focused guide](http://bit.ly/VQsHy1).
@@ -15,12 +18,7 @@ This guide was inspired by Mr Belyamani's
 [Another guide](http://johanbrook.com/development/web-dev-environment/)
 from John Brook.
 
-0. Unpack the Computer
----------------------
-This step was probably pretty obvious.
-
-
-1. Rename Computer
+Rename Computer
 ------------------
 
 By default, your computer probably has a name like John Smith's
@@ -37,25 +35,25 @@ Do the same for your Bonjour name...hit Fn+F6 to bring up the System
 Preferences panel (didn't know you could do that with a keyboard
 shortcut huh?), and type Sharing. Enter your new Computer Name here.
 
-2. Keyboard Shortcut
+Keyboard Shortcut
 --------------------
 
 Setup option-command-, as a shortcut to launch System Preferences, since
 you'll be doing it a lot in the future: http://goo.gl/CvElA
 
-3. Desktop
+Desktop
 ----------
 
 * Check for updates
+* Map CAPSLOCK to CTRL
 * Turn off Scroll direction:natural
 * Dock on the left, remove unused icons
 * Tweak keyboard repeat rate (key repeat=fast, delay=short)
 * Turn on Firewall (Security & Preferences)
 
-4. Chrome
+Chrome
 ---------
-
-Baller way to install:
+Yes, you can install Chrome from command line. 
 
     $ mkdir ~/tmp && cd tmp
     $ curl -O https://dl.google.com/chrome/mac/stable/GGRM/googlechrome.dmg 
@@ -70,37 +68,62 @@ Then:
 * Install vimium extension (just Google for "vimium")
 
 Other groovy extensions: 1Password, AdBlock, dotjs (remove), Google +1 Button,
-    JoinTabs (optional), SessionBuddy, Syntaxtic
+    JoinTabs (optional), SessionBuddy, Syntaxtic, LiveReload
 
-5. XCODE
---------
-Note: for Mavericks, you can skip directly to step 6 since brew can now
-bootstrap the installation of the command line tools. We think that's
-triggered by the use of gcc or make.
+Change default shell
+-----------------------
+Launch Terminal. Now change your shell from `bash` to `zsh`
+    
+    $ chsh -s /bin/zsh
 
-Note: for Mountain Lion, you may need to follow some extra steps. The
-version of XCode is now 4.4. Read this first: https://gist.github.com/1860902
+I thought about using `brew` to install a new zsh, but the version
+included with the Mac is only one version behind (two were redacted).
 
-Most of the homebrew packages need the compiler (and header and libraries)
-previously only available after a full 4GB Xcode install from AppStore, then
-choosing the optional Command Line Tools from the preference pane. 
+Close this session `CTRL-D` and start a new one.
 
-But Apple now allows the installation of the Command Line Tools
-*without* needing to install Xcode. However you need a free Apple ID to
-download the CLT. After that, head to [Apple Developer Tools][1] to
-download. 
+Fix the Path
+------------
+We own everything under /usr/local; Apple (and Unix in general) doesn't
+put anything in here. In order for our apps to superseed included
+utilities like `git`, we need /usr/local/bin before /usr/bin in path.
 
-[1]: https://developer.apple.com/downloads/index.action
+Not sure if this works, but ensure `/usr/local/bin` is at the top of
+`/etc/paths`
 
-As of this writing, Command Line Tools for Xcode - Late March 2012 is current.
+	$ echo "/usr/local/bin" | cat - /etc/paths | sudo tee /etc/paths 
 
-Note: If you have Xcode already and want to remove, uninstall with:
+There's some weirdness with the way Apple setup the zsh config files.
+Read more here: https://github.com/sorin-ionescu/prezto/issues/381
+Fix it with the following command
 
-    $ sudo /Developer/Library/uninstall-devtools --mode=all
+	$ sudo mv /etc/{zshenv,zprofile}
 
-Full story at http://kennethreitz.com/xcode-gcc-and-homebrew.html
+Again, close this session `CTRL-D` and restart a new one.
 
-6. HOMEBREW
+
+Command Line Tools
+------------------
+Apple doesn't ship a compiler with Mavericks for some reason. So you
+need to trigger the installation by trying to run the compiler directly.
+We need `gcc` installed so we can build the rest of our tools via
+`brew` later.
+
+Trigger installation of Command Line Tools by launching Terminal.app and
+typing this
+
+	$ gcc
+
+Instructions are confusing. Just click the Install button. After install, verify:
+
+	$ xcode-select -p
+	/Library/Developer/CommandLineTools
+
+And now verify that gcc is actually installed
+
+	$ gcc --version
+
+
+HOMEBREW
 -----------
 Install [brew](http://brew.sh) before changing shells since it requires /bin/sh.
 
@@ -117,37 +140,16 @@ Do all this from Terminal.app; we'll swap out to iTerm2 later.
     $ rehash
     $ cowsay "brew install worked!"
 
-You might need to do the following. I did not on a clean Mt. Lion build.
-To satisfy the xcode-select "error" reported by brew doctor, see
-https://github.com/mxcl/homebrew/issues/10245 and run
-
-    $ sudo xcode-select -switch /usr/bin
-
-7. /usr/local/bin before /usr/bin in path
------------------------------------------
 Now that brew thinks it is working, try installing a utility that was
 already installed by the Command Line Tools, namely "git" (and a few
 other useful utilities).
 
-    $ brew install git wget gist htop
+    $ brew install git wget gist htop source-highlight
     $ brew doctor
 
-Although 'brew doctor' didn't report any problems in the previous step,
-it probably does now. Basically, you need /usr/local/bin in your path
-before /usr/bin. That's why the Apple-installed /usr/bin/git is being
-run before /usr/local/bin/git, the version installed by brew (the most
-up-to-date version).
 
-This will be fixed shortly, when we use a new .cshrc file pulled from my
-dotfiles.
 
-8. Change default shell
------------------------
-Change your shell from bash to tcsh (temporary).
-    
-    $ chsh -s /bin/tcsh
-
-9. GNU utilities TCSH
+GNU utilities TCSH
 ---------------------
 The 'ls' version built in to tcsh will display folders and files in
 color when you use the flag "-G". But it sorts the folders along with

@@ -86,10 +86,6 @@ Disable logging in as root.
 		usermod -a -G sshlogin scott
 		vi /etc/ssh/sshd_config
 
-Change from port 22 to something else:
-
-		Port 2222
-
 Add this line to the bottom of the file:
 
 		AllowGroups sshlogin
@@ -98,7 +94,7 @@ Save and restart with `reload ssh`.
 
 Important! Keep this shell open and test with a new shell:
 
-		ssh scott@0.0.0.0 -p 2222
+		ssh scott@0.0.0.0
 
 Once you've confirmed that works, add a helper to your ~/.ssh/config
 file:
@@ -106,7 +102,6 @@ file:
 		Host foo
 			Hostname 0.0.0.0
 			User scott
-			Port 2222
 
 ## Recap
 
@@ -134,20 +129,15 @@ Use the simple firewall `ufw`
 
 Create a custom ufw "application":
 
-		cat > /etc/ufw/applications.d/ssh-custom << EOF
-		[ssh-custom]
-		title=SSH on custom port
-		description=OpenSSH custom port
-		ports=3939/tcp
-		EOF
-
 		ufw logging on
-		ufw allow 2222
+		ufw allow ssh
+		ufw limit ssh
 		ufw status
 
+## Fail2ban
+Edit 
 
-Edit the file `/etc/ufw/applications.d/openssh-server` to reflect the
-new port 2222.
+
 
 # Resources
 
