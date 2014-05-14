@@ -19,7 +19,7 @@ This guide was inspired by Mr Belyamani's
 from John Brook.
 
 Rename Computer
-------------------
+---------------
 
 By default, your computer probably has a name like John Smith's
 Computer. Rename it easily from Terminal:
@@ -36,13 +36,13 @@ Preferences panel (didn't know you could do that with a keyboard
 shortcut huh?), and type Sharing. Enter your new Computer Name here.
 
 Keyboard Shortcut
---------------------
+-----------------
 
 Setup option-command-, as a shortcut to launch System Preferences, since
 you'll be doing it a lot in the future: http://goo.gl/CvElA
 
 Desktop
-----------
+-------
 
 * Check for updates
 * Map CAPSLOCK to CTRL
