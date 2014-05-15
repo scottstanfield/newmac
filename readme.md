@@ -21,6 +21,119 @@ from John Brook.
 [Top Eight OSX Utilites Developers Should Know]
 (http://www.mitchchn.me/2014/os-x-terminal/)
 
+
+TEMPORARY
+=========
+> Integrate the following
+
+Keyboard Shortcuts you should know and love
+================
+Readline / EMACs
+
+ctrl+a	beginning of line
+ctrl+e 	end of line
+ctrl+w	delete backwards by word
+
+Cmd + Space	Spotlight
+Cmd + Tab	Just like Alt-Tab in Windows
+Cmd + +/-	Most apps make text bigger or smaller
+Cmd + H		Hide or Minimize
+
+TextEdit
+=======
+This is your basic text editor. For some reason, it defaults to RichText, which is stupid. Launch, display its Preferences dialog and change:
+	Format to Plain text
+	Plain text font to something larger if you want
+	Turn off *all* the Options
+
+System Preferences
+==================
+You're going to be bringing up this dialog a lot. Since preferences for any application is cmd-comma, I was thinking option-command-comma should map to overall system preferences.
+
+## Keyboard/Keyboard
+Key Repeat: fast
+Delay Until Repeat: short
+Modifier Keys...: Caps Lock Key => Control
+
+## Keyboard/Shortcuts
+Select "App Shortcuts"
+Hit the + button
+Type "System Preferences..." exactly
+Use option+command+comma
+
+## Trackpad/Point & Click
+Enable Tap to click and Three finger drag
+
+## Trackpad/Scroll & Zoom
+Disable "Scroll direction: natural"
+
+## Trackpad/More Gestures
+Enable Mission Control (because why note?
+
+## Dock
+Position on screen: Left
+
+## Desktop/Screen Saver
+
+--> turn on zoom magnification with control+track padbash
+
+Finder Preferences
+==================
+(In Sidebar)
+
+Turn off All My Files and AirDrop. Both are accessible from the Finder "Go" menu. They're used so infrequently to deserve a top spot.
+
+Turn on your home folder. I drag mine to the top of the list.
+
+Turn on Hard disks.
+
+(In Advanced)
+Turn on Shall all filename extensions
+
+Spectacle App
+=============
+Wrangling windows is like hearding cats: no matter what you do, they still get away. Microsoft Windows has a great, built-in solution: Windows + arrow keys. 
+
+Spectacle is the best (and free) solution for the Mac. I've tried about a half-dozen of them. The defaults all all wrong, so you'll need to remap them.
+
+http://spectacleapp.com/
+
+Brew
+====
+brew install tree
+
+after brew install:
+$ rehash
+
+Reference: http://zsh.sourceforge.net/Guide/zshguide03.html
+
+
+
+Github
+======
+https://help.github.com/articles/set-up-git
+
+git config --global user.name "your name here"
+git config --global user.email "you@example.com"
+git config --global credential.helper osxkeychain
+git config --global push.default simple
+
+
+Notes
+=====
+Keyboard shortcut first
+Move rename computer down to later
+
+ZSH config
+==========
+instead of rehash, try setopt nohashdirs
+
+
+
+TEMPORARY END
+=============
+
+
 Rename Computer
 ---------------
 
