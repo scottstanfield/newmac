@@ -18,6 +18,9 @@ This guide was inspired by Mr Belyamani's
 [Another guide](http://johanbrook.com/development/web-dev-environment/)
 from John Brook.
 
+[Top Eight OSX Utilites Developers Should Know]
+(http://www.mitchchn.me/2014/os-x-terminal/)
+
 Rename Computer
 ---------------
 
@@ -29,9 +32,9 @@ Computer. Rename it easily from Terminal:
     $ scutil --set LocalHostName new_hostname
 
 I use my initials then some indicator of the machine type, like *ss-mbp17*
-for my 17" MacBook Pro. 
+for my 17" MacBook Pro.
 
-Do the same for your Bonjour name...hit Fn+F6 to bring up the System
+        Do the same for your Bonjour name...hit Fn+F6 to bring up the System
 Preferences panel (didn't know you could do that with a keyboard
 shortcut huh?), and type Sharing. Enter your new Computer Name here.
 
@@ -61,7 +64,7 @@ Yes, you can install Chrome from command line.
     $ diskutil unmount "Google Chrome"
     $ rm googlechrome.dmg
 
-Then: 
+Then:
 
 * Make it the default browser
 * Add it to the dock, under Finder
@@ -73,7 +76,7 @@ Other groovy extensions: 1Password, AdBlock, dotjs (remove), Google +1 Button,
 Change default shell
 -----------------------
 Launch Terminal. Now change your shell from `bash` to `zsh`
-    
+
     $ chsh -s /bin/zsh
 
 I thought about using `brew` to install a new zsh, but the version
@@ -90,13 +93,13 @@ utilities like `git`, we need /usr/local/bin before /usr/bin in path.
 Not sure if this works, but ensure `/usr/local/bin` is at the top of
 `/etc/paths`
 
-	$ echo "/usr/local/bin" | cat - /etc/paths | sudo tee /etc/paths 
+    $ echo "/usr/local/bin" | cat - /etc/paths | sudo tee /etc/paths 
 
 There's some weirdness with the way Apple setup the zsh config files.
 Read more here: https://github.com/sorin-ionescu/prezto/issues/381
 Fix it with the following command
 
-	$ sudo mv /etc/{zshenv,zprofile}
+    $ sudo mv /etc/{zshenv,zprofile}
 
 Again, close this session `CTRL-D` and restart a new one.
 
@@ -111,16 +114,16 @@ We need `gcc` installed so we can build the rest of our tools via
 Trigger installation of Command Line Tools by launching Terminal.app and
 typing this
 
-	$ gcc
+    $ gcc
 
 Instructions are confusing. Just click the Install button. After install, verify:
 
-	$ xcode-select -p
-	/Library/Developer/CommandLineTools
+    $ xcode-select -p
+    /Library/Developer/CommandLineTools
 
 And now verify that gcc is actually installed
 
-	$ gcc --version
+    $ gcc --version
 
 
 HOMEBREW
@@ -133,8 +136,8 @@ should read [why they should switch to brew][3].
 [3]: http://lostincode.net/blog/homebrew
 
 Do all this from Terminal.app; we'll swap out to iTerm2 later.
-	
-	$ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+    
+    $ ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
     $ brew doctor
     $ brew install cowsay
     $ rehash
@@ -237,9 +240,9 @@ in this [github comment](https://github.com/scottstanfield/newmac/issues/2).
 Assuming you have a github.com account, tell your Mac about it. Follow
 [these instructions](https://help.github.com/articles/set-up-git).
 
-	$ git config --global user.name "your name here"
-	$ git config --global user.emal "your@email.com"
-	$ git config --global credential.helper osxkeychain
+    $ git config --global user.name "your name here"
+    $ git config --global user.emal "your@email.com"
+    $ git config --global credential.helper osxkeychain
 
 When you clone a repo, use the HTTPS URL instead of SSH. If you must use
 the SSH repo, then follow [this guide](2) to setup your SSH keys.
@@ -260,8 +263,8 @@ you don't install XCode.
 Node (as of version 0.8?) will install npm for you.
 
     $ brew install node
-	$ npm install grunt-cli -g
-	$ npm install nws -g
+    $ npm install grunt-cli -g
+    $ npm install nws -g
 
 15. LESS (optional)
 -------------------
@@ -290,13 +293,13 @@ Now add the following line somewhere around line 30:
 Find the code around line 35 that looks like this:
 
 `
-	opts = language_opts
+    opts = language_opts
 `
 
 Add this line below:
 
 `
-	opts << "--enable-clipboard"
+    opts << "--enable-clipboard"
 `
 
     $ brew install vim
