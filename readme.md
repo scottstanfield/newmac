@@ -1,30 +1,26 @@
-Mac Config for Web Development
-==============================
-Tested for Mavericks OS 10.9.2
-Last updated on May 12, 2014
+# Mac Config for Web Development
+
+> Tested for Mavericks OS 10.9.2  
+> Last updated on May 12, 2014
+> THIS IS A DRAFT FOR MAVERICKS. AND IT'S CURRENTLY INCOMPLETE.
 
 The steps below assume you have a clean, fully patched Mac.
 
-Thoughtbot's laptop setup:
-https://github.com/thoughtbot/laptop/blob/master/mac
+Ideas liberally stolen from:
 
-Great understanding of ZSH from two sources:
-http://zanshin.net/2013/02/02/zsh-configuration-from-the-ground-up/
-https://github.com/myfreeweb/zshuery/blob/master/zshuery.sh
-
-This guide was inspired by Mr Belyamani's 
-[Ruby focused guide](http://bit.ly/VQsHy1).
-
-[Another guide](http://johanbrook.com/development/web-dev-environment/)
-from John Brook.
-
-[Top Eight OSX Utilites Developers Should Know]
-(http://www.mitchchn.me/2014/os-x-terminal/)
-
+* [Thoughtbot's][1] laptop setup.
+* Mark H. Nichols excellent writeup on [configuring ZSH from scratch][2]
+* [zshuery][3], 
+  a one file good .zshrc config
+* Moncef Belyamani has a [guide for Mavericks][4].
+* And finally, [Top Eight OSX Utilites Developers Should Know][5]
 
 TEMPORARY
 =========
-> Integrate the following
+Figure out how to explain steps to install the python library
+[formd][6]. Provides nice Markdown
+hyperlink management. Notice how all my links are at the bottom? That's
+`formd` in action.
 
 Keyboard Shortcuts you should know and love
 ================
@@ -41,14 +37,19 @@ Cmd + H		Hide or Minimize
 
 TextEdit
 =======
-This is your basic text editor. For some reason, it defaults to RichText, which is stupid. Launch, display its Preferences dialog and change:
+This is your basic text editor. For some reason, it defaults to
+RichText, which is stupid. Launch, display its Preferences dialog and
+change:
+
 	Format to Plain text
 	Plain text font to something larger if you want
 	Turn off *all* the Options
 
 System Preferences
 ==================
-You're going to be bringing up this dialog a lot. Since preferences for any application is cmd-comma, I was thinking option-command-comma should map to overall system preferences.
+You're going to be bringing up this dialog a lot. Since preferences for
+any application is cmd-comma, I was thinking option-command-comma should
+map to overall system preferences.
 
 ## Keyboard/Keyboard
 Key Repeat: fast
@@ -241,12 +242,12 @@ And now verify that gcc is actually installed
 
 HOMEBREW
 -----------
-Install [brew](http://brew.sh) before changing shells since it requires /bin/sh.
+Install [brew][7] before changing shells since it requires /bin/sh.
 
 Instructions located at http://mxcl.github.com/homebrew/. MacPorts users
-should read [why they should switch to brew][3].
+should read [why they should switch to brew][8].
 
-[3]: http://lostincode.net/blog/homebrew
+
 
 Do all this from Terminal.app; we'll swap out to iTerm2 later.
     
@@ -299,7 +300,7 @@ Log out, then back in.
 10. Use my .dotfiles
 --------------------
 Follow instructions at
-[scottstanfield/dotfiles](http://github.com/scottstanfield/dotfiles). It uses tcsh (most
+[scottstanfield/dotfiles][9]. It uses tcsh (most
 people are using zsh now, but I have old habits), so it installs a
 .cshrc and a pretty custom .vimrc. 
 
@@ -325,7 +326,7 @@ iTerm is a full-featured replacement for the anemic Terminal.app that
 ships with the Mac. It's also referred to as iTerm 2.
 
 * Download the iTerm2 beta (20130319 build or later) from [iTerm2
-  downloads](https://code.google.com/p/iterm2/downloads/list?q=label:Featured).
+  downloads][10].
 * Open the zip to extract 'iTerm.app', then drag it to your Applications
   folder.
 * Run the app (it should be available now from Spotlight).
@@ -346,21 +347,17 @@ Otherwise, do it by hand:
 * Use the same font for both 'Regular Font' and 'Non-ASCII Font'
 
 When finished, your profile seetings dialog box should look like the one
-in this [github comment](https://github.com/scottstanfield/newmac/issues/2).
+in this [github comment][11].
 
 13. Setup Git for github
 ------------------------
 Assuming you have a github.com account, tell your Mac about it. Follow
-[these instructions](https://help.github.com/articles/set-up-git).
+[these instructions][12].
 
     $ git config --global user.name "your name here"
     $ git config --global user.emal "your@email.com"
     $ git config --global credential.helper osxkeychain
 
-When you clone a repo, use the HTTPS URL instead of SSH. If you must use
-the SSH repo, then follow [this guide](2) to setup your SSH keys.
-
-[2]: (https://help.github.com/articles/generating-ssh-keys)
 
 14. NODE
 --------
@@ -422,7 +419,20 @@ TODO: I should submit the above change as a pull request to homebrew.
 
 17. X11 (optional)
 ------------------
-This [gist](https://gist.github.com/1860902) will help you get X11
-working with Mountain Lion since it's no longer installed with OS X. 
+This [gist][13] will help you get X11
+working with Mountain Lion since it's no longer installed with OS X.
 
 
+[1]: https://github.com/thoughtbot/laptop/blob/master/mac
+[2]: http://zanshin.net/2013/02/02/zsh-configuration-from-the-ground-up/
+[3]: https://github.com/myfreeweb/zshuery/blob/master/zshuery.sh
+[4]: http://bit.ly/VQsHy1
+[5]: http://www.mitchchn.me/2014/os-x-terminal/
+[6]: http://drbunsen.github.io/formd/
+[7]: http://brew.sh
+[8]: http://lostincode.net/blog/homebrew
+[9]: http://github.com/scottstanfield/dotfiles
+[10]: https://code.google.com/p/iterm2/downloads/list?q=label:Featured
+[11]: https://github.com/scottstanfield/newmac/issues/2
+[12]: https://help.github.com/articles/set-up-git
+[13]: https://gist.github.com/1860902
