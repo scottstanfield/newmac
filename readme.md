@@ -26,14 +26,14 @@ Keyboard Shortcuts you should know and love
 ================
 Readline / EMACs
 
-ctrl+a	beginning of line
-ctrl+e 	end of line
-ctrl+w	delete backwards by word
+	ctrl+a	beginning of line  
+	ctrl+e 	end of line  
+	ctrl+w	delete backwards by word  
 
-Cmd + Space	Spotlight
-Cmd + Tab	Just like Alt-Tab in Windows
-Cmd + +/-	Most apps make text bigger or smaller
-Cmd + H		Hide or Minimize
+	Cmd + Space	Spotlight
+	Cmd + Tab	Just like Alt-Tab in Windows
+	Cmd + +/-	Most apps make text bigger or smaller
+	Cmd + H		Hide or Minimize
 
 TextEdit
 =======
@@ -52,15 +52,15 @@ any application is cmd-comma, I was thinking option-command-comma should
 map to overall system preferences.
 
 ## Keyboard/Keyboard
-Key Repeat: fast
-Delay Until Repeat: short
-Modifier Keys...: Caps Lock Key => Control
+Key Repeat: fast  
+Delay Until Repeat: short  
+Modifier Keys...: Caps Lock Key => Control  
 
 ## Keyboard/Shortcuts
-Select "App Shortcuts"
-Hit the + button
-Type "System Preferences..." exactly
-Use option+command+comma
+Select "App Shortcuts"  
+Hit the + button  
+Type "System Preferences..." exactly  
+Use option+command+comma  
 
 ## Trackpad/Point & Click
 Enable Tap to click and Three finger drag
@@ -75,6 +75,9 @@ Enable Mission Control (because why note?
 Position on screen: Left
 
 ## Desktop/Screen Saver
+hot corners
+
+## Accessibility
 
 --> turn on zoom magnification with control+track padbash
 
