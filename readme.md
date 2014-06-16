@@ -35,6 +35,12 @@ Readline / EMACs
 	Cmd + +/-	Most apps make text bigger or smaller
 	Cmd + H		Hide or Minimize
 
+Dash
+====
+[Dash][7] gives you offline access to 150+ doc sets like vim, markdown, css, html, python,
+etc.
+
+
 TextEdit
 =======
 This is your basic text editor. For some reason, it defaults to
@@ -245,10 +251,10 @@ And now verify that gcc is actually installed
 
 HOMEBREW
 -----------
-Install [brew][7] before changing shells since it requires /bin/sh.
+Install [brew][8] before changing shells since it requires /bin/sh.
 
 Instructions located at http://mxcl.github.com/homebrew/. MacPorts users
-should read [why they should switch to brew][8].
+should read [why they should switch to brew][9].
 
 
 
@@ -303,7 +309,7 @@ Log out, then back in.
 10. Use my .dotfiles
 --------------------
 Follow instructions at
-[scottstanfield/dotfiles][9]. It uses tcsh (most
+[scottstanfield/dotfiles][10]. It uses tcsh (most
 people are using zsh now, but I have old habits), so it installs a
 .cshrc and a pretty custom .vimrc. 
 
@@ -329,7 +335,7 @@ iTerm is a full-featured replacement for the anemic Terminal.app that
 ships with the Mac. It's also referred to as iTerm 2.
 
 * Download the iTerm2 beta (20130319 build or later) from [iTerm2
-  downloads][10].
+  downloads][11].
 * Open the zip to extract 'iTerm.app', then drag it to your Applications
   folder.
 * Run the app (it should be available now from Spotlight).
@@ -350,12 +356,12 @@ Otherwise, do it by hand:
 * Use the same font for both 'Regular Font' and 'Non-ASCII Font'
 
 When finished, your profile seetings dialog box should look like the one
-in this [github comment][11].
+in this [github comment][12].
 
 13. Setup Git for github
 ------------------------
 Assuming you have a github.com account, tell your Mac about it. Follow
-[these instructions][12].
+[these instructions][13].
 
     $ git config --global user.name "your name here"
     $ git config --global user.emal "your@email.com"
@@ -422,7 +428,7 @@ TODO: I should submit the above change as a pull request to homebrew.
 
 17. X11 (optional)
 ------------------
-This [gist][13] will help you get X11
+This [gist][14] will help you get X11
 working with Mountain Lion since it's no longer installed with OS X.
 
 
@@ -432,10 +438,11 @@ working with Mountain Lion since it's no longer installed with OS X.
 [4]: http://bit.ly/VQsHy1
 [5]: http://www.mitchchn.me/2014/os-x-terminal/
 [6]: http://drbunsen.github.io/formd/
-[7]: http://brew.sh
-[8]: http://lostincode.net/blog/homebrew
-[9]: http://github.com/scottstanfield/dotfiles
-[10]: https://code.google.com/p/iterm2/downloads/list?q=label:Featured
-[11]: https://github.com/scottstanfield/newmac/issues/2
-[12]: https://help.github.com/articles/set-up-git
-[13]: https://gist.github.com/1860902
+[7]: http://kapeli.com/dash
+[8]: http://brew.sh
+[9]: http://lostincode.net/blog/homebrew
+[10]: http://github.com/scottstanfield/dotfiles
+[11]: https://code.google.com/p/iterm2/downloads/list?q=label:Featured
+[12]: https://github.com/scottstanfield/newmac/issues/2
+[13]: https://help.github.com/articles/set-up-git
+[14]: https://gist.github.com/1860902
