@@ -6,7 +6,7 @@
 
 The steps below assume you have a clean, fully patched Mac.
 
-Ideas liberally stolen from:
+__Inspired from__
 
 * [Thoughtbot's][1] laptop setup.
 * Mark H. Nichols excellent writeup on [configuring ZSH from scratch][2]
@@ -15,11 +15,9 @@ Ideas liberally stolen from:
 * Moncef Belyamani has a [guide for Mavericks][4].
 * And finally, [Top Eight OSX Utilites Developers Should Know][5]
 
-TEMPORARY
-=========
-Figure out how to explain steps to install the python library
-[formd][6]. Provides nice Markdown
-hyperlink management. Notice how all my links are at the bottom? That's
+### Markdown Hyperlink Cleanup in VIM
+There's a great Python command-line tool called [formd][6] that keeps 
+Markdown links looking clean. Notice how all my links are at the bottom? That's
 `formd` in action.
 
 Keyboard Shortcuts you should know and love
@@ -40,7 +38,6 @@ Dash
 [Dash][7] gives you offline access to 150+ doc sets like vim, markdown, css, html, python,
 etc.
 
-
 TextEdit
 =======
 This is your basic text editor. For some reason, it defaults to
@@ -53,9 +50,6 @@ change:
 
 System Preferences
 ==================
-You're going to be bringing up this dialog a lot. Since preferences for
-any application is cmd-comma, I was thinking option-command-comma should
-map to overall system preferences.
 
 ## Keyboard/Keyboard
 Key Repeat: fast  
@@ -63,6 +57,10 @@ Delay Until Repeat: short
 Modifier Keys...: Caps Lock Key => Control  
 
 ## Keyboard/Shortcuts
+You're going to be bringing up this dialog a lot. Since preferences for
+any application is ⌘-comma, I believe ⌥⌘-comma should display the system
+preferences.
+
 Select "App Shortcuts"  
 Hit the + button  
 Type "System Preferences..." exactly  
@@ -194,7 +192,9 @@ Then:
 * Install vimium extension (just Google for "vimium")
 
 Other groovy extensions: 1Password, AdBlock, dotjs (remove), Google +1 Button,
-    JoinTabs (optional), SessionBuddy, Syntaxtic, LiveReload
+    JoinTabs (optional), SessionBuddy, Syntaxtic, LiveReload, WhatFont
+    
+I use a product from Abine.com called "DoNotTrackMe".
 
 Change default shell
 -----------------------
@@ -229,6 +229,9 @@ Again, close this session `CTRL-D` and restart a new one.
 
 Command Line Tools
 ------------------
+> Note: this section is no longer needed as running `brew` install
+> triggers the installation of the Xcode tools.
+
 Apple doesn't ship a compiler with Mavericks for some reason. So you
 need to trigger the installation by trying to run the compiler directly.
 We need `gcc` installed so we can build the rest of our tools via
@@ -255,8 +258,6 @@ Install [brew][8] before changing shells since it requires /bin/sh.
 
 Instructions located at http://mxcl.github.com/homebrew/. MacPorts users
 should read [why they should switch to brew][9].
-
-
 
 Do all this from Terminal.app; we'll swap out to iTerm2 later.
     
@@ -291,6 +292,9 @@ pulled from a https://github.com/seebi/dircolors-solarized. Thank you
 seebi for bringing Solarized colors to GNU utilities!
 
     $ brew install coreutils
+
+> Note: consider mkdir ~/lib and clone this repo into there
+
     $ cd ~/projects/repo
     $ git clone git://github.com/seebi/dircolors-solarized.git
 
@@ -319,8 +323,8 @@ people are using zsh now, but I have old habits), so it installs a
 Solarized is a well-known common color scheme that works across vim,
 iTerm, my custom prompt and the GNU utilities.
 
-    $ mkdir -p ~/projects/repos 
-    $ cd ~/projects/repos
+    $ mkdir -p ~/lib
+    $ cd ~/lib
     $ git clone git://github.com/altercation/solarized.git
 
 Then follow instructions under iterm2-colors-solarized folder to add the color
@@ -403,23 +407,14 @@ But brew does not install system duplicates by default, so work with an alt fork
 16. VIM (optional)
 ------------------
 Install new version of vim that enables system *clipboard access* for the
-Mac. You'll need to edit the build formula for vim and add a single line
-to the configuration section.
+Mac. The brew formula for vim includes +clipboard support. 
 
-    $ brew edit vim
+Verify for yourself (if you want) that clipboard support is turned off;
+it'll show "-clipboard":
 
-Now add the following line somewhere around line 30:
-Find the code around line 35 that looks like this:
+	$ vim --version | grep clipboard
 
-`
-    opts = language_opts
-`
-
-Add this line below:
-
-`
-    opts << "--enable-clipboard"
-`
+Just install the latest:
 
     $ brew install vim
     $ ln -s /usr/local/bin/vim /usr/local/bin/vi  # I still call it vi
