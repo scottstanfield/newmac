@@ -21,7 +21,6 @@ Markdown links looking clean. Notice how all my links are at the bottom? That's
 `formd` in action.
 
 
-
 Keyboard Shortcuts you should know and love
 ================
 Readline / EMACs
@@ -34,11 +33,6 @@ Readline / EMACs
 	Cmd + Tab	Just like Alt-Tab in Windows
 	Cmd + +/-	Most apps make text bigger or smaller
 	Cmd + H		Hide or Minimize
-
-Dash
-====
-[Dash][7] gives you offline access to 150+ doc sets like vim, markdown, css, html, python,
-etc.
 
 TextEdit
 =======
@@ -173,11 +167,13 @@ Again, close this session `CTRL-D` and restart a new one.
 
 
 
-
-
 7. HOMEBREW
 ===========
 Install [brew][8] before changing shells since it requires /bin/sh.
+
+> Note: if you haven't already installed the Apple development tools
+> `brew` will detect this and prompt you to do so. Install the command
+> line tools, not the entire Xcode.
 
 Instructions located at http://mxcl.github.com/homebrew/. MacPorts users
 should read [why they should switch to brew][9].
@@ -194,7 +190,7 @@ Now that brew thinks it is working, try installing a utility that was
 already installed by the Command Line Tools, namely "git" (and a few
 other useful utilities).
 
-    $ brew install git wget gist htop source-highlight
+    $ brew install git wget gist htop source-highlight hub tree
     $ brew doctor
     
 > $ rehash doesn't work/wasn't needed  
@@ -207,9 +203,8 @@ other useful utilities).
 Solarized is a well-known common color scheme that works across vim,
 iTerm, my custom prompt and the GNU utilities.
 
-    $ mkdir -p ~/lib
-    $ cd ~/lib
-    $ git clone git://github.com/altercation/solarized.git
+    $ mkdir ~/lib && cd ~/lib
+	$ hub clone altercation/solarized
 
 Then follow instructions under iterm2-colors-solarized folder to add the color
 profiles to iTerm 2. I create two named profiles called "solarized-dark" and 
@@ -224,7 +219,7 @@ iTerm is a full-featured replacement for the anemic Terminal.app that
 ships with the Mac. It's also referred to as iTerm 2.
 
 * Download the iTerm2 beta (20130319 build or later) from [iTerm2
-  downloads][11].
+  downloads][10].
 * Open the zip to extract 'iTerm.app', then drag it to your Applications
   folder.
 * Run the app (it should be available now from Spotlight).
@@ -245,14 +240,14 @@ Otherwise, do it by hand:
 * Use the same font for both 'Regular Font' and 'Non-ASCII Font'
 
 When finished, your profile seetings dialog box should look like the one
-in this [github comment][12].
+in this [github comment][11].
 
 > iTerm2 downloads link is empty
 
 10. Setup Git for github
 ========================
 Assuming you have a github.com account, tell your Mac about it. Follow
-[these instructions][13].
+[these instructions][12].
 
     $ git config --global user.name "your name here"
     $ git config --global user.emal "your@email.com"
@@ -310,38 +305,27 @@ TODO: I should submit the above change as a pull request to homebrew.
 
 14. X11 (optional)
 ==================
-This [gist][14] will help you get X11
+This [gist][13] will help you get X11
 working with Mountain Lion since it's no longer installed with OS X.
 
 > Did not test bc no apple ID for xcode
 
 
-[1]: https://github.com/thoughtbot/laptop/blob/master/mac
-[2]: http://zanshin.net/2013/02/02/zsh-configuration-from-the-ground-up/
-[3]: https://github.com/myfreeweb/zshuery/blob/master/zshuery.sh
-[4]: http://bit.ly/VQsHy1
-[5]: http://www.mitchchn.me/2014/os-x-terminal/
-[6]: http://drbunsen.github.io/formd/
-[7]: http://kapeli.com/dash
-[8]: http://brew.sh
-[9]: http://lostincode.net/blog/homebrew
-[10]: http://github.com/scottstanfield/dotfiles
-[11]: https://code.google.com/p/iterm2/downloads/list?q=label:Featured
-[12]: https://github.com/scottstanfield/newmac/issues/2
-[13]: https://help.github.com/articles/set-up-git
-[14]: https://gist.github.com/1860902
+
 
 Skip
 ====
 Brew
 ====
-brew install tree
 
-after brew install:
-$ rehash
 
 Reference: http://zsh.sourceforge.net/Guide/zshguide03.html
 
+
+Dash
+====
+[Dash][7] gives you offline access to 150+ doc sets like vim, markdown, css, html, python,
+etc.
 
 
 Github
@@ -368,29 +352,7 @@ included with the Mac is only one version behind (two were redacted).
 
 Close this session `CTRL-D` and start a new one.
 
-Command Line Tools
-------------------
-> Note: this section is no longer needed as running `brew` install
-> triggers the installation of the Xcode tools.
 
-Apple doesn't ship a compiler with Mavericks for some reason. So you
-need to trigger the installation by trying to run the compiler directly.
-We need `gcc` installed so we can build the rest of our tools via
-`brew` later.
-
-Trigger installation of Command Line Tools by launching Terminal.app and
-typing this
-
-    $ gcc
-
-Instructions are confusing. Just click the Install button. After install, verify:
-
-    $ xcode-select -p
-    /Library/Developer/CommandLineTools
-
-And now verify that gcc is actually installed
-
-    $ gcc --version
     
 GNU utilities TCSH
 ---------------------
@@ -429,8 +391,22 @@ Log out, then back in.
 10. Use my .dotfiles
 --------------------
 Follow instructions at
-[scottstanfield/dotfiles][10]. It uses tcsh (most
+[scottstanfield/dotfiles][14]. It uses tcsh (most
 people are using zsh now, but I have old habits), so it installs a
-.cshrc and a pretty custom .vimrc. 
+.cshrc and a pretty custom .vimrc.
 
 
+[1]: https://github.com/thoughtbot/laptop/blob/master/mac
+[2]: http://zanshin.net/2013/02/02/zsh-configuration-from-the-ground-up/
+[3]: https://github.com/myfreeweb/zshuery/blob/master/zshuery.sh
+[4]: http://bit.ly/VQsHy1
+[5]: http://www.mitchchn.me/2014/os-x-terminal/
+[6]: http://drbunsen.github.io/formd/
+[7]: http://kapeli.com/dash
+[8]: http://brew.sh
+[9]: http://lostincode.net/blog/homebrew
+[10]: https://code.google.com/p/iterm2/downloads/list?q=label:Featured
+[11]: https://github.com/scottstanfield/newmac/issues/2
+[12]: https://help.github.com/articles/set-up-git
+[13]: https://gist.github.com/1860902
+[14]: http://github.com/scottstanfield/dotfiles
