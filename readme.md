@@ -140,7 +140,7 @@ Again, close this session `CTRL-D` and restart a new one.
 
 8. HOMEBREW
 ===========
-[brew](http://brew.sh) is the App Store for the command line. 
+[Homebrew](http://brew.sh) is the App Store for the command line. 
 
 > Note: if you haven't already installed the Apple development tools
 > `brew` will detect this and prompt you to do so. Install the command
@@ -208,8 +208,6 @@ Setup iTerm
 When finished, your profile seetings dialog box should look like the one
 in this [github comment](https://github.com/scottstanfield/newmac/issues/2).
 
-> iTerm2 downloads link is empty
-
 11. Setup Git for github
 ========================
 Assuming you have a github.com account, tell your Mac about it. Follow
@@ -218,8 +216,6 @@ Assuming you have a github.com account, tell your Mac about it. Follow
     $ git config --global user.name "your name here"
     $ git config --global user.emal "your@email.com"
     $ git config --global credential.helper osxkeychain
-
-> Did not test bc do not have github account
 
 12. Change default shell
 ========================
@@ -239,24 +235,11 @@ people are using zsh now, but I have old habits), so it installs a
 14. NODE
 ========
 
-With the Command Line Tools-only option from earlier steps (i.e., you
-don't install Xcode), I found that with Mountain Lion I had to first run
-the following command before node would successfully build. 
-
-    $ sudo xcode-select -switch /usr/bin
-
-I get conflicting reports on how the above line should be handled when
-you don't install XCode. 
-
 Node (as of version 0.8?) will install npm for you.
 
     $ brew install node
-    $ npm install grunt-cli -g
-    $ npm install nws -g
+    $ npm install -g nws gulp grunt-cli 
     
-> I recommend adding in that it will take time to complete the installation  
-> Did not require $ sudo xcode-select -switch /usr/bin
-
 15. LESS (optional)
 ===================
 `less` is a terminal pager program used to look at text files. It's
