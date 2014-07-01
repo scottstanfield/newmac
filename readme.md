@@ -279,8 +279,8 @@ Markdown links looking clean. Notice how all my links are at the bottom? That's
 `formd` in action.
 
 
-Keyboard Shortcuts you should know and love
-================
+Handy Keyboard Shortcuts
+========================
 Readline / EMACs
 
     ctrl+a  beginning of line  
