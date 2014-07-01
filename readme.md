@@ -22,7 +22,7 @@ First, check for system updates by running `AppStore`.
 2. System Preferences
 =====================
 
-## Keyboard
+### Keyboard
 
 Tab      | Option
 ---------|---------
@@ -38,7 +38,7 @@ preferences.
 1. Type **System Preferences...** exactly, with the elipsis at the end
 1. Use option+command+comma  
 
-## Trackpad
+### Trackpad
 
 Tab           | Option
 --------------|---------
@@ -47,44 +47,37 @@ Point & Click | Enable **Tap to Click**
 Scroll & Zoom | Disable **Scroll direction: natural**
 More Gestures | Enable **App Exposé**
 
-## Dock
+### Dock
 Position on screen: Left
 Enable Minimize windows into application icon
 Disable Animate opening applications
 
-## Accessibility
+### Accessibility
 Select Zoom
 Enable "Use scroll gesture with modifier keys to zoom"
 
-## Security & Privacy
-#### General
-If you think you know what you're doing, Allow apps downloaded from **Anywhere**. 
+### Security & Privacy
+Tab           | Option
+--------------|---------
+General       | Allow apps downloaded from **Anywhere** (NB: security risk)
+Firewall      | Turn on the Firewall
 
-#### Firewall
-Turn on firewall.
-
-4. Finder 
+3. Finder 
 ==========
 In Finder Preferences ⌘-,
 
-#### Advanced
-Enable **Show all filename extensions**
+Tab           | Option
+--------------|---------
+Advanced      | Enable **Show all filename extensions**
+Sidebar       | Disable **All My Files** 
+              | Disable **AirDrop**. 
+			  | Enable **(your home)** and drag to top
+			  | Enable **Hard Disks**
 
-#### Sidebar
-Uncheck **All My Files** 
-Uncheck **AirDrop**. 
+> AirDrop and AllMyFiles are accessible from the Finder "Go" menu. 
+> They're used so infrequently to deserve a top spot.
 
-> Both are accessible from the Finder "Go" menu. They're used so infrequently to deserve a top spot.
-
-Check **(home)** 
-> Turn on your home folder. I drag mine to the top of the list.
-
-Check **Hard disks**
-
-**hello**
-
-
-2. Chrome
+4. Chrome
 =========
 Yes, you can install Chrome from command line. 
 
@@ -104,18 +97,21 @@ Optional:
 
 5. Spectacle App
 ================
-Wrangling windows is like hearding cats: no matter what you do, they still get away. Microsoft Windows has a great, built-in solution: Windows + arrow keys. 
+Wrangling windows is like hearding cats: no matter what you do, they still get 
+away. Microsoft Windows has a great, built-in solution: Windows + arrow keys. 
 
-[Spectacle](http://spectacleapp.com/) is the best (and free) solution for the Mac. I've tried about a half-dozen of them. Some of the defaults conflict with Chrome's shortcuts to move between tabs, so I've remapped mine to something sane. Check out the screenshot below for mine
+[Spectacle](http://spectacleapp.com/) is the best (and free) solution for the 
+Mac. I've tried about a half-dozen of them. Some of the defaults conflict with 
+Chrome's shortcuts to move between tabs, so I've remapped mine to something 
+sane. Check out the screenshot below for mine:
 
 ![Spectacle Preferences](http://f.cl.ly/items/1q0x3g2N3t1u1H091J0b/spectacle.png)
 
-Enable **Launch Spectacle at login**
+Also, enable **Launch Spectacle at login**
 
-
-
-3. Rename Computer
-================
+6. Rename Computer
+==================
+Open `Terminal.app`.
 
 By default, your computer probably has a name like John Smith's
 Computer. Rename it easily from Terminal:
@@ -127,9 +123,7 @@ for my 15" MacBook Pro.
     $ scutil --set ComputerName ss-mbp15
     $ scutil --set LocalHostName ss-mbp15
 
-
-
-6. Fix the Path
+7. Fix the Path
 ===============
 
 We own everything under /usr/local; Apple (and Unix in general) doesn't
@@ -150,8 +144,7 @@ Fix it with the following command
 Again, close this session `CTRL-D` and restart a new one.
 
 
-
-7. HOMEBREW
+8. HOMEBREW
 ===========
 [brew](http://brew.sh) is the App Store for the command line. 
 
@@ -181,8 +174,7 @@ other useful utilities).
 > requires command line developer tool (asks to install when trying to run)
 
 
-
-8. Solarized
+9. Solarized
 ============
 Solarized is a well-known common color scheme that works across vim,
 iTerm, my custom prompt and the GNU utilities.
@@ -196,8 +188,8 @@ profiles to iTerm 2. I create two named profiles called "solarized-dark" and
 Light is my default. Keep minimum color contrast set to low.
 
 
-9. iTerm 
-========
+10. iTerm 
+==========
 
 iTerm is a full-featured replacement for the anemic Terminal.app that
 ships with the Mac. It's also referred to as iTerm 2.
@@ -224,7 +216,7 @@ in this [github comment](https://github.com/scottstanfield/newmac/issues/2).
 
 > iTerm2 downloads link is empty
 
-10. Setup Git for github
+11. Setup Git for github
 ========================
 Assuming you have a github.com account, tell your Mac about it. Follow
 [these instructions](https://help.github.com/articles/set-up-git).
@@ -235,8 +227,8 @@ Assuming you have a github.com account, tell your Mac about it. Follow
 
 > Did not test bc do not have github account
 
-Change default shell
------------------------
+12. Change default shell
+========================
 Launch Terminal. Now change your shell from `bash` to `zsh`
 
     $ chsh -s /bin/csh
@@ -246,14 +238,14 @@ included with the Mac is only one version behind (two were redacted).
 
 Close this session `CTRL-D` and start a new one.
 
-10. Use my .dotfiles
---------------------
+13. Use my .dotfiles
+====================
 Follow instructions at
 [scottstanfield/dotfiles](http://github.com/scottstanfield/dotfiles). It uses tcsh (most
 people are using zsh now, but I have old habits), so it installs a
 .cshrc and a pretty custom .vimrc.
 
-11. NODE
+14. NODE
 ========
 
 With the Command Line Tools-only option from earlier steps (i.e., you
@@ -274,7 +266,7 @@ Node (as of version 0.8?) will install npm for you.
 > I recommend adding in that it will take time to complete the installation  
 > Did not require $ sudo xcode-select -switch /usr/bin
 
-12. LESS (optional)
+15. LESS (optional)
 ===================
 `less` is a terminal pager program used to look at text files. It's
 similar to `more` but improved, allowing both forward and backwards
@@ -288,8 +280,7 @@ But brew does not install system duplicates by default, so work with an alt fork
     $ brew tap homebrew/dupes
     $ brew install less 
 
-
-13. VIM (optional)
+16. VIM 
 ==================
 Install new version of vim that enables system *clipboard access* for the
 Mac. The brew formula for vim includes +clipboard support. 
@@ -301,18 +292,18 @@ Just install the latest:
 
 TODO: I should submit the above change as a pull request to homebrew.
 
-14. X11 (optional)
-==================
-This [gist](https://gist.github.com/1860902) will help you get X11
-working with Mountain Lion since it's no longer installed with OS X.
-
-> Did not test bc no apple ID for xcode
-
 
 
 
 # Extras
 
+X11 (optional)
+==================
+This [gist](https://gist.github.com/1860902) will help you get X11
+working with Mountain Lion since it's no longer installed with OS X.
+
+Formd
+=====
 There's a great Python command-line tool called [formd](http://drbunsen.github.io/formd/) that keeps 
 Markdown links looking clean. Notice how all my links are at the bottom? That's
 `formd` in action.
@@ -332,7 +323,7 @@ Readline / EMACs
 	Cmd + H		Hide or Minimize
 
 TextEdit
-=======
+========
 This is your basic text editor. For some reason, it defaults to
 RichText, which is stupid. Launch, display its Preferences dialog and
 change:
@@ -340,7 +331,6 @@ change:
 	Format to Plain text
 	Plain text font to something larger if you want
 	Turn off *all* the Options
-
 
 Reference: http://zsh.sourceforge.net/Guide/zshguide03.html
 
