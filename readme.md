@@ -264,10 +264,6 @@ Just install the latest:
     $ brew install vim
     $ ln -s /usr/local/bin/vim /usr/local/bin/vi  # I still call it vi
 
-TODO: I should submit the above change as a pull request to homebrew.
-
-
-
 
 # Extras
 
