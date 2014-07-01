@@ -8,41 +8,12 @@ The steps below assume you have a clean, fully patched Mac.
 
 __Inspired from__
 
-* [Thoughtbot's][1] laptop setup.
-* Mark H. Nichols excellent writeup on [configuring ZSH from scratch][2]
-* [zshuery][3], 
+* [Thoughtbot's](https://github.com/thoughtbot/laptop/blob/master/mac) laptop setup.
+* Mark H. Nichols excellent writeup on [configuring ZSH from scratch](http://zanshin.net/2013/02/02/zsh-configuration-from-the-ground-up/)
+* [zshuery](https://github.com/myfreeweb/zshuery/blob/master/zshuery.sh), 
   a one file good .zshrc config
-* Moncef Belyamani has a [guide for Mavericks][4].
-* And finally, [Top Eight OSX Utilites Developers Should Know][5]
-
-### Markdown Hyperlink Cleanup in VIM
-There's a great Python command-line tool called [formd][6] that keeps 
-Markdown links looking clean. Notice how all my links are at the bottom? That's
-`formd` in action.
-
-
-Keyboard Shortcuts you should know and love
-================
-Readline / EMACs
-
-	ctrl+a	beginning of line  
-	ctrl+e 	end of line  
-	ctrl+w	delete backwards by word  
-
-	Cmd + Space	Spotlight
-	Cmd + Tab	Just like Alt-Tab in Windows
-	Cmd + +/-	Most apps make text bigger or smaller
-	Cmd + H		Hide or Minimize
-
-TextEdit
-=======
-This is your basic text editor. For some reason, it defaults to
-RichText, which is stupid. Launch, display its Preferences dialog and
-change:
-
-	Format to Plain text
-	Plain text font to something larger if you want
-	Turn off *all* the Options
+* Moncef Belyamani has a [guide for Mavericks](http://bit.ly/VQsHy1).
+* And finally, [Top Eight OSX Utilites Developers Should Know](http://www.mitchchn.me/2014/os-x-terminal/)
 
 1. System Preferences
 =====================
@@ -169,14 +140,14 @@ Again, close this session `CTRL-D` and restart a new one.
 
 7. HOMEBREW
 ===========
-Install [brew][8] before changing shells since it requires /bin/sh.
+[brew](http://brew.sh) is the App Store for the command line. 
 
 > Note: if you haven't already installed the Apple development tools
 > `brew` will detect this and prompt you to do so. Install the command
 > line tools, not the entire Xcode.
 
 Instructions located at http://mxcl.github.com/homebrew/. MacPorts users
-should read [why they should switch to brew][9].
+should read [why they should switch to brew](http://lostincode.net/blog/homebrew).
 
 Do all this from Terminal.app; we'll swap out to iTerm2 later.
     
@@ -218,42 +189,56 @@ Light is my default. Keep minimum color contrast set to low.
 iTerm is a full-featured replacement for the anemic Terminal.app that
 ships with the Mac. It's also referred to as iTerm 2.
 
-* Download the iTerm2 beta (20130319 build or later) from [iTerm2
-  downloads][10].
+* Download the iTerm2 **Test** release or the **Stable release if it's v2** from 
+  [iTerm2 downloads](http://www.iterm2.com/#/section/downloads).
 * Open the zip to extract 'iTerm.app', then drag it to your Applications
   folder.
 * Run the app (it should be available now from Spotlight).
 * Right click on the icon and choose Options | Keep in Dock
 
-If you installed my .dotfiles, you have the preference file already.
-Bring up the preferences for iTerm and enter `~/.dotfiles/lib` for the
-option at the bottom "Load preferences from a custom folder".
-
-Otherwise, do it by hand:
+Setup iTerm
 
 * Add two new profiles: "solarized-light" and "solarized-dark".  
   Set the color contrast profile to *low*, otherwise colors will be
   washed out.
-* Delete the default profile.
+* Delete the **default** profile.
 * Set both color schemes to the appropriate Solarized files from previous step.
 * I use 18 pt. Menlo for font. Window: columns=100, rows=35
 * Use the same font for both 'Regular Font' and 'Non-ASCII Font'
 
 When finished, your profile seetings dialog box should look like the one
-in this [github comment][11].
+in this [github comment](https://github.com/scottstanfield/newmac/issues/2).
 
 > iTerm2 downloads link is empty
 
 10. Setup Git for github
 ========================
 Assuming you have a github.com account, tell your Mac about it. Follow
-[these instructions][12].
+[these instructions](https://help.github.com/articles/set-up-git).
 
     $ git config --global user.name "your name here"
     $ git config --global user.emal "your@email.com"
     $ git config --global credential.helper osxkeychain
 
 > Did not test bc do not have github account
+
+Change default shell
+-----------------------
+Launch Terminal. Now change your shell from `bash` to `zsh`
+
+    $ chsh -s /bin/csh
+
+I thought about using `brew` to install a new zsh, but the version
+included with the Mac is only one version behind (two were redacted).
+
+Close this session `CTRL-D` and start a new one.
+
+10. Use my .dotfiles
+--------------------
+Follow instructions at
+[scottstanfield/dotfiles](http://github.com/scottstanfield/dotfiles). It uses tcsh (most
+people are using zsh now, but I have old habits), so it installs a
+.cshrc and a pretty custom .vimrc.
 
 11. NODE
 ========
@@ -305,7 +290,7 @@ TODO: I should submit the above change as a pull request to homebrew.
 
 14. X11 (optional)
 ==================
-This [gist][13] will help you get X11
+This [gist](https://gist.github.com/1860902) will help you get X11
 working with Mountain Lion since it's no longer installed with OS X.
 
 > Did not test bc no apple ID for xcode
@@ -313,10 +298,35 @@ working with Mountain Lion since it's no longer installed with OS X.
 
 
 
-Skip
-====
-Brew
-====
+# Extras
+
+There's a great Python command-line tool called [formd](http://drbunsen.github.io/formd/) that keeps 
+Markdown links looking clean. Notice how all my links are at the bottom? That's
+`formd` in action.
+
+
+Keyboard Shortcuts you should know and love
+================
+Readline / EMACs
+
+	ctrl+a	beginning of line  
+	ctrl+e 	end of line  
+	ctrl+w	delete backwards by word  
+
+	Cmd + Space	Spotlight
+	Cmd + Tab	Just like Alt-Tab in Windows
+	Cmd + +/-	Most apps make text bigger or smaller
+	Cmd + H		Hide or Minimize
+
+TextEdit
+=======
+This is your basic text editor. For some reason, it defaults to
+RichText, which is stupid. Launch, display its Preferences dialog and
+change:
+
+	Format to Plain text
+	Plain text font to something larger if you want
+	Turn off *all* the Options
 
 
 Reference: http://zsh.sourceforge.net/Guide/zshguide03.html
@@ -324,7 +334,7 @@ Reference: http://zsh.sourceforge.net/Guide/zshguide03.html
 
 Dash
 ====
-[Dash][7] gives you offline access to 150+ doc sets like vim, markdown, css, html, python,
+[Dash](http://kapeli.com/dash) gives you offline access to 150+ doc sets like vim, markdown, css, html, python,
 etc.
 
 
@@ -341,16 +351,6 @@ ZSH config
 ==========
 instead of rehash, try setopt nohashdirs
 
-Change default shell
------------------------
-Launch Terminal. Now change your shell from `bash` to `zsh`
-
-    $ chsh -s /bin/zsh
-
-I thought about using `brew` to install a new zsh, but the version
-included with the Mac is only one version behind (two were redacted).
-
-Close this session `CTRL-D` and start a new one.
 
 
     
@@ -387,26 +387,3 @@ don't have to do this with zsh.
     alias ls 'gls $LS_OPTIONS'
 
 Log out, then back in.
-
-10. Use my .dotfiles
---------------------
-Follow instructions at
-[scottstanfield/dotfiles][14]. It uses tcsh (most
-people are using zsh now, but I have old habits), so it installs a
-.cshrc and a pretty custom .vimrc.
-
-
-[1]: https://github.com/thoughtbot/laptop/blob/master/mac
-[2]: http://zanshin.net/2013/02/02/zsh-configuration-from-the-ground-up/
-[3]: https://github.com/myfreeweb/zshuery/blob/master/zshuery.sh
-[4]: http://bit.ly/VQsHy1
-[5]: http://www.mitchchn.me/2014/os-x-terminal/
-[6]: http://drbunsen.github.io/formd/
-[7]: http://kapeli.com/dash
-[8]: http://brew.sh
-[9]: http://lostincode.net/blog/homebrew
-[10]: https://code.google.com/p/iterm2/downloads/list?q=label:Featured
-[11]: https://github.com/scottstanfield/newmac/issues/2
-[12]: https://help.github.com/articles/set-up-git
-[13]: https://gist.github.com/1860902
-[14]: http://github.com/scottstanfield/dotfiles
