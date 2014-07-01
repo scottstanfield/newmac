@@ -15,29 +15,21 @@ __Inspired from__
 * Moncef Belyamani has a [guide for Mavericks](http://bit.ly/VQsHy1).
 * And finally, [Top Eight OSX Utilites Developers Should Know](http://www.mitchchn.me/2014/os-x-terminal/)
 
-0. Update Computer
+1. Update Computer
 ==================
 First, check for system updates by running `AppStore`.
 
-1. System Preferences
+2. System Preferences
 =====================
 
 ## Keyboard
 
-Section  | Command
+Tab      | Option
 ---------|---------
 Keyboard | Key Repeat: **fast**
          | Delay: **short**
          | Modifier Keys: Caps Lock => Control
 
-
-#### Keyboard
-Key Repeat: fast  
-Delay Until Repeat: short  
-Modifier Keys...: Caps Lock Key => Control  
-
-#### Shortcuts
-You're going to be bringing up this dialog a lot. Since preferences for
 any application is ⌘-comma, I believe ⌥⌘-comma should display the system
 preferences.
 
@@ -47,14 +39,13 @@ preferences.
 1. Use option+command+comma  
 
 ## Trackpad
-#### Point & Click
-Enable Tap to click and Three finger drag
 
-#### Scroll & Zoom
-Disable "Scroll direction: natural"
-
-#### More Gestures
-Enable App Exposé
+Tab           | Option
+--------------|---------
+Point & Click | Enable **Tap to Click**
+              | Enable **Three-finger drag** 
+Scroll & Zoom | Disable **Scroll direction: natural**
+More Gestures | Enable **App Exposé**
 
 ## Dock
 Position on screen: Left
