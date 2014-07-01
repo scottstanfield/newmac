@@ -267,11 +267,6 @@ Just install the latest:
 
 # Extras
 
-X11 (optional)
-==================
-This [gist](https://gist.github.com/1860902) will help you get X11
-working with Mountain Lion since it's no longer installed with OS X.
-
 Formd
 =====
 There's a great Python command-line tool called [formd](http://drbunsen.github.io/formd/) that keeps 
