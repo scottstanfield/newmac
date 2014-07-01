@@ -15,48 +15,83 @@ __Inspired from__
 * Moncef Belyamani has a [guide for Mavericks](http://bit.ly/VQsHy1).
 * And finally, [Top Eight OSX Utilites Developers Should Know](http://www.mitchchn.me/2014/os-x-terminal/)
 
+0. Update Computer
+==================
+First, check for system updates by running `AppStore`.
+
 1. System Preferences
 =====================
-## Update
-Check for software updates in the app store.
 
-## Keyboard/Keyboard
+## Keyboard
+
+Section  | Command
+---------|---------
+Keyboard | Key Repeat: **fast**
+         | Delay: **short**
+         | Modifier Keys: Caps Lock => Control
+
+
+#### Keyboard
 Key Repeat: fast  
 Delay Until Repeat: short  
 Modifier Keys...: Caps Lock Key => Control  
 
-## Keyboard/Shortcuts
+#### Shortcuts
 You're going to be bringing up this dialog a lot. Since preferences for
 any application is ⌘-comma, I believe ⌥⌘-comma should display the system
 preferences.
 
-Select "App Shortcuts"  
-Hit the + button  
-Type "System Preferences..." exactly  
-Use option+command+comma  
+1. Select "App Shortcuts".
+1. Hit the + button  
+1. Type **System Preferences...** exactly, with the elipsis at the end
+1. Use option+command+comma  
 
-> Cannot find "App Shortcuts"
-
-## Trackpad/Point & Click
+## Trackpad
+#### Point & Click
 Enable Tap to click and Three finger drag
 
-## Trackpad/Scroll & Zoom
+#### Scroll & Zoom
 Disable "Scroll direction: natural"
 
-## Trackpad/More Gestures
-Enable Mission Control (because why note?
+#### More Gestures
+Enable App Exposé
 
 ## Dock
 Position on screen: Left
+Enable Minimize windows into application icon
+Disable Animate opening applications
 
 ## Accessibility
+Select Zoom
+Enable "Use scroll gesture with modifier keys to zoom"
 
---> turn on zoom magnification with control+track padbash
+## Security & Privacy
+#### General
+If you think you know what you're doing, Allow apps downloaded from **Anywhere**. 
 
-> Where is this?
-
-## Firewall
+#### Firewall
 Turn on firewall.
+
+4. Finder 
+==========
+In Finder Preferences ⌘-,
+
+#### Advanced
+Enable **Show all filename extensions**
+
+#### Sidebar
+Uncheck **All My Files** 
+Uncheck **AirDrop**. 
+
+> Both are accessible from the Finder "Go" menu. They're used so infrequently to deserve a top spot.
+
+Check **(home)** 
+> Turn on your home folder. I drag mine to the top of the list.
+
+Check **Hard disks**
+
+**hello**
+
 
 2. Chrome
 =========
@@ -70,9 +105,23 @@ Yes, you can install Chrome from command line.
 
 Then:
 
-* Make it the default browser
-* Add it to the dock, under Finder
+1. Launch Chrome. It'll ask if it can be your default browser.
+2. Right-click on it's icon, select Options | Keep in dock.
+
+Optional:
 * Install vimium extension (just Google for "vimium")
+
+5. Spectacle App
+================
+Wrangling windows is like hearding cats: no matter what you do, they still get away. Microsoft Windows has a great, built-in solution: Windows + arrow keys. 
+
+[Spectacle](http://spectacleapp.com/) is the best (and free) solution for the Mac. I've tried about a half-dozen of them. Some of the defaults conflict with Chrome's shortcuts to move between tabs, so I've remapped mine to something sane. Check out the screenshot below for mine
+
+![Spectacle Preferences](http://f.cl.ly/items/1q0x3g2N3t1u1H091J0b/spectacle.png)
+
+Enable **Launch Spectacle at login**
+
+
 
 3. Rename Computer
 ================
@@ -80,39 +129,12 @@ Then:
 By default, your computer probably has a name like John Smith's
 Computer. Rename it easily from Terminal:
 
-    $ scutil --set HostName new_hostname
-    $ scutil --set ComputerName new_hostname
-    $ scutil --set LocalHostName new_hostname
+I use my initials then some indicator of the machine type, like *ss-mbp15*
+for my 15" MacBook Pro.
 
-I use my initials then some indicator of the machine type, like *ss-mbp17*
-for my 17" MacBook Pro.
-
-        Do the same for your Bonjour name...hit Fn+F6 to bring up the System
-Preferences panel (didn't know you could do that with a keyboard
-shortcut huh?), and type Sharing. Enter your new Computer Name here.
-
-
-
-4. Finder Preferences
-=====================
-(In Sidebar)
-
-Turn off All My Files and AirDrop. Both are accessible from the Finder "Go" menu. They're used so infrequently to deserve a top spot.
-
-Turn on your home folder. I drag mine to the top of the list.
-
-Turn on Hard disks.
-
-(In Advanced)
-Turn on Shall all filename extensions
-
-5. Spectacle App
-================
-Wrangling windows is like hearding cats: no matter what you do, they still get away. Microsoft Windows has a great, built-in solution: Windows + arrow keys. 
-
-Spectacle is the best (and free) solution for the Mac. I've tried about a half-dozen of them. The defaults all all wrong, so you'll need to remap them.
-
-http://spectacleapp.com/
+    $ scutil --set HostName ss-mbp15
+    $ scutil --set ComputerName ss-mbp15
+    $ scutil --set LocalHostName ss-mbp15
 
 
 
@@ -332,8 +354,12 @@ change:
 Reference: http://zsh.sourceforge.net/Guide/zshguide03.html
 
 
-Dash
-====
+Good Mac Apps to Have
+=====================
+
+[MacDown](http://macdown.uranusjr.com/) is an open-source Markdown
+editor that handles Github-flavored Markdown (GFM) nicely.
+
 [Dash](http://kapeli.com/dash) gives you offline access to 150+ doc sets like vim, markdown, css, html, python,
 etc.
 
