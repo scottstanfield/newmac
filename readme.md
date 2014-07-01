@@ -48,13 +48,13 @@ Scroll & Zoom | Disable **Scroll direction: natural**
 More Gestures | Enable **App Exposé**
 
 ### Dock
-Position on screen: Left
-Enable Minimize windows into application icon
-Disable Animate opening applications
+Position on screen: Left  
+Enable Minimize windows into application icon  
+Disable Animate opening applications  
 
 ### Accessibility
-Select Zoom
-Enable "Use scroll gesture with modifier keys to zoom"
+Select Zoom  
+Enable "Use scroll gesture with modifier keys to zoom"  
 
 ### Security & Privacy
 Tab           | Option
@@ -71,10 +71,10 @@ Tab           | Option
 Advanced      | Enable **Show all filename extensions**
 Sidebar       | Disable **All My Files** 
               | Disable **AirDrop**. 
-			  | Enable **(your home)** and drag to top
-			  | Enable **Hard Disks**
+              | Enable **(your home)** and drag to top
+              | Enable **Hard Disks**
 
-> AirDrop and AllMyFiles are accessible from the Finder "Go" menu. 
+> AirDrop and AllMyFiles are accessible from the Finder "Go" menu.  
 > They're used so infrequently to deserve a top spot.
 
 4. Chrome
@@ -135,12 +135,6 @@ Not sure if this works, but ensure `/usr/local/bin` is at the top of
 
     $ echo "/usr/local/bin" | cat - /etc/paths | sudo tee /etc/paths 
 
-There's some weirdness with the way Apple setup the zsh config files.
-Read more here: https://github.com/sorin-ionescu/prezto/issues/381
-Fix it with the following command
-
-    $ sudo mv /etc/{zshenv,zprofile}
-
 Again, close this session `CTRL-D` and restart a new one.
 
 
@@ -180,7 +174,7 @@ Solarized is a well-known common color scheme that works across vim,
 iTerm, my custom prompt and the GNU utilities.
 
     $ mkdir ~/lib && cd ~/lib
-	$ hub clone altercation/solarized
+    $ hub clone altercation/solarized
 
 Then follow instructions under iterm2-colors-solarized folder to add the color
 profiles to iTerm 2. I create two named profiles called "solarized-dark" and 
@@ -229,12 +223,9 @@ Assuming you have a github.com account, tell your Mac about it. Follow
 
 12. Change default shell
 ========================
-Launch Terminal. Now change your shell from `bash` to `zsh`
+Launch Terminal. Now change your shell from `bash` to `csh`
 
     $ chsh -s /bin/csh
-
-I thought about using `brew` to install a new zsh, but the version
-included with the Mac is only one version behind (two were redacted).
 
 Close this session `CTRL-D` and start a new one.
 
@@ -313,14 +304,14 @@ Keyboard Shortcuts you should know and love
 ================
 Readline / EMACs
 
-	ctrl+a	beginning of line  
-	ctrl+e 	end of line  
-	ctrl+w	delete backwards by word  
+    ctrl+a  beginning of line  
+    ctrl+e  end of line  
+    ctrl+w  delete backwards by word  
 
-	Cmd + Space	Spotlight
-	Cmd + Tab	Just like Alt-Tab in Windows
-	Cmd + +/-	Most apps make text bigger or smaller
-	Cmd + H		Hide or Minimize
+    Cmd + Space Spotlight
+    Cmd + Tab   Just like Alt-Tab in Windows
+    Cmd + +/-   Most apps make text bigger or smaller
+    Cmd + H     Hide or Minimize
 
 TextEdit
 ========
@@ -328,9 +319,9 @@ This is your basic text editor. For some reason, it defaults to
 RichText, which is stupid. Launch, display its Preferences dialog and
 change:
 
-	Format to Plain text
-	Plain text font to something larger if you want
-	Turn off *all* the Options
+    Format to Plain text
+    Plain text font to something larger if you want
+    Turn off *all* the Options
 
 Reference: http://zsh.sourceforge.net/Guide/zshguide03.html
 
@@ -358,6 +349,11 @@ ZSH config
 ==========
 instead of rehash, try setopt nohashdirs
 
+There's some weirdness with the way Apple setup the zsh config files.
+Read more here: https://github.com/sorin-ionescu/prezto/issues/381
+Fix it with the following command
+
+    $ sudo mv /etc/{zshenv,zprofile}
 
 
     
