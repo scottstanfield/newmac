@@ -181,8 +181,22 @@ profiles to iTerm 2. I create two named profiles called "solarized-dark" and
 "solarized-light", each set to the corresponding color profile and Monoco 18pt.
 Light is my default. Keep minimum color contrast set to low.
 
+10. Install Programming Fonts
+=============================
+There's a big set of programmer-friendly, monospaced fonts that we can
+use. They also have a handful of extra glyphs that make certain symbols
+for git and Powerline (a vim and shell plugin) look nicer. 
 
-10. iTerm 
+	$ cd ~/lib
+	$ hub clone Lokaltog/powerline-fonts
+
+Launch the Font Book app. Create a new collection called
+**Powerline**. Drag the powerline-fonts folder into the empty space.
+This action registers the typefaces with the Mac and allow you to choose one 
+when you configure the fonts in iTerm, below.
+
+
+11. iTerm 
 ==========
 
 iTerm is a full-featured replacement for the anemic Terminal.app that
@@ -208,7 +222,7 @@ Setup iTerm
 When finished, your profile seetings dialog box should look like the one
 in this [github comment](https://github.com/scottstanfield/newmac/issues/2).
 
-11. Setup Git for github
+12. Setup Git for github
 ========================
 Assuming you have a github.com account, tell your Mac about it. Follow
 [these instructions](https://help.github.com/articles/set-up-git).
@@ -217,7 +231,7 @@ Assuming you have a github.com account, tell your Mac about it. Follow
     $ git config --global user.emal "your@email.com"
     $ git config --global credential.helper osxkeychain
 
-12. Change default shell
+13. Change default shell
 ========================
 Launch Terminal. Now change your shell from `bash` to `csh`
 
@@ -225,14 +239,14 @@ Launch Terminal. Now change your shell from `bash` to `csh`
 
 Close this session `CTRL-D` and start a new one.
 
-13. Use my .dotfiles
+14. Use my .dotfiles
 ====================
 Follow instructions at
 [scottstanfield/dotfiles](http://github.com/scottstanfield/dotfiles). It uses tcsh (most
 people are using zsh now, but I have old habits), so it installs a
 .cshrc and a pretty custom .vimrc.
 
-14. A better 'ls'
+15. A better 'ls'
 ======================
 The 'ls' version built in to tcsh will display folders and files in
 color when you use the flag "-G". But it sorts the folders along with
@@ -266,7 +280,7 @@ don't have to do this with zsh.
 
 Log out, then back in.
 
-15. NODE
+16. NODE
 ========
 
 Node (as of version 0.8?) will install npm for you.
@@ -274,7 +288,7 @@ Node (as of version 0.8?) will install npm for you.
     $ brew install node
     $ npm install -g nws gulp grunt-cli 
     
-16. LESS (optional)
+17. LESS (optional)
 ===================
 `less` is a terminal pager program used to look at text files. It's
 similar to `more` but improved, allowing both forward and backwards
@@ -288,7 +302,7 @@ But brew does not install system duplicates by default, so work with an alt fork
     $ brew tap homebrew/dupes
     $ brew install less 
 
-17. VIM 
+18. VIM 
 ==================
 Install new version of vim that enables system *clipboard access* for the
 Mac. The brew formula for vim includes +clipboard support. 
