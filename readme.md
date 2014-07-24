@@ -232,7 +232,41 @@ Follow instructions at
 people are using zsh now, but I have old habits), so it installs a
 .cshrc and a pretty custom .vimrc.
 
-14. NODE
+14. A better 'ls'
+======================
+The 'ls' version built in to tcsh will display folders and files in
+color when you use the flag "-G". But it sorts the folders along with
+the files. I wanted the folders displayed first, then the files. Turns
+out the GNU 'coreutils' package includes 'gls', that does just that.
+
+But to enable color, it requires you to set a variable 'LS_COLOR' that
+is strangely set by running another utility, gdircolors. And that
+returns a string that is incompatible with tcsh LS_COLOR. 
+
+The solution is to give gdircolors an initialization file, which is
+pulled from a https://github.com/seebi/dircolors-solarized. Thank you
+seebi for bringing Solarized colors to GNU utilities!
+
+    $ brew install coreutils
+
+> Note: consider mkdir ~/lib and clone this repo into there
+
+    $ cd ~/lib
+    $ git clone git://github.com/seebi/dircolors-solarized.git
+
+Now edit your .cshrc to put the coreutils in the path, and to initialize
+the LS_COLOR variable with the output of dircolors using the solarized
+version. This is a lot of work to get color *and* sorting. Basically
+tcsh is put together with so much string and tape. I'm guessing you
+don't have to do this with zsh. 
+
+    eval `gdircolors -c ~/lib/dircolors-solarized/dircolors.ansi-universal`
+    setenv LS_OPTIONS "--color=auto --group-directories-first -F"
+    alias ls 'gls $LS_OPTIONS'
+
+Log out, then back in.
+
+15. NODE
 ========
 
 Node (as of version 0.8?) will install npm for you.
@@ -240,7 +274,7 @@ Node (as of version 0.8?) will install npm for you.
     $ brew install node
     $ npm install -g nws gulp grunt-cli 
     
-15. LESS (optional)
+16. LESS (optional)
 ===================
 `less` is a terminal pager program used to look at text files. It's
 similar to `more` but improved, allowing both forward and backwards
@@ -254,7 +288,7 @@ But brew does not install system duplicates by default, so work with an alt fork
     $ brew tap homebrew/dupes
     $ brew install less 
 
-16. VIM 
+17. VIM 
 ==================
 Install new version of vim that enables system *clipboard access* for the
 Mac. The brew formula for vim includes +clipboard support. 
@@ -331,36 +365,3 @@ Fix it with the following command
 
 
     
-GNU utilities TCSH
----------------------
-The 'ls' version built in to tcsh will display folders and files in
-color when you use the flag "-G". But it sorts the folders along with
-the files. I wanted the folders displayed first, then the files. Turns
-out the GNU 'coreutils' package includes 'gls', that does just that.
-
-But to enable color, it requires you to set a variable 'LS_COLOR' that
-is strangely set by running another utility, gdircolors. And that
-returns a string that is incompatible with tcsh LS_COLOR. 
-
-The solution is to give gdircolors an initialization file, which is
-pulled from a https://github.com/seebi/dircolors-solarized. Thank you
-seebi for bringing Solarized colors to GNU utilities!
-
-    $ brew install coreutils
-
-> Note: consider mkdir ~/lib and clone this repo into there
-
-    $ cd ~/projects/repo
-    $ git clone git://github.com/seebi/dircolors-solarized.git
-
-Now edit your .cshrc to put the coreutils in the path, and to initialize
-the LS_COLOR variable with the output of dircolors using the solarized
-version. This is a lot of work to get color *and* sorting. Basically
-tcsh is put together with so much string and tape. I'm guessing you
-don't have to do this with zsh. 
-
-    eval `gdircolors -c ~/projects/repos/dircolors-solarized/dircolors.ansi-universal`
-    setenv LS_OPTIONS "--color=auto --group-directories-first -F"
-    alias ls 'gls $LS_OPTIONS'
-
-Log out, then back in.
