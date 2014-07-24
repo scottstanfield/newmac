@@ -71,7 +71,7 @@ Tab           | Option
 Advanced      | Enable **Show all filename extensions**
 Sidebar       | Disable **All My Files** 
               | Disable **AirDrop**. 
-              | Enable **(your home)** and drag to top
+              | Enable **(your home)** and drag to the top in the finder menu
               | Enable **Hard Disks**
 
 > AirDrop and AllMyFiles are accessible from the Finder "Go" menu.  
