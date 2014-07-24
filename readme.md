@@ -252,7 +252,7 @@ seebi for bringing Solarized colors to GNU utilities!
 > Note: consider mkdir ~/lib and clone this repo into there
 
     $ cd ~/lib
-    $ git clone git://github.com/seebi/dircolors-solarized.git
+    $ hub clone seebi/dircolors-solarized
 
 Now edit your .cshrc to put the coreutils in the path, and to initialize
 the LS_COLOR variable with the output of dircolors using the solarized
