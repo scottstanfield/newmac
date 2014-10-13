@@ -228,7 +228,7 @@ Assuming you have a github.com account, tell your Mac about it. Follow
 [these instructions](https://help.github.com/articles/set-up-git).
 
     $ git config --global user.name "your name here"
-    $ git config --global user.emal "your@email.com"
+    $ git config --global user.email "your@email.com"
     $ git config --global credential.helper osxkeychain
 
 13. Change default shell
