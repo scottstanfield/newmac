@@ -159,11 +159,21 @@ Now that brew thinks it is working, try installing a utility that was
 already installed by the Command Line Tools, namely "git" (and a few
 other useful utilities).
 
-    $ brew install git wget gist htop source-highlight hub tree
+    $ brew install git wget gist htop source-highlight hub tree node ack
+    $ brew install openssl && brew link openssl --force		
     $ brew doctor
     
 
-9. Solarized
+9. Setup Git for github
+========================
+Assuming you have a github.com account, tell your Mac about it. Follow
+[these instructions](https://help.github.com/articles/set-up-git).
+
+    $ git config --global user.name "your name here"
+    $ git config --global user.email "your@email.com"
+    $ git config --global credential.helper osxkeychain
+
+10. Solarized
 ============
 Solarized is a well-known common color scheme that works across vim,
 iTerm, my custom prompt and the GNU utilities.
@@ -176,7 +186,7 @@ profiles to iTerm 2. I create two named profiles called "solarized-dark" and
 "solarized-light", each set to the corresponding color profile and Monoco 18pt.
 Light is my default. Keep minimum color contrast set to low.
 
-10. Install Programming Fonts
+11. Install Programming Fonts
 =============================
 There's a big set of programmer-friendly, monospaced fonts that we can
 use. They also have a handful of extra glyphs that make certain symbols
@@ -191,7 +201,7 @@ This action registers the typefaces with the Mac and allow you to choose one
 when you configure the fonts in iTerm, below.
 
 
-11. iTerm 
+12. iTerm 
 ==========
 
 iTerm is a full-featured replacement for the anemic Terminal.app that
@@ -216,15 +226,6 @@ Setup iTerm
 
 When finished, your profile seetings dialog box should look like the one
 in this [github comment](https://github.com/scottstanfield/newmac/issues/2).
-
-12. Setup Git for github
-========================
-Assuming you have a github.com account, tell your Mac about it. Follow
-[these instructions](https://help.github.com/articles/set-up-git).
-
-    $ git config --global user.name "your name here"
-    $ git config --global user.email "your@email.com"
-    $ git config --global credential.helper osxkeychain
 
 13. Change default shell
 ========================
@@ -275,14 +276,6 @@ don't have to do this with zsh.
 
 Log out, then back in.
 
-16. NODE
-========
-
-Node (as of version 0.8?) will install npm for you.
-
-    $ brew install node
-    $ npm install -g nws gulp grunt-cli 
-    
 17. LESS (optional)
 ===================
 `less` is a terminal pager program used to look at text files. It's
@@ -296,16 +289,6 @@ But brew does not install system duplicates by default, so work with an alt fork
 
     $ brew tap homebrew/dupes
     $ brew install less 
-
-18. VIM 
-==================
-Install new version of vim that enables system *clipboard access* for the
-Mac. The brew formula for vim includes +clipboard support. 
-
-Just install the latest:
-
-    $ brew install vim
-    $ ln -s /usr/local/bin/vim /usr/local/bin/vi  # I still call it vi
 
 
 # Extras
