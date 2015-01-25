@@ -94,19 +94,6 @@ Then:
 Optional:
 * Install vimium extension (just Google for "vimium")
 
-5. Spectacle App
-================
-Wrangling windows is like hearding cats: no matter what you do, they still get 
-away. Microsoft Windows has a great, built-in solution: Windows + arrow keys. 
-
-[Spectacle](http://spectacleapp.com/) is the best (and free) solution for the 
-Mac. I've tried about a half-dozen of them. Some of the defaults conflict with 
-Chrome's shortcuts to move between tabs, so I've remapped mine to something 
-sane. Check out the screenshot below for mine:
-
-![Spectacle Preferences](http://f.cl.ly/items/1q0x3g2N3t1u1H091J0b/spectacle.png)
-
-Also, enable **Launch Spectacle at login**
 
 6. Rename Computer
 ==================
@@ -153,7 +140,7 @@ Do all this from Terminal.app; we'll swap out to iTerm2 later.
     $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     $ brew doctor
     $ brew install cowsay
-    $ cowsay "brew install worked!"
+    $ cowsay "brew works!"
 
 Now that brew thinks it is working, try installing a utility that was
 already installed by the Command Line Tools, namely "git" (and a few
@@ -162,7 +149,38 @@ other useful utilities).
     $ brew install git wget gist htop source-highlight hub tree node ack
     $ brew install openssl && brew link openssl --force		
     $ brew doctor
+
+We'll use the Cask extension for Homebrew to install some Mac apps
+
+    $ brew install caskroom/cask/brew-cask
+    $ brew cask install atom
+    $ brew cask install github
+    $ brew cask install spectacle
+    $ brew cask install iterm2
+
+One of the Mac apps, [Atom](http://atom.io) is a new, hackable text editor. It
+has rudimentary vi(m) support, which I like. Here are a few plug-ins to make it noice.
+
+    $ apm install language-jade vim-mode minimap file-icons 
+    $ apm install open-in-github-app terminal-status
     
+5. Spectacle App
+================
+> Note: you installed this in the previous step. Run it.
+
+Wrangling windows is like hearding cats: no matter what you do, they still get 
+away. Microsoft Windows has a great, built-in solution: Windows + arrow keys. 
+
+[Spectacle](http://spectacleapp.com/) is the best (and free) solution for the 
+Mac. I've tried about a half-dozen of them. Some of the defaults conflict with 
+Chrome's shortcuts to move between tabs, so I've remapped mine to something 
+sane. Check out the screenshot below for mine:
+
+![Spectacle Preferences](http://f.cl.ly/items/1q0x3g2N3t1u1H091J0b/spectacle.png)
+
+Let Spectacle do it's thing by enabling it in **System Preferences -> Security -> Accessibility**
+
+Also, once launched, click on it's icon, go to preferenes and enable **Launch Spectacle at login**
 
 9. Setup Git for github
 ========================
