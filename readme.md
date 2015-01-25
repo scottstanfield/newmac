@@ -1,8 +1,7 @@
 # Mac Config for Web Development
 
-> Tested for Mavericks OS 10.9.2  
-> Last updated on June 30, 2014 by Sean O'Farrell  
-> THIS IS A DRAFT FOR MAVERICKS. AND IT'S CURRENTLY INCOMPLETE.
+> Tested for Yosemite
+> Last updated in January 2015
 
 The steps below assume you have a clean, fully patched Mac.
 
@@ -142,7 +141,7 @@ Again, close this session `CTRL-D` and restart a new one.
 ===========
 [Homebrew](http://brew.sh) is the App Store for the command line. 
 
-> Note: if you haven't already installed the Apple development tools
+> Important: if you haven't already installed the Apple development tools
 > `brew` will detect this and prompt you to do so. Install the command
 > line tools, not the entire Xcode.
 
@@ -154,7 +153,6 @@ Do all this from Terminal.app; we'll swap out to iTerm2 later.
     $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     $ brew doctor
     $ brew install cowsay
-    $ rehash
     $ cowsay "brew install worked!"
 
 Now that brew thinks it is working, try installing a utility that was
@@ -164,9 +162,6 @@ other useful utilities).
     $ brew install git wget gist htop source-highlight hub tree
     $ brew doctor
     
-> $ rehash doesn't work/wasn't needed  
-> requires command line developer tool (asks to install when trying to run)
-
 
 9. Solarized
 ============
