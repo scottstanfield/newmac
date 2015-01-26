@@ -1,6 +1,6 @@
 # Mac Config for Web Development
 
-> Tested for Yosemite
+> Tested for Yosemite  
 > Last updated in January 2015
 
 The steps below assume you have a clean, fully patched Mac.
