@@ -1,8 +1,7 @@
 # Mac Config for Web Development
 
-> Tested for Mavericks OS 10.9.2  
-> Last updated on June 30, 2014 by Sean O'Farrell  
-> THIS IS A DRAFT FOR MAVERICKS. AND IT'S CURRENTLY INCOMPLETE.
+> Tested for Yosemite  
+> Last updated in January 2015
 
 The steps below assume you have a clean, fully patched Mac.
 
@@ -95,19 +94,6 @@ Then:
 Optional:
 * Install vimium extension (just Google for "vimium")
 
-5. Spectacle App
-================
-Wrangling windows is like hearding cats: no matter what you do, they still get 
-away. Microsoft Windows has a great, built-in solution: Windows + arrow keys. 
-
-[Spectacle](http://spectacleapp.com/) is the best (and free) solution for the 
-Mac. I've tried about a half-dozen of them. Some of the defaults conflict with 
-Chrome's shortcuts to move between tabs, so I've remapped mine to something 
-sane. Check out the screenshot below for mine:
-
-![Spectacle Preferences](http://f.cl.ly/items/1q0x3g2N3t1u1H091J0b/spectacle.png)
-
-Also, enable **Launch Spectacle at login**
 
 6. Rename Computer
 ==================
@@ -142,7 +128,7 @@ Again, close this session `CTRL-D` and restart a new one.
 ===========
 [Homebrew](http://brew.sh) is the App Store for the command line. 
 
-> Note: if you haven't already installed the Apple development tools
+> Important: if you haven't already installed the Apple development tools
 > `brew` will detect this and prompt you to do so. Install the command
 > line tools, not the entire Xcode.
 
@@ -154,21 +140,58 @@ Do all this from Terminal.app; we'll swap out to iTerm2 later.
     $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     $ brew doctor
     $ brew install cowsay
-    $ rehash
-    $ cowsay "brew install worked!"
+    $ cowsay "brew works!"
 
 Now that brew thinks it is working, try installing a utility that was
 already installed by the Command Line Tools, namely "git" (and a few
 other useful utilities).
 
-    $ brew install git wget gist htop source-highlight hub tree
+    $ brew install git wget gist htop source-highlight hub tree node ack
+    $ brew install openssl && brew link openssl --force		
     $ brew doctor
+
+We'll use the Cask extension for Homebrew to install some Mac apps
+
+    $ brew install caskroom/cask/brew-cask
+    $ brew cask install atom
+    $ brew cask install github
+    $ brew cask install spectacle
+    $ brew cask install iterm2
+
+One of the Mac apps, [Atom](http://atom.io) is a new, hackable text editor. It
+has rudimentary vi(m) support, which I like. Here are a few plug-ins to make it noice.
+
+    $ apm install language-jade vim-mode minimap file-icons 
+    $ apm install open-in-github-app terminal-status
     
-> $ rehash doesn't work/wasn't needed  
-> requires command line developer tool (asks to install when trying to run)
+5. Spectacle App
+================
+> Note: you installed this in the previous step. Run it.
 
+Wrangling windows is like hearding cats: no matter what you do, they still get 
+away. Microsoft Windows has a great, built-in solution: Windows + arrow keys. 
 
-9. Solarized
+[Spectacle](http://spectacleapp.com/) is the best (and free) solution for the 
+Mac. I've tried about a half-dozen of them. Some of the defaults conflict with 
+Chrome's shortcuts to move between tabs, so I've remapped mine to something 
+sane. Check out the screenshot below for mine:
+
+![Spectacle Preferences](http://f.cl.ly/items/1q0x3g2N3t1u1H091J0b/spectacle.png)
+
+Let Spectacle do it's thing by enabling it in **System Preferences -> Security -> Accessibility**
+
+Also, once launched, click on it's icon, go to preferenes and enable **Launch Spectacle at login**
+
+9. Setup Git for github
+========================
+Assuming you have a github.com account, tell your Mac about it. Follow
+[these instructions](https://help.github.com/articles/set-up-git).
+
+    $ git config --global user.name "your name here"
+    $ git config --global user.email "your@email.com"
+    $ git config --global credential.helper osxkeychain
+
+10. Solarized
 ============
 Solarized is a well-known common color scheme that works across vim,
 iTerm, my custom prompt and the GNU utilities.
@@ -181,7 +204,7 @@ profiles to iTerm 2. I create two named profiles called "solarized-dark" and
 "solarized-light", each set to the corresponding color profile and Monoco 18pt.
 Light is my default. Keep minimum color contrast set to low.
 
-10. Install Programming Fonts
+11. Install Programming Fonts
 =============================
 There's a big set of programmer-friendly, monospaced fonts that we can
 use. They also have a handful of extra glyphs that make certain symbols
@@ -196,7 +219,7 @@ This action registers the typefaces with the Mac and allow you to choose one
 when you configure the fonts in iTerm, below.
 
 
-11. iTerm 
+12. iTerm 
 ==========
 
 iTerm is a full-featured replacement for the anemic Terminal.app that
@@ -221,15 +244,6 @@ Setup iTerm
 
 When finished, your profile seetings dialog box should look like the one
 in this [github comment](https://github.com/scottstanfield/newmac/issues/2).
-
-12. Setup Git for github
-========================
-Assuming you have a github.com account, tell your Mac about it. Follow
-[these instructions](https://help.github.com/articles/set-up-git).
-
-    $ git config --global user.name "your name here"
-    $ git config --global user.email "your@email.com"
-    $ git config --global credential.helper osxkeychain
 
 13. Change default shell
 ========================
@@ -280,14 +294,6 @@ don't have to do this with zsh.
 
 Log out, then back in.
 
-16. NODE
-========
-
-Node (as of version 0.8?) will install npm for you.
-
-    $ brew install node
-    $ npm install -g nws gulp grunt-cli 
-    
 17. LESS (optional)
 ===================
 `less` is a terminal pager program used to look at text files. It's
@@ -301,16 +307,6 @@ But brew does not install system duplicates by default, so work with an alt fork
 
     $ brew tap homebrew/dupes
     $ brew install less 
-
-18. VIM 
-==================
-Install new version of vim that enables system *clipboard access* for the
-Mac. The brew formula for vim includes +clipboard support. 
-
-Just install the latest:
-
-    $ brew install vim
-    $ ln -s /usr/local/bin/vim /usr/local/bin/vi  # I still call it vi
 
 
 # Extras
