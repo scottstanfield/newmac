@@ -46,7 +46,14 @@ Point & Click | Enable **Tap to Click**
 Scroll & Zoom | Disable **Scroll direction: natural**
 More Gestures | Enable **App Exposé**
 
-On the 2015 12" MacBook, the location for three-finger drag has changed. It's in the [hidden deep in Accessibility](https://discussions.apple.com/thread/6869616).
+### Accessibility
+Feature          | Option
+-----------------|---------
+Zoom             | Check **Use scroll gesture with modifier keys to zoom**
+Mouse & Trakpad † | Trackpad Options... | Enable dragging **three finger drag**
+
+† On the 2015 12" MacBook, the location for three-finger drag has changed. It's in the [hidden deep in Accessibility](https://discussions.apple.com/thread/6869616).
+
 
 ### Dock
 Position on screen: Left  
