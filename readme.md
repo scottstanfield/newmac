@@ -107,9 +107,9 @@ Computer. Rename it easily from Terminal:
 I use my initials then some indicator of the machine type, like *ss-mbp15*
 for my 15" MacBook Pro.
 
-    $ scutil --set HostName ss-mbp15
-    $ scutil --set ComputerName ss-mbp15
-    $ scutil --set LocalHostName ss-mbp15
+    $ sudo scutil --set HostName ss-mbp15
+    $ sudo scutil --set ComputerName ss-mbp15
+    $ sudo scutil --set LocalHostName ss-mbp15
 
 7. Fix the Path
 ===============
