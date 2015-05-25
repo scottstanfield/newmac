@@ -5,15 +5,6 @@
 
 The steps below assume you have a clean, fully patched Mac.
 
-__Inspired from__
-
-* [Thoughtbot's](https://github.com/thoughtbot/laptop/blob/master/mac) laptop setup.
-* Mark H. Nichols excellent writeup on [configuring ZSH from scratch](http://zanshin.net/2013/02/02/zsh-configuration-from-the-ground-up/)
-* [zshuery](https://github.com/myfreeweb/zshuery/blob/master/zshuery.sh), 
-  a one file good .zshrc config
-* Moncef Belyamani has a [guide for Mavericks](http://bit.ly/VQsHy1).
-* And finally, [Top Eight OSX Utilites Developers Should Know](http://www.mitchchn.me/2014/os-x-terminal/)
-
 1. Update Computer
 ==================
 First, check for system updates by running `AppStore`.
@@ -29,10 +20,10 @@ Keyboard | Key Repeat: **fast**
          | Delay: **short**
          | Modifier Keys: Caps Lock => Control
 
-any application is ⌘-comma, I believe ⌥⌘-comma should display the system
-preferences.
+Find the **Shortcuts** tab. Now since any application's preferences is ⌘-comma, 
+I believe ⌥⌘-comma should display the _system_ preferences.
 
-1. Select "App Shortcuts".
+1. Select "App Shortcuts" from list on the left.
 1. Hit the + button  
 1. Type **System Preferences...** exactly, with the elipsis at the end
 1. Use option+command+comma  
@@ -380,7 +371,14 @@ There's some weirdness with the way Apple setup the zsh config files.
 Read more here: https://github.com/sorin-ionescu/prezto/issues/381
 Fix it with the following command
 
-    $ sudo mv /etc/{zshenv,zprofile}
-
-
+$ sudo mv /etc/{zshenv,zprofile}
     
+# Inspired from
+
+* My collegue [Matt Carrier](https://github.com/icecreammatt) and his excellent dotfiles
+* [Thoughtbot's](https://github.com/thoughtbot/laptop/blob/master/mac) laptop setup.
+* Mark H. Nichols excellent writeup on [configuring ZSH from scratch](http://zanshin.net/2013/02/02/zsh-configuration-from-the-ground-up/)
+* [zshuery](https://github.com/myfreeweb/zshuery/blob/master/zshuery.sh), 
+  a one file good .zshrc config
+* Moncef Belyamani has a [guide for Mavericks](http://bit.ly/VQsHy1).
+* And finally, [Top Eight OSX Utilites Developers Should Know](http://www.mitchchn.me/2014/os-x-terminal/)
