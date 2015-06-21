@@ -146,17 +146,14 @@ Now that brew thinks it is working, try installing a utility that was
 already installed by the Command Line Tools, namely "git" (and a few
 other useful utilities).
 
-    $ brew install git wget gist htop source-highlight hub tree node ack
+    $ brew install git wget gist htop source-highlight hub tree node ack httpie
     $ brew install openssl && brew link openssl --force		
     $ brew doctor
 
 We'll use the Cask extension for Homebrew to install some Mac apps
 
     $ brew install caskroom/cask/brew-cask
-    $ brew cask install atom
-    $ brew cask install github
-    $ brew cask install spectacle
-    $ brew cask install iterm2
+    $ brew cask install atom github spectacle iterm2 
 
 One of the Mac apps, [Atom](http://atom.io) is a new, hackable text editor. It
 has rudimentary vi(m) support, which I like. Here are a few plug-ins to make it noice.
