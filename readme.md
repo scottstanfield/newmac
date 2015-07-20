@@ -3,6 +3,8 @@
 > Tested for Yosemite  
 > Last updated in January 2015
 
+I just found http://nerderati.com/2014/09/03/installing-matplotlib-numpy-scipy-nltk-and-pandas-on-os-x-without-going-crazy/. Need to examine that for some updated tips.
+
 The steps below assume you have a clean, fully patched Mac.
 
 1. Update Computer
