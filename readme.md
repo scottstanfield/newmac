@@ -9,7 +9,7 @@ The steps below assume you have a clean, fully patched Mac.
 
 1. Update Computer
 ==================
-First, check for system updates by running `AppStore`.
+Check for system updates in the **App Store**.
 
 2. System Preferences
 =====================
@@ -25,7 +25,7 @@ Keyboard | Key Repeat: **fast**
 Find the **Shortcuts** tab. Now since any application's preferences is ⌘-comma, 
 I believe ⌥⌘-comma should display the _system_ preferences.
 
-1. Select "App Shortcuts" from list on the left.
+1. Select **App Shortcuts** from list on the left.
 1. Hit the + button  
 1. Type **System Preferences...** exactly, with the elipsis at the end
 1. Use option+command+comma  
@@ -65,7 +65,7 @@ Firewall      | Turn on the Firewall
 
 3. Finder 
 ==========
-In Finder Preferences ⌘-,
+Finder Preferences ⌘,
 
 Tab           | Option
 --------------|---------
@@ -113,6 +113,8 @@ for my 15" MacBook Pro.
 
 7. Fix the Path
 ===============
+
+> I don't think you need to do this step in Yosemite!
 
 We own everything under /usr/local; Apple (and Unix in general) doesn't
 put anything in here. In order for our apps to superseed included
