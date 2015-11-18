@@ -150,7 +150,7 @@ Now that brew thinks it is working, try installing a utility that was
 already installed by the Command Line Tools, namely "git" (and a few
 other useful utilities).
 
-    $ brew install git wget gist htop source-highlight hub tree node ack httpie
+    $ brew install git wget gist htop source-highlight hub tree node ack httpie p7zip
     $ brew install openssl && brew link openssl --force		
     $ brew doctor
 
