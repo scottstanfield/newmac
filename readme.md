@@ -119,12 +119,11 @@ for my 15" MacBook Pro.
 > `brew` will detect this and prompt you to do so. Install the command
 > line tools, not the entire Xcode.
 
-Instructions located at http://mxcl.github.com/homebrew/. MacPorts users
-should read [why they should switch to brew](http://lostincode.net/blog/homebrew).
+Instructions located at http://brew.sh 
 
 Do all this from Terminal.app; we'll swap out to iTerm2 later.
     
-    $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     $ brew doctor
     $ brew install cowsay
     $ cowsay "brew works!"
