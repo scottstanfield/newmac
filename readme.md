@@ -78,24 +78,6 @@ Sidebar       | Disable **All My Files**
 > AirDrop and AllMyFiles are accessible from the Finder "Go" menu.  
 > They're used so infrequently to deserve a top spot.
 
-4. Chrome
-=========
-Yes, you can install Chrome from command line. 
-
-    $ mkdir ~/tmp && cd tmp
-    $ curl -O https://dl.google.com/chrome/mac/stable/GGRM/googlechrome.dmg 
-    $ open googlechrome.dmg
-    $ diskutil unmount "Google Chrome"
-    $ rm googlechrome.dmg
-
-Then:
-
-1. Launch Chrome. It'll ask if it can be your default browser.
-2. Right-click on it's icon, select Options | Keep in dock.
-
-Optional:
-* Install vimium extension (just Google for "vimium")
-
 
 6. Rename Computer
 ==================
