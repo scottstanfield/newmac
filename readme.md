@@ -1,7 +1,7 @@
 # Mac Config for Web Development
 
-> Tested for Yosemite  
-> Last updated in January 2015
+> Tested for El Capitan  
+> Last updated in July 2016
 
 I just found http://nerderati.com/2014/09/03/installing-matplotlib-numpy-scipy-nltk-and-pandas-on-os-x-without-going-crazy/. Need to examine that for some updated tips.
 
@@ -110,23 +110,6 @@ for my 15" MacBook Pro.
     $ sudo scutil --set HostName ss-mbp15
     $ sudo scutil --set ComputerName ss-mbp15
     $ sudo scutil --set LocalHostName ss-mbp15
-
-7. Fix the Path
-===============
-
-> I don't think you need to do this step in Yosemite!
-
-We own everything under /usr/local; Apple (and Unix in general) doesn't
-put anything in here. In order for our apps to superseed included
-utilities like `git`, we need /usr/local/bin before /usr/bin in path.
-
-Not sure if this works, but ensure `/usr/local/bin` is at the top of
-`/etc/paths`
-
-    $ echo "/usr/local/bin" | cat - /etc/paths | sudo tee /etc/paths 
-
-Again, close this session `CTRL-D` and restart a new one.
-
 
 8. HOMEBREW
 ===========
