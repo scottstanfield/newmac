@@ -3,16 +3,12 @@
 > Tested for El Capitan  
 > Last updated in July 2016
 
-I just found http://nerderati.com/2014/09/03/installing-matplotlib-numpy-scipy-nltk-and-pandas-on-os-x-without-going-crazy/. Need to examine that for some updated tips.
+*Python*
+[numpy-pandas-python](http://nerderati.com/2014/09/03/installing-matplotlib-numpy-scipy-nltk-and-pandas-on-os-x-without-going-crazy). Need to examine that for some updated tips.
 
 The steps below assume you have a clean, fully patched Mac.
 
-1. Update Computer
-==================
-Check for system updates in the **App Store**.
-
-2. System Preferences
-=====================
+## System Preferences
 
 ### Keyboard
 
