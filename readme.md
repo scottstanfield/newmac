@@ -1,7 +1,7 @@
 # Mac Config for Web Development
 
-> Tested for El Capitan  
-> Last updated in July 2016
+> Tested for macOS Sierra 
+> Last updated in August 2017
 
 *Python*
 [numpy-pandas-python](http://nerderati.com/2014/09/03/installing-matplotlib-numpy-scipy-nltk-and-pandas-on-os-x-without-going-crazy). Need to examine that for some updated tips.
@@ -110,21 +110,15 @@ Now that brew thinks it is working, try installing a utility that was
 already installed by the Command Line Tools, namely "git" (and a few
 other useful utilities).
 
-    $ brew install git wget gist htop source-highlight hub tree node ack httpie p7zip
-    $ brew install openssl && brew link openssl --force		
+    $ brew install git wget gist htop source-highlight hub tree httpie ripgrep
+	$ brew install tmux reattach-to-user-namespace
     $ brew doctor
 
 We'll use the Cask extension for Homebrew to install some Mac apps
 
-    $ brew install caskroom/cask/brew-cask
-    $ brew cask install atom github spectacle iterm2 
+	$ brew tap caskroom/cask
+    $ brew cask install visual-studio-code github spectacle iterm2 
 
-One of the Mac apps, [Atom](http://atom.io) is a new, hackable text editor. It
-has rudimentary vi(m) support, which I like. Here are a few plug-ins to make it noice.
-
-    $ apm install language-jade vim-mode minimap file-icons 
-    $ apm install open-in-github-app terminal-status
-    
 5. Spectacle App
 ================
 > Note: you installed this in the previous step. Run it.
