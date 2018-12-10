@@ -1,22 +1,24 @@
 Mac Config for Web Development
-------------------------------
+==============================
 
-> Tested for macOS Sierra 
-> Last updated in August 2017
+How I spend my first 15 minutes with a new macOS.
 
-The steps below assume you have a clean, fully patched Mac.
+> Last tested on macOS Mojave (Dec 2018)
 
-## System Preferences
+I'm a touch typist. I avoid the mouse whenever I can for speed. So some
+of my configuration on the Mac is geared around that.
 
-My three critical changes:
+## 1. System Preferences
+
+My three critical modifications:
 
 1. Key repeat fast with little delay
 2. Scroll direction: [unnatural](https://www.lifewire.com/how-to-change-scrolling-direction-on-mac-2260835)
 3. Mapping CAPS LOCK to CONTROL, cause [vim](http://xahlee.info/kbd/ADM-3A_terminal.html), [readline](https://spin.atomicobject.com/2017/11/10/readline-productivity/), and it's useless.
 
+![map caps to control](img/caps-lock-mapping.png?raw=true "Map CAPS to CONTROL")
 
-
-Hit the Apple menu, click System Preferences... and have at it:
+Hit the Apple menu, click System Preferences...and have at it:
 
 ```text
 keyboard      keyboard             key repeat (fast)
@@ -50,7 +52,7 @@ Tab           | Option
 General       | ✓ Show (Hard disks & External Disks)
 Sidebar       | × All My Files†
               | × AirDrop
-              | ✓ **(your home)** and drag to the top in the finder menu
+              | ✓ (your home) and drag to the top in the finder menu
               | ✓ Hard Disks
 Advanced      | ✓ Show all filename extensions\*
               | ✓ Keep folders on top
@@ -73,15 +75,15 @@ My order in the Finder pane (you can drag to re-order items):
 
 Open `Terminal.app`.
 
-By default, your computer probably has a name like John Smith's
-Computer. Rename it easily from Terminal:
+By default, your computer probably has a name like `Dutch Morgan's Computer`. Rename it easily from Terminal:
 
-I use my initials then some indicator of the machine type, like *ss-mbp15*
-for my 15" MacBook Pro.
+I use my initials then some indicator of the machine type, like *ss-mbp15* for my 15" MacBook Pro.
 
-    $ sudo scutil --set HostName ss-mbp15
-    $ sudo scutil --set ComputerName ss-mbp15
-    $ sudo scutil --set LocalHostName ss-mbp15
+```bash
+  sudo scutil --set HostName ss-mbp15
+  ^Host^Computer
+  ^Computer^LocalHost
+```
 
 ## 4. HOMEBREW
 
@@ -95,23 +97,25 @@ Instructions located at http://brew.sh
 
 Do all this from Terminal.app; we'll swap out to iTerm2 later.
     
+```bash
     $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     $ brew doctor
-    $ brew install cowsay
-    $ cowsay "brew works!"
+```
 
 Now that brew thinks it is working, try installing a utility that was
 already installed by the Command Line Tools, namely "git" (and a few
 other useful utilities).
 
-    $ brew install git wget gist htop source-highlight hub tree httpie ripgrep
-	$ brew install tmux reattach-to-user-namespace
-    $ brew doctor
+```bash
+  brew install git wget cask htop tree httpie ripgrep tmux
+  brew doctor
+```
 
 We'll use the Cask extension for Homebrew to install some Mac apps
 
-	$ brew tap caskroom/cask
-    $ brew cask install visual-studio-code github spectacle iterm2 
+```bash
+  brew cask install google-chrome iterm2 spectacle visual-studio-code
+```
 
 ## 5. Spectacle
 
@@ -140,8 +144,8 @@ Assuming you have a github.com account, tell your Mac about it. Follow
     $ git config --global user.email "your@email.com"
     $ git config --global credential.helper osxkeychain
 
-10. Solarized
-============
+## 7. Solarized
+
 Solarized is a well-known common color scheme that works across vim,
 iTerm, my custom prompt and the GNU utilities.
 
@@ -153,8 +157,8 @@ profiles to iTerm 2. I create two named profiles called "solarized-dark" and
 "solarized-light", each set to the corresponding color profile and Monoco 18pt.
 Light is my default. Keep minimum color contrast set to low.
 
-11. Install Programming Fonts
-=============================
+## 8. Programming Fonts
+
 There's a big set of programmer-friendly, monospaced fonts that we can
 use. They also have a handful of extra glyphs that make certain symbols
 for git and Powerline (a vim and shell plugin) look nicer. 
@@ -168,8 +172,7 @@ This action registers the typefaces with the Mac and allow you to choose one
 when you configure the fonts in iTerm, below.
 
 
-12. iTerm 
-==========
+## 9. iTerm2
 
 iTerm is a full-featured replacement for the anemic Terminal.app that
 ships with the Mac. It's also referred to as iTerm 2.
@@ -193,6 +196,8 @@ Setup iTerm
 
 When finished, your profile seetings dialog box should look like the one
 in this [github comment](https://github.com/scottstanfield/newmac/issues/2).
+
+## Zsh
 
 13. Change default shell
 ========================
