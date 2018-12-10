@@ -1,82 +1,76 @@
-# Mac Config for Web Development
+Mac Config for Web Development
+------------------------------
 
 > Tested for macOS Sierra 
 > Last updated in August 2017
-
-*Python*
-[numpy-pandas-python](http://nerderati.com/2014/09/03/installing-matplotlib-numpy-scipy-nltk-and-pandas-on-os-x-without-going-crazy). Need to examine that for some updated tips.
 
 The steps below assume you have a clean, fully patched Mac.
 
 ## System Preferences
 
-### Keyboard
+My three critical changes:
 
-Tab      | Option
----------|---------
-Keyboard | Key Repeat: **fast**
-         | Delay: **short**
-         | Modifier Keys: Caps Lock => Control
-
-Find the **Shortcuts** tab. Now since any application's preferences is ⌘-comma, 
-I believe ⌥⌘-comma should display the _system_ preferences.
-
-1. Select **App Shortcuts** from list on the left.
-1. Hit the + button  
-1. Type **System Preferences...** exactly, with the elipsis at the end
-1. Use option+command+comma  
-
-### Trackpad
-
-Tab           | Option
---------------|---------
-Point & Click | Enable **Tap to Click**
-              | Enable **Three-finger drag** 
-Scroll & Zoom | Disable **Scroll direction: natural**
-More Gestures | Enable **App Exposé**
-
-### Accessibility
-Feature          | Option
------------------|---------
-Zoom             | Check **Use scroll gesture with modifier keys to zoom**
-Mouse & Trakpad † | Trackpad Options... | Enable dragging **three finger drag**
-
-† On the 2015 12" MacBook, the location for three-finger drag has changed. It's in the [hidden deep in Accessibility](https://discussions.apple.com/thread/6869616).
+1. Key repeat fast with little delay
+2. Scroll direction: [unnatural](https://www.lifewire.com/how-to-change-scrolling-direction-on-mac-2260835)
+3. Mapping CAPS LOCK to CONTROL, cause [vim](http://xahlee.info/kbd/ADM-3A_terminal.html), [readline](https://spin.atomicobject.com/2017/11/10/readline-productivity/), and it's useless.
 
 
-### Dock
-Position on screen: Left  
-Enable Minimize windows into application icon  
-Disable Animate opening applications  
 
-### Accessibility
-Select Zoom  
-Enable "Use scroll gesture with modifier keys to zoom"  
+Hit the Apple menu, click System Preferences... and have at it:
 
-### Security & Privacy
-Tab           | Option
---------------|---------
-General       | Allow apps downloaded from **Anywhere** (NB: security risk)
-Firewall      | Turn on the Firewall
+```text
+keyboard      keyboard             key repeat (fast)
+              keyboard             delay until repeat (short)
+              modifier keys...     Caps Lock ⇪ (^ Control)
+              shortcuts*           App Shortcuts, click +: System Preferences...  ⌘ ⌥ ,
+trackpad      point & click        ✓ Tap to Click
+              point & click        ✓ Three-finger drag
+              point & click†       ✓ Silent clicking
+              scroll & zoom        × Scroll direction: natural
+              more gestures        ✓ Enable App Exposé
+accessibility zoom                 ✓ Use scroll gesture with modifier keys to zoom (^ control)
+              mouse & trackpad‡    trackpad options... ✓ enable dragging (three finger drag)
+dock          -                    position on screen (left)
+              -                    ✓ minimize windows into application icon
+              -                    × disable animate opening applications
+```
 
-3. Finder 
-==========
-Finder Preferences ⌘,
+**Notes**
+\* Since app preferences are ⌘-comma, I like the symmetry of ⌥⌘-comma for system preferences.
+† Added in macOS Mojave (v10.14)
+‡ Hold down control and zoom in/out with the mouse wheel, it's [magic](https://discussions.apple.com/thread/6869616).
+
+
+## 2. Finder 
+
+Launch Finder and go to Preferences (⌘-comma)
 
 Tab           | Option
 --------------|---------
-Advanced      | Enable **Show all filename extensions**
-Sidebar       | Disable **All My Files** 
-              | Disable **AirDrop**. 
-              | Enable **(your home)** and drag to the top in the finder menu
-              | Enable **Hard Disks**
+General       | ✓ Show (Hard disks & External Disks)
+Sidebar       | × All My Files†
+              | × AirDrop
+              | ✓ **(your home)** and drag to the top in the finder menu
+              | ✓ Hard Disks
+Advanced      | ✓ Show all filename extensions\*
+              | ✓ Keep folders on top
+              | When performing search (Search the current folder)
 
-> AirDrop and AllMyFiles are accessible from the Finder "Go" menu.  
-> They're used so infrequently to deserve a top spot.
+**Notes**
+* `CMD + SHIFT + .` will toggle hidden files on and off
+† AirDrop and AllMyFiles are accessible from the Finder "Go" menu. They're used too infrequently to deserve a top spot.
 
+My order in the Finder pane (you can drag to re-order items):
 
-6. Rename Computer
-==================
+1. Home
+2. Desktop
+3. Documents
+4. Downloads
+5. Dropbox | OneDrive
+6. Applications
+
+## 3. Rename Computer
+
 Open `Terminal.app`.
 
 By default, your computer probably has a name like John Smith's
@@ -89,8 +83,8 @@ for my 15" MacBook Pro.
     $ sudo scutil --set ComputerName ss-mbp15
     $ sudo scutil --set LocalHostName ss-mbp15
 
-8. HOMEBREW
-===========
+## 4. HOMEBREW
+
 [Homebrew](http://brew.sh) is the App Store for the command line. 
 
 > Important: if you haven't already installed the Apple development tools
@@ -119,8 +113,8 @@ We'll use the Cask extension for Homebrew to install some Mac apps
 	$ brew tap caskroom/cask
     $ brew cask install visual-studio-code github spectacle iterm2 
 
-5. Spectacle App
-================
+## 5. Spectacle
+
 > Note: you installed this in the previous step. Run it.
 
 Wrangling windows is like hearding cats: no matter what you do, they still get 
@@ -137,8 +131,8 @@ Let Spectacle do it's thing by enabling it in **System Preferences -> Security -
 
 Also, once launched, click on it's icon, go to preferenes and enable **Launch Spectacle at login**
 
-9. Setup Git for github
-========================
+## 6. Git
+
 Assuming you have a github.com account, tell your Mac about it. Follow
 [these instructions](https://help.github.com/articles/set-up-git).
 
@@ -298,6 +292,10 @@ change:
 
 Reference: http://zsh.sourceforge.net/Guide/zshguide03.html
 
+Python
+======
+[numpy-pandas-python](http://nerderati.com/2014/09/03/installing-matplotlib-numpy-scipy-nltk-and-pandas-on-os-x-without-going-crazy). Need to examine that for some updated tips.
+
 
 Good Mac Apps to Have
 =====================
@@ -337,3 +335,5 @@ $ sudo mv /etc/{zshenv,zprofile}
   a one file good .zshrc config
 * Moncef Belyamani has a [guide for Mavericks](http://bit.ly/VQsHy1).
 * And finally, [Top Eight OSX Utilites Developers Should Know](http://www.mitchchn.me/2014/os-x-terminal/)
+
+
