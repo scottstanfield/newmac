@@ -1,66 +1,53 @@
-# Mac Config for Web Development
+Mac Config for Development
+==========================
 
-> Tested for macOS Sierra 
-> Last updated in August 2017
+This is my first 15 minutes with a new mac. 
 
-*Python*
-[numpy-pandas-python](http://nerderati.com/2014/09/03/installing-matplotlib-numpy-scipy-nltk-and-pandas-on-os-x-without-going-crazy). Need to examine that for some updated tips.
+> Tested for macOS Mojave
+> Last personal walk-through: December 2018
 
 The steps below assume you have a clean, fully patched Mac.
 
-## System Preferences
+## 1. System Preferences
 
-### Keyboard
+I'm a touch typist. I avoid the mouse whenever I can for speed. So some
+of my configuration on the Mac is geared around that.
 
-Tab      | Option
----------|---------
-Keyboard | Key Repeat: **fast**
-         | Delay: **short**
-         | Modifier Keys: Caps Lock => Control
+Three modifications are critical for me:
 
-Find the **Shortcuts** tab. Now since any application's preferences is ⌘-comma, 
-I believe ⌥⌘-comma should display the _system_ preferences.
+1. Key repeat fast with little delay
+2. Mapping CAPS LOCK to CONTROL.
+3. Scroll direction: unnatural. I also play Halo "inverted".
 
-1. Select **App Shortcuts** from list on the left.
-1. Hit the + button  
-1. Type **System Preferences...** exactly, with the elipsis at the end
-1. Use option+command+comma  
+![map caps to control](img/caps-lock-mapping.png?raw=true "Map CAPS to CONTROL")
 
-### Trackpad
+Here are all the 
 
-Tab           | Option
---------------|---------
-Point & Click | Enable **Tap to Click**
-              | Enable **Three-finger drag** 
-Scroll & Zoom | Disable **Scroll direction: natural**
-More Gestures | Enable **App Exposé**
+```text
+keyboard      keyboard             key repeat (fast)
+              keyboard             delay until repeat (short)
+              modifier keys...     Caps Lock ⇪ (^ Control)
+              shortcuts*           App Shortcuts, click +: System Preferences...  ⌘ ⌥ ,
+trackpad      point & click        ✓ Tap to Click
+              point & click        ✓ Three-finger drag
+              point & click†       ✓ Silent clicking
+              scroll & zoom        × Scroll direction: natural
+              more gestures        ✓ Enable App Exposé
+accessibility zoom                 ✓ Use scroll gesture with modifier keys to zoom (^ control)
+              mouse & trackpad‡    trackpad options... ✓ enable dragging (three finger drag)
+dock                               position on screen (left)
+                                   ✓ minimize windows into application icon
+                                   × disable animate opening applications
+```
 
-### Accessibility
-Feature          | Option
------------------|---------
-Zoom             | Check **Use scroll gesture with modifier keys to zoom**
-Mouse & Trakpad † | Trackpad Options... | Enable dragging **three finger drag**
-
-† On the 2015 12" MacBook, the location for three-finger drag has changed. It's in the [hidden deep in Accessibility](https://discussions.apple.com/thread/6869616).
+Notes:
+\* Since app preferences are ⌘-comma, I like the symmetry of ⌥⌘-comma for system preferences.
+† Added in macOS Mojave (v10.14)
+‡ Hold down control and zoom in/out with the mouse wheel, it's [magic](https://discussions.apple.com/thread/6869616).
 
 
-### Dock
-Position on screen: Left  
-Enable Minimize windows into application icon  
-Disable Animate opening applications  
+## 3. Finder 
 
-### Accessibility
-Select Zoom  
-Enable "Use scroll gesture with modifier keys to zoom"  
-
-### Security & Privacy
-Tab           | Option
---------------|---------
-General       | Allow apps downloaded from **Anywhere** (NB: security risk)
-Firewall      | Turn on the Firewall
-
-3. Finder 
-==========
 Finder Preferences ⌘,
 
 Tab           | Option
@@ -266,15 +253,21 @@ But brew does not install system duplicates by default, so work with an alt fork
 
 # Extras
 
+Python
+------
+
+[numpy-pandas-python](http://nerderati.com/2014/09/03/installing-matplotlib-numpy-scipy-nltk-and-pandas-on-os-x-without-going-crazy). Need to examine that for some updated tips.
+
+
 Formd
-=====
+-----
 There's a great Python command-line tool called [formd](http://drbunsen.github.io/formd/) that keeps 
 Markdown links looking clean. Notice how all my links are at the bottom? That's
 `formd` in action.
 
 
 Handy Keyboard Shortcuts
-========================
+------------------------
 Readline / EMACs
 
     ctrl+a  beginning of line  
@@ -337,3 +330,15 @@ $ sudo mv /etc/{zshenv,zprofile}
   a one file good .zshrc config
 * Moncef Belyamani has a [guide for Mavericks](http://bit.ly/VQsHy1).
 * And finally, [Top Eight OSX Utilites Developers Should Know](http://www.mitchchn.me/2014/os-x-terminal/)
+
+### image processing 
+
+I'm using Monosnap to capture and annote the screenshots. Then
+ImageMagik for a smart rescale down to 75% size:
+
+```
+mogrify -path img -filter spline -resize 75% -unsharp 0x0.75+0.75+0.008 ~/Pictures/Monosnap/*.png
+```
+
+Finally `ImageOptim` to compress down to virtually nothing (Lossy with PNGCrush)
+
