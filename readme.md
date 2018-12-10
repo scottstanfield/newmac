@@ -1,27 +1,24 @@
 Mac Config for Development
 ==========================
 
-This is my first 15 minutes with a new mac. 
+How I spend my first 15 minutes with a new macOS.
 
-> Tested for macOS Mojave
-> Last personal walk-through: December 2018
-
-The steps below assume you have a clean, fully patched Mac.
-
-## 1. System Preferences
+> Last tested on macOS Mojave (Dec 2018)
 
 I'm a touch typist. I avoid the mouse whenever I can for speed. So some
 of my configuration on the Mac is geared around that.
 
-Three modifications are critical for me:
+## 1. System Preferences
+
+My three critical modifications:
 
 1. Key repeat fast with little delay
-2. Mapping CAPS LOCK to CONTROL.
-3. Scroll direction: unnatural. I also play Halo "inverted".
+2. Scroll direction: [unnatural](https://www.lifewire.com/how-to-change-scrolling-direction-on-mac-2260835)
+3. Mapping CAPS LOCK to CONTROL, cause [vim](http://xahlee.info/kbd/ADM-3A_terminal.html), [readline](https://spin.atomicobject.com/2017/11/10/readline-productivity/), and it's useless.
 
 ![map caps to control](img/caps-lock-mapping.png?raw=true "Map CAPS to CONTROL")
 
-Here are all the 
+Hit the Apple menu, click System Preferences...and have at it:
 
 ```text
 keyboard      keyboard             key repeat (fast)
@@ -35,49 +32,61 @@ trackpad      point & click        ✓ Tap to Click
               more gestures        ✓ Enable App Exposé
 accessibility zoom                 ✓ Use scroll gesture with modifier keys to zoom (^ control)
               mouse & trackpad‡    trackpad options... ✓ enable dragging (three finger drag)
-dock                               position on screen (left)
-                                   ✓ minimize windows into application icon
-                                   × disable animate opening applications
+dock          -                    position on screen (left)
+              -                    ✓ minimize windows into application icon
+              -                    × disable animate opening applications
 ```
 
-Notes:
+**Notes**
 \* Since app preferences are ⌘-comma, I like the symmetry of ⌥⌘-comma for system preferences.
 † Added in macOS Mojave (v10.14)
 ‡ Hold down control and zoom in/out with the mouse wheel, it's [magic](https://discussions.apple.com/thread/6869616).
 
 
-## 3. Finder 
+## 2. Finder 
 
-Finder Preferences ⌘,
+Launch Finder and go to Preferences (⌘-comma)
 
 Tab           | Option
 --------------|---------
-Advanced      | Enable **Show all filename extensions**
-Sidebar       | Disable **All My Files** 
-              | Disable **AirDrop**. 
-              | Enable **(your home)** and drag to the top in the finder menu
-              | Enable **Hard Disks**
+General       | ✓ Show (Hard disks & External Disks)
+Sidebar       | × All My Files†
+              | × AirDrop
+              | ✓ (your home) and drag to the top in the finder menu
+              | ✓ Hard Disks
+Advanced      | ✓ Show all filename extensions\*
+              | ✓ Keep folders on top
+              | When performing search (Search the current folder)
 
-> AirDrop and AllMyFiles are accessible from the Finder "Go" menu.  
-> They're used so infrequently to deserve a top spot.
+**Notes**
+* `CMD + SHIFT + .` will toggle hidden files on and off
+† AirDrop and AllMyFiles are accessible from the Finder "Go" menu. They're used too infrequently to deserve a top spot.
 
+My order in the Finder pane (you can drag to re-order items):
 
-6. Rename Computer
-==================
+1. Home
+2. Desktop
+3. Documents
+4. Downloads
+5. Dropbox | OneDrive
+6. Applications
+
+## 3. Rename Computer
+
 Open `Terminal.app`.
 
-By default, your computer probably has a name like John Smith's
-Computer. Rename it easily from Terminal:
+By default, your computer probably has a name like `Dutch Morgan's Computer`. Rename it easily from Terminal:
 
-I use my initials then some indicator of the machine type, like *ss-mbp15*
-for my 15" MacBook Pro.
+I use my initials then some indicator of the machine type, like *ss-mbp15* for my 15" MacBook Pro.
 
-    $ sudo scutil --set HostName ss-mbp15
-    $ sudo scutil --set ComputerName ss-mbp15
-    $ sudo scutil --set LocalHostName ss-mbp15
+```bash
+  sudo scutil --set HostName ss-mbp15
+  ^Host^Computer
+  ^Computer^LocalHost
+```
 
-8. HOMEBREW
-===========
+## 4. HOMEBREW
+
 [Homebrew](http://brew.sh) is the App Store for the command line. 
 
 > Important: if you haven't already installed the Apple development tools
@@ -88,26 +97,28 @@ Instructions located at http://brew.sh
 
 Do all this from Terminal.app; we'll swap out to iTerm2 later.
     
+```bash
     $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     $ brew doctor
-    $ brew install cowsay
-    $ cowsay "brew works!"
+```
 
 Now that brew thinks it is working, try installing a utility that was
 already installed by the Command Line Tools, namely "git" (and a few
 other useful utilities).
 
-    $ brew install git wget gist htop source-highlight hub tree httpie ripgrep
-	$ brew install tmux reattach-to-user-namespace
-    $ brew doctor
+```bash
+  brew install git wget cask htop tree httpie ripgrep tmux
+  brew doctor
+```
 
 We'll use the Cask extension for Homebrew to install some Mac apps
 
-	$ brew tap caskroom/cask
-    $ brew cask install visual-studio-code github spectacle iterm2 
+```bash
+  brew cask install google-chrome iterm2 spectacle visual-studio-code
+```
 
-5. Spectacle App
-================
+## 5. Spectacle
+
 > Note: you installed this in the previous step. Run it.
 
 Wrangling windows is like hearding cats: no matter what you do, they still get 
@@ -124,8 +135,8 @@ Let Spectacle do it's thing by enabling it in **System Preferences -> Security -
 
 Also, once launched, click on it's icon, go to preferenes and enable **Launch Spectacle at login**
 
-9. Setup Git for github
-========================
+## 6. Git
+
 Assuming you have a github.com account, tell your Mac about it. Follow
 [these instructions](https://help.github.com/articles/set-up-git).
 
@@ -133,8 +144,8 @@ Assuming you have a github.com account, tell your Mac about it. Follow
     $ git config --global user.email "your@email.com"
     $ git config --global credential.helper osxkeychain
 
-10. Solarized
-============
+## 7. Solarized
+
 Solarized is a well-known common color scheme that works across vim,
 iTerm, my custom prompt and the GNU utilities.
 
@@ -146,8 +157,8 @@ profiles to iTerm 2. I create two named profiles called "solarized-dark" and
 "solarized-light", each set to the corresponding color profile and Monoco 18pt.
 Light is my default. Keep minimum color contrast set to low.
 
-11. Install Programming Fonts
-=============================
+## 8. Programming Fonts
+
 There's a big set of programmer-friendly, monospaced fonts that we can
 use. They also have a handful of extra glyphs that make certain symbols
 for git and Powerline (a vim and shell plugin) look nicer. 
@@ -161,8 +172,7 @@ This action registers the typefaces with the Mac and allow you to choose one
 when you configure the fonts in iTerm, below.
 
 
-12. iTerm 
-==========
+## 9. iTerm2
 
 iTerm is a full-featured replacement for the anemic Terminal.app that
 ships with the Mac. It's also referred to as iTerm 2.
@@ -187,23 +197,22 @@ Setup iTerm
 When finished, your profile seetings dialog box should look like the one
 in this [github comment](https://github.com/scottstanfield/newmac/issues/2).
 
-13. Change default shell
-========================
+## Change default shell
 Launch Terminal. Now change your shell from `bash` to `csh`
 
     $ chsh -s /bin/csh
 
 Close this session `CTRL-D` and start a new one.
 
-14. Use my .dotfiles
-====================
+##  Use my .dotfiles
+
 Follow instructions at
 [scottstanfield/dotfiles](http://github.com/scottstanfield/dotfiles). It uses tcsh (most
 people are using zsh now, but I have old habits), so it installs a
 .cshrc and a pretty custom .vimrc.
 
-15. A better 'ls'
-======================
+## A better 'ls'
+
 The 'ls' version built in to tcsh will display folders and files in
 color when you use the flag "-G". But it sorts the folders along with
 the files. I wanted the folders displayed first, then the files. Turns
@@ -236,8 +245,8 @@ don't have to do this with zsh.
 
 Log out, then back in.
 
-17. LESS (optional)
-===================
+##  LESS (optional)
+
 `less` is a terminal pager program used to look at text files. It's
 similar to `more` but improved, allowing both forward and backwards
 navigation in a file. 
@@ -291,6 +300,10 @@ change:
 
 Reference: http://zsh.sourceforge.net/Guide/zshguide03.html
 
+Python
+======
+[numpy-pandas-python](http://nerderati.com/2014/09/03/installing-matplotlib-numpy-scipy-nltk-and-pandas-on-os-x-without-going-crazy). Need to examine that for some updated tips.
+
 
 Good Mac Apps to Have
 =====================
@@ -339,6 +352,4 @@ ImageMagik for a smart rescale down to 75% size:
 ```
 mogrify -path img -filter spline -resize 75% -unsharp 0x0.75+0.75+0.008 ~/Pictures/Monosnap/*.png
 ```
-
 Finally `ImageOptim` to compress down to virtually nothing (Lossy with PNGCrush)
-
