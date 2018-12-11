@@ -51,12 +51,12 @@ Tab           | Option
 --------------|---------
 General       | ✓ Show (Hard disks & External Disks)
 Sidebar       | × All My Files†
-              | × AirDrop
-              | ✓ (your home) and drag to the top in the finder menu
-              | ✓ Hard Disks
+Sidebar       | × AirDrop
+Sidebar       | ✓ (your home) and drag to the top in the finder menu
+Sidebar       | ✓ Hard Disks
 Advanced      | ✓ Show all filename extensions\*
-              | ✓ Keep folders on top
-              | When performing search (Search the current folder)
+Advanced      | ✓ Keep folders on top
+Advanced      | When performing search (Search the current folder)
 
 **Notes**
 * `CMD + SHIFT + .` will toggle hidden files on and off
