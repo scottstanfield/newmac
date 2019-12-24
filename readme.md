@@ -23,24 +23,32 @@ Hit the Apple menu, click System Preferences...and have at it:
 ```text
 keyboard      keyboard             key repeat (fast)
               keyboard             delay until repeat (short)
-              modifier keys...     Caps Lock ⇪ (^ Control)
-              shortcuts*           App Shortcuts, click +: System Preferences...  ⌘ ⌥ ,
+              keyboard             modifier keys...     Caps Lock ⇪ (^ Control)
+              shortcuts            App Shortcuts --> [+] title: "System Preferences..." keys: ⌘ ⌥ ,	    
 trackpad      point & click        ✓ Tap to Click
               point & click        ✓ Three-finger drag
+
               point & click†       ✓ Silent clicking
+	      
               scroll & zoom        × Scroll direction: natural
               more gestures        ✓ Enable App Exposé
 accessibility zoom                 ✓ Use scroll gesture with modifier keys to zoom (^ control)
-              mouse & trackpad‡    trackpad options... ✓ enable dragging (three finger drag)
+              pointer control‡     trackpad options... ✓ enable dragging (three finger drag)
 dock          -                    position on screen (left)
               -                    ✓ minimize windows into application icon
               -                    × disable animate opening applications
+sound         sound effects        ✓ show volume in menu bar
+spotlight     search results       × spotlight suggestions
 ```
 
 **Notes**
-\* Since app preferences are ⌘-comma, I like the symmetry of ⌥⌘-comma for system preferences.
-† Added in macOS Mojave (v10.14)
+\* Since app preferences are ⌘-comma, I like the symmetry of ⌥⌘-comma for system preferences.  
+† Added in macOS Mojave (v10.14).  
 ‡ Hold down control and zoom in/out with the mouse wheel, it's [magic](https://discussions.apple.com/thread/6869616).
+
+Other personal preferences: 
+* disable Siri
+
 
 
 ## 2. Finder 
