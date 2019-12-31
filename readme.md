@@ -3,7 +3,7 @@ Mac Config for Development
 
 How I spend my first 15 minutes with a new macOS.
 
-> Last tested on macOS Mojave (Dec 2018)
+> Last tested on macOS Cataline (Dec 2019)
 
 I'm a touch typist. I avoid the mouse whenever I can for speed. So some
 of my configuration on the Mac is geared around that.
@@ -115,14 +115,14 @@ already installed by the Command Line Tools, namely "git" (and a few
 other useful utilities).
 
 ```bash
-  brew install git wget cask htop tree httpie ripgrep tmux
+  brew install bash git wget cask htop tree httpie ripgrep tmux neovim
   brew doctor
 ```
 
 We'll use the Cask extension for Homebrew to install some Mac apps
 
 ```bash
-  brew cask install google-chrome iterm2 spectacle visual-studio-code
+  brew cask install xquartz iterm2 spectacle visual-studio-code
 ```
 
 ## 5. Spectacle
