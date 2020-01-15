@@ -104,7 +104,6 @@ I use my initials then some indicator of the machine type, like *ss-mbp15* for m
 Instructions located at http://brew.sh 
 
 Do all this from Terminal.app; we'll swap out to iTerm2 later.
-    
 ```bash
     $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     $ brew doctor
@@ -115,7 +114,7 @@ already installed by the Command Line Tools, namely "git" (and a few
 other useful utilities).
 
 ```bash
-  brew install bash git wget cask htop tree httpie ripgrep tmux neovim
+  brew install bash git wget cask htop tree httpie ripgrep tmux neovim zsh coreutils
   brew doctor
 ```
 
@@ -170,6 +169,24 @@ Light is my default. Keep minimum color contrast set to low.
 There's a big set of programmer-friendly, monospaced fonts that we can
 use. They also have a handful of extra glyphs that make certain symbols
 for git and Powerline (a vim and shell plugin) look nicer. 
+
+	$ brew tap caskroom/fonts
+	$ brew cask install font-inconsolata		# clear 0 vs O
+	$ brew cask install font-inconsolatago-nerd-font		# clear 0 vs O
+	$ brew cask install font-ia-writer-duo
+	$ 
+
+	firacode  # Mozilla, many programming ligatures
+	dejavu # Linux, ~3300 glyphs
+	source code pro # Adobe, clear punctuation, many weights
+	noto mono # Google, available for 209 languages
+	nerd fonts # https://www.nerdfonts.com/
+
+	# Source Code Pro
+	# https://blog.typekit.com/2012/09/24/source-code-pro/
+	# 1Il|iO0oB8
+	# <>^"^$\/()|?+*[]{},.
+	
 
 	$ cd ~/lib
 	$ hub clone Lokaltog/powerline-fonts
@@ -341,7 +358,7 @@ Read more here: https://github.com/sorin-ionescu/prezto/issues/381
 Fix it with the following command
 
 $ sudo mv /etc/{zshenv,zprofile}
-    
+
 # Inspired from
 
 * My collegue [Matt Carrier](https://github.com/icecreammatt) and his excellent dotfiles
