@@ -98,7 +98,7 @@ I use my initials then some indicator of the machine type, like *ss-mbp15* for m
 
 [Homebrew](http://brew.sh) is the App Store for the command line.
 
-> Important: if you haven't already installed the Apple development tools
+> Note: if you haven't already installed the Apple development tools
 > `brew` will detect this and prompt you to do so. Install the command
 > line tools, not the entire Xcode.
 
