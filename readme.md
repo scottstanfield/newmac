@@ -38,6 +38,7 @@ dock		  -					   position on screen (left)
 			  -					   ✓ minimize windows into application icon
 			  -					   × disable animate opening applications
 sound		  sound effects		   ✓ show volume in menu bar
+			  sound effects		   Select an alert sound: Pop
 spotlight	  search results	   × spotlight suggestions
 ```
 
@@ -118,7 +119,6 @@ other useful utilities).
 
 ```bash
   brew install bash git wget cask htop tree httpie ripgrep tmux neovim zsh coreutils
-  brew doctor
 ```
 
 We'll use the Cask extension for Homebrew to install some Mac apps
