@@ -116,7 +116,23 @@ already installed by the Command Line Tools, namely "git" (and a few
 other useful utilities).
 
 ```bash
-  brew install bash git wget cask htop tree httpie ripgrep tmux neovim zsh coreutils
+  brew install bash git wget cask htop tree tmux neovim zsh 
+```
+
+For programming, you're gonna need these:
+```bash
+  brew install llvm
+```
+
+My extra utilities:
+```bash
+  brew install ascii hyperfine hub pigz pv dust exa xsv ripgrep httpie
+  brew cask install marked
+```
+
+For SQL Server CLI tools
+```bash
+  brew install unixodbc msodbcsql17 mssql-tools
 ```
 
 We'll use the Cask extension for Homebrew to install some Mac apps
