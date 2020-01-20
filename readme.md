@@ -25,17 +25,22 @@ keyboard      keyboard             key repeat (fast)
               keyboard             delay until repeat (short)
               keyboard             modifier keys...     Caps Lock ⇪ (^ Control)
               shortcuts            App Shortcuts --> [+] title: "System Preferences..." keys: ⌘ ⌥ ,
+
 trackpad      point & click        ✓ Tap to Click
               point & click†       ✓ Silent clicking
               scroll & zoom        × Scroll direction: natural
               more gestures        ✓ Enable App Exposé
+
 accessibility zoom                 ✓ Use scroll gesture with modifier keys to zoom (^ control)
               pointer control‡     trackpad options... ✓ enable dragging (three finger drag)
+
 dock          -                    position on screen (left)
               -                    ✓ minimize windows into application icon
               -                    × disable animate opening applications
+
 sound         sound effects        ✓ show volume in menu bar
               sound effects        Select an alert sound: Pop
+
 spotlight     search results       × spotlight suggestions
 ```
 
@@ -48,16 +53,10 @@ spotlight     search results       × spotlight suggestions
 Other personal preferences:
 * disable Siri
 
-## other stuff to add
-brew cask install miniconda
-
-
-## 2. Finder
-
 Launch Finder and go to Preferences (⌘-comma)
 
 Tab           | Option
---------------|---------
+:-------------|:---------
 General       | ✓ Show (Hard disks & External Disks)
 Sidebar       | × All My Files†
 Sidebar       | × AirDrop
@@ -80,11 +79,12 @@ My order in the Finder pane (you can drag to re-order items):
 5. Dropbox | OneDrive
 6. Applications
 
-## 3. Rename Computer
+## Rename Computer
 
 Open `Terminal.app`.
 
-By default, your computer probably has a name like `Dutch Morgan's Computer`. Rename it easily from Terminal:
+By default, your computer probably has a name like `Dutch Morgan's
+Computer`. Rename it easily from Terminal:
 
 I use my initials then some indicator of the machine type, like *ss-mbp15* for my 15" MacBook Pro.
 
@@ -94,7 +94,8 @@ I use my initials then some indicator of the machine type, like *ss-mbp15* for m
   ^Computer^LocalHost
 ```
 
-## 4. HOMEBREW
+
+## Homebrew
 
 [Homebrew](http://brew.sh) is the App Store for the command line.
 
@@ -151,20 +152,15 @@ Assuming you have a github.com account, tell your Mac about it. Follow
     $ git config --global user.email "your@email.com"
     $ git config --global credential.helper osxkeychain
 
-## 7. Solarized
+# Programming 
 
-Solarized is a well-known common color scheme that works across vim,
-iTerm, my custom prompt and the GNU utilities.
+Steps to install various programming languages.
 
-    $ mkdir ~/lib && cd ~/lib
-    $ hub clone altercation/solarized
+## Python (via miniconda)
+brew cask install miniconda
 
-Then follow instructions under iterm2-colors-solarized folder to add the color
-profiles to iTerm 2. I create two named profiles called "solarized-dark" and
-"solarized-light", each set to the corresponding color profile and Monoco 18pt.
-Light is my default. Keep minimum color contrast set to low.
-
-## 8. Programming Fonts
+## Node (via NVM)
+## Programming Fonts
 
 There's a big set of programmer-friendly, monospaced fonts that we can
 use. They also have a handful of extra glyphs that make certain symbols
