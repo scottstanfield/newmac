@@ -107,8 +107,8 @@ Instructions located at http://brew.sh
 
 Do all this from Terminal.app; we'll swap out to iTerm2 later.
 ```bash
-    $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    $ brew doctor
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    brew doctor
 ```
 
 Now that brew thinks it is working, try installing a utility that was
@@ -181,7 +181,7 @@ use. They also have a handful of extra glyphs that make certain symbols
 for git and Powerline (a vim and shell plugin) look nicer.
 
 ```bash
-    brew tap caskroom/fonts
+    brew tap homebrew/cask-fonts
     brew cask install font-inconsolatago-nerd-font        # clear 0 vs O
     brew cask install font-jetbrains-mono
 ```
