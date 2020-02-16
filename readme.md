@@ -116,7 +116,7 @@ already installed by the Command Line Tools, namely "git" (and a few
 other useful utilities).
 
 ```bash
-  brew install bash git wget cask htop tree tmux neovim zsh 
+  brew install bash git wget cask htop tree tmux neovim zsh less
 ```
 
 For programming, you're gonna need these:
@@ -126,7 +126,7 @@ For programming, you're gonna need these:
 
 My extra utilities:
 ```bash
-  brew install ascii hyperfine hub pigz pv dust exa xsv ripgrep httpie
+  brew install ascii hyperfine hub pigz pv dust exa xsv ripgrep httpie tldr
   brew cask install marked
 ```
 
@@ -173,8 +173,6 @@ Assuming you have a github.com account, tell your Mac about it. Follow
 Steps to install various programming languages.
 
 ## Python (via miniconda)
-brew cask install miniconda
-
 ## Node (via NVM)
 ## Programming Fonts
 
@@ -182,32 +180,25 @@ There's a big set of programmer-friendly, monospaced fonts that we can
 use. They also have a handful of extra glyphs that make certain symbols
 for git and Powerline (a vim and shell plugin) look nicer.
 
-    $ brew tap caskroom/fonts
-    $ brew cask install font-inconsolata        # clear 0 vs O
-    $ brew cask install font-inconsolatago-nerd-font        # clear 0 vs O
-    $ brew cask install font-ia-writer-duo
-    $ 
+```bash
+    brew tap caskroom/fonts
+    brew cask install font-inconsolatago-nerd-font        # clear 0 vs O
+    brew cask install font-jetbrains-mono
+```
 
-    firacode  # Mozilla, many programming ligatures
-    dejavu # Linux, ~3300 glyphs
-    source code pro # Adobe, clear punctuation, many weights
-    noto mono # Google, available for 209 languages
-    nerd fonts # https://www.nerdfonts.com/
+Other good fonts:
+> firacode  # Mozilla, many programming ligatures
+> dejavu # Linux, ~3300 glyphs
+> source code pro # Adobe, clear punctuation, many weights https://blog.typekit.com/2012/09/24/source-code-pro/
+> noto mono # Google, available for 209 languages
+> nerd fonts # https://www.nerdfonts.com/
+> jetbrains mono: https://www.jetbrains.com/lp/mono/
 
-    # Source Code Pro
-    # https://blog.typekit.com/2012/09/24/source-code-pro/
-    # 1Il|iO0oB8
-    # <>^"^$\/()|?+*[]{},.
-    
-
-    $ cd ~/lib
-    $ hub clone Lokaltog/powerline-fonts
-
-Launch the Font Book app. Create a new collection called
-**Powerline**. Drag the powerline-fonts folder into the empty space.
-This action registers the typefaces with the Mac and allow you to choose one
-when you configure the fonts in iTerm, below.
-
+> confusing characters to test:
+```text
+    1Il|iO0oB8
+    <>^"^$\/()|?+*[]{},.
+```
 
 ## 9. iTerm2
 
@@ -235,18 +226,8 @@ When finished, your profile seetings dialog box should look like the one
 in this [github comment](https://github.com/scottstanfield/newmac/issues/2).
 
 ## Change default shell
-Launch Terminal. Now change your shell from `bash` to `csh`
-
-    $ chsh -s /bin/csh
-
-Close this session `CTRL-D` and start a new one.
-
-##  Use my .dotfiles
-
-Follow instructions at
-[scottstanfield/dotfiles](http://github.com/scottstanfield/dotfiles). It uses tcsh (most
-people are using zsh now, but I have old habits), so it installs a
-.cshrc and a pretty custom .vimrc.
+This whole section has changed. With macOS Catalina, the default shell
+is zsh. For that, see my DMZ script https://github.com/scottstanfield/dmz
 
 ## A better 'ls'
 
@@ -282,28 +263,7 @@ don't have to do this with zsh.
 
 Log out, then back in.
 
-##  LESS (optional)
-
-`less` is a terminal pager program used to look at text files. It's
-similar to `more` but improved, allowing both forward and backwards
-navigation in a file.
-
-Version 418 comes with Mt Lion, but there are features in the latest
-stable (451) that are nice to have.
-
-But brew does not install system duplicates by default, so work with an alt fork.
-
-    $ brew tap homebrew/dupes
-    $ brew install less
-
-
 # Extras
-
-Python
-------
-
-[numpy-pandas-python](http://nerderati.com/2014/09/03/installing-matplotlib-numpy-scipy-nltk-and-pandas-on-os-x-without-going-crazy). Need to examine that for some updated tips.
-
 
 Formd
 -----
