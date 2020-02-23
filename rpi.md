@@ -22,6 +22,9 @@ sudo rpi-eeprom-update
 Then reboot. Idle before was 54.0 C; now 49.0 C.
 As of 2020-02-22: 1568112110/137ad 
 
+# Disable automatic Firmware update check
+`sudo systemctl mask rpi-eeprom-update`
+
 # Larger console font 
 ls /usr/share/consolefonts/Uni3*
 echo 'FONTFACE="TerminusBold"' | sudo tee -a /etc/default/console-setup
@@ -104,6 +107,9 @@ uname -r
 > SolarizedLight http://github.com/joepvd/tty-solarized
 > https://github.com/samartzidis/RaspiKey
 
+# DEBUG
+Bootloader failure diagnosis and fix:
+https://jamesachambers.com/raspberry-pi-4-bootloader-firmware-updating-recovery-guide/
 
 # SPEEDUP
 https://github.com/samartzidis/RaspiKey/blob/master/setup/setup/setup.sh
