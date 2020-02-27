@@ -26,6 +26,8 @@ As of 2020-02-22: 1568112110/137ad
 `sudo systemctl mask rpi-eeprom-update`
 
 # Larger console font 
+
+```
 ls /usr/share/consolefonts/Uni3*
 echo 'FONTFACE="TerminusBold"' | sudo tee -a /etc/default/console-setup
 echo 'FONTFACE="14x28"' | sudo tee -a /etc/default/console-setup
@@ -35,45 +37,49 @@ video=HDMI-A-1:1920x1080M@60
 
 # /boot/cmdline.txt
 >> consider hdmi_force_hotplug=1 (added by NOOBS)
-
-
+```
 
 setup rip with cloud-init
 https://dev.to/wesleybatista/setup-raspberry-pi-3-model-b-with-ubuntu-server-and-ssh-over-wifi-4d41
 
 
 # Script to check CPU temperature
-cputemp.sh
+
+```
 #!/usr/bin/env bash
 uptime
 sudo vcgencmd measure_temp
 sudo vcgencmd measure_volts
+```
 
-
+# Set timezone
+```
 set timezone
 sudo cp /usr/share/zoneinfo/US/Pacific /etc/localtime
+```
 
-update
-sudo apt update && sudo apt upgrade -y
-32 seconds from coldboot to login:
+## SSH
 
-enable ssh
+```
+sudo touch /boot/ssh
+
 Put a filecalled "ssh" on the /boot partition, or:
 sudo systemctl enable ssh
 sudo systemctl start ssh
+```
 
-
-setup wifi country-code (important)
-sudo rasps-config 
+# setup wifi country-code (important)
+sudo raspi-config 
 
 
 Strategy to  script setup via raspi-config script
 https://gist.github.com/damoclark/ab3d700aafa140efb97e510650d9b1be
 
 # Set to US locale
+```
 echo 'en_US.UTF-8 UTF-8' | sudo tee -a /etc/local.gen
 sudo dpkg-reconfigure locales
-
+```
 
 boot headless
 Pi Zero W
@@ -92,12 +98,21 @@ Another way from a gist
 https://gist.github.com/gbaman/975e2db164b3ca2b51ae11e45e8fd40a
 
 # Remove (or set) MOTD for Moab
+```
 sudo rm /etc/motd
+```
 
 # Packages to install
 
+```
+sudo apt install -y neofetch
+```
+
+Try it out
+```
 neofetch --backend off
 uname -r
+```
 
 
 # NOTES
