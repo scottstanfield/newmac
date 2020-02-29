@@ -1,8 +1,23 @@
+# Changes to Sean's wiki
+
+= Mac instructions for cat 5 on macOS initial connect
+= Set DNS on the self-assigned to 1.1.1.1
+= ECDSA host key `ssh-keygen -R raspberrypi.local`
+= macOS share it's wifi over cat 5
+= Disconnect from 802.1X wifi-profile, connect to MSFTGUEST
+= on Windows: `ssh`, not `ssh.txt`
+= change passwd
+
 # Boot times
 14.4 - 14.6: Bluetooth
 14.96 ms ICMPv6
 
-# Firmware update
+# 1. Change password
+```
+sudo passwd pi
+```
+
+# 1. Firmware update
 
 Two EEPROMS (boot loader and USB controller VL805).
 137ab ~ lower power consumption and temps w/power save
