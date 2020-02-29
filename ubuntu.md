@@ -1,3 +1,27 @@
+# Virtual Console (TTY)
+
+Get a TTY console: `ctrl-alt-F3`.
+
+VGA32x16
+TerminusBold28x14
+Uni30Terminus28x14
+
+
+UTF-8 > Combined - Latin; Slavic Cyrillic; Greek > Terminus Bold > 14x28
+```
+	sudo dpkg-reconfigure console-setup
+```
+
+## Set TTY colors
+https://github.com/joepvd/tty-solarized
+
+
+# Mounting a USB drive
+
+```
+	sudo fdisk -l
+```
+
 ## Log in as root and change password
 
 		passwd
