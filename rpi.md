@@ -7,6 +7,10 @@
 = Disconnect from 802.1X wifi-profile, connect to MSFTGUEST
 = on Windows: `ssh`, not `ssh.txt`
 = change passwd
+= safely shutdown rpi with a button
+https://howchoo.com/g/mwnlytk3zmm/how-to-add-a-power-button-to-your-raspberry-pi
+= microSD card performance
+https://www.jeffgeerling.com/blog/2019/raspberry-pi-microsd-card-performance-comparison-2019
 
 # Boot times
 14.4 - 14.6: Bluetooth
