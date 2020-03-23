@@ -12,9 +12,9 @@ of my configuration on the Mac is geared around that.
 
 My three critical modifications:
 
-1. Key repeat fast with little delay
+1. Mapping CAPS LOCK to CONTROL, because: [vim](http://xahlee.info/kbd/ADM-3A_terminal.html), [readline](https://spin.atomicobject.com/2017/11/10/readline-productivity/), and it's useless
 2. Scroll direction: [unnatural](https://www.lifewire.com/how-to-change-scrolling-direction-on-mac-2260835)
-3. Mapping CAPS LOCK to CONTROL, cause [vim](http://xahlee.info/kbd/ADM-3A_terminal.html), [readline](https://spin.atomicobject.com/2017/11/10/readline-productivity/), and it's useless.
+3. Key repeat fast, with little delay
 
 ![map caps to control](img/caps-lock-mapping.png?raw=true "Map CAPS to CONTROL")
 
@@ -174,6 +174,14 @@ Steps to install various programming languages.
 
 ## Python (via miniconda)
 ## Node (via NVM)
+
+Don't install node directly; use the [node version
+manager](https://github.com/nvm-sh/nvm).
+
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+```
+
 ## Programming Fonts
 
 There's a big set of programmer-friendly, monospaced fonts that we can
