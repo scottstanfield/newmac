@@ -8,7 +8,8 @@ How I spend my first 15 minutes with a new macOS.
 I'm a touch typist. I avoid the mouse whenever I can for speed. So some
 of my configuration on the Mac is geared around that.
 
-## 1. System Preferences
+1.1 System Preferences
+----------------------
 
 My three critical modifications:
 
@@ -24,15 +25,15 @@ Hit the Apple menu, click System Preferences...and have at it:
 keyboard      keyboard             key repeat (fast)
               keyboard             delay until repeat (short)
               keyboard             modifier keys...     Caps Lock ⇪ (^ Control)
-              shortcuts            App Shortcuts --> [+] title: "System Preferences..." keys: ⌘ ⌥ ,
+              shortcuts†           App Shortcuts --> [+] title: "System Preferences..." keys: ⌘⌥,
 
 trackpad      point & click        ✓ Tap to Click
-              point & click†       ✓ Silent clicking
+              point & click‡       ✓ Silent clicking
               scroll & zoom        × Scroll direction: natural
               more gestures        ✓ Enable App Exposé
 
 accessibility zoom                 ✓ Use scroll gesture with modifier keys to zoom (^ control)
-              pointer control‡     trackpad options... ✓ enable dragging (three finger drag)
+              pointer control◊     trackpad options... ✓ enable dragging (three finger drag)
 
 dock          -                    position on screen (left)
               -                    ✓ minimize windows into application icon
@@ -42,18 +43,20 @@ sound         sound effects        ✓ show volume in menu bar
               sound effects        Select an alert sound: Pop
 
 spotlight     search results       × spotlight suggestions
+
+siri          -                    × Disable Ask Siri
 ```
 
-**Notes**
+Note:
 
-\* Since app preferences are ⌘-comma, I like the symmetry of ⌥⌘-comma for system preferences.
-† Added in macOS Mojave (v10.14).
-‡ Hold down control and zoom in/out with the mouse wheel, it's [magic](https://discussions.apple.com/thread/6869616).
+† **⌘,** for app preferences; **⌥⌘,** for system preferences.  
+‡ Added in macOS Mojave (v10.14).  
+◊ Hold down control and zoom in/out with the mouse wheel, it's [magic](https://discussions.apple.com/thread/6869616).
 
-Other personal preferences:
-* disable Siri
+1.2 Finder Preferences
+----------------------
 
-Launch Finder and go to Preferences (⌘-comma)
+Launch Finder and go to Preferences **⌘,**
 
 Tab           | Option
 :-------------|:---------
@@ -62,15 +65,16 @@ Sidebar       | × All My Files†
 Sidebar       | × AirDrop
 Sidebar       | ✓ (your home) and drag to the top in the finder menu
 Sidebar       | ✓ Hard Disks
-Advanced      | ✓ Show all filename extensions\*
+Advanced      | ✓ Show all filename extension‡ 
 Advanced      | ✓ Keep folders on top
 Advanced      | When performing search (Search the current folder)
 
-**Notes**
-* `CMD + SHIFT + .` will toggle hidden files on and off
-† AirDrop and AllMyFiles are accessible from the Finder "Go" menu. They're used too infrequently to deserve a top spot.
+Note:
 
-My order in the Finder pane (you can drag to re-order items):
+† AirDrop and AllMyFiles are accessible from the Finder "Go" menu. They're used too infrequently to deserve a top spot.
+‡ `CMD + SHIFT + .` will toggle hidden files on and off
+
+Favorites order in the Finder pane (you can drag to re-order items):
 
 1. Home
 2. Desktop
@@ -79,23 +83,30 @@ My order in the Finder pane (you can drag to re-order items):
 5. Dropbox | OneDrive
 6. Applications
 
-## Rename Computer
+1.3 Rename Your Computer
+------------------------
 
 Open `Terminal.app`.
 
 By default, your computer probably has a name like `Dutch Morgan's
-Computer`. Rename it easily from Terminal:
+Computer`. Rename it easily from Terminal using
+[scutil](https://ss64.com/osx/scutil.html)
 
-I use my initials then some indicator of the machine type, like *ss-mbp15* for my 15" MacBook Pro.
+I use my initials then some indicator of the machine type, like `ss-mbp15` for my 15" MacBook Pro.
 
 ```bash
   sudo scutil --set HostName ss-mbp15
-  ^Host^Computer
-  ^Computer^LocalHost
+  sudo scutil --set ComputerName ss-mbp15
+  sudo scutil --set LocalHostName ss-mbp15
 ```
 
+2. Apps
+=======
 
-## Homebrew
+Minimal set of command line and GUI apps.
+
+2.1 Homebrew
+------------
 
 [Homebrew](http://brew.sh) is the App Store for the command line.
 
@@ -107,8 +118,8 @@ Instructions located at http://brew.sh
 
 Do all this from Terminal.app; we'll swap out to iTerm2 later.
 ```bash
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    brew doctor
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  brew doctor
 ```
 
 Now that brew thinks it is working, try installing a utility that was
@@ -141,7 +152,8 @@ We'll use the Cask extension for Homebrew to install some Mac apps
   brew cask install xquartz iterm2 spectacle visual-studio-code
 ```
 
-## 5. Spectacle
+2.2 Spectacle
+-------------
 
 > Note: you installed this in the previous step. Run it.
 
@@ -159,7 +171,10 @@ Let Spectacle do it's thing by enabling it in **System Preferences -> Security -
 
 Also, once launched, click on it's icon, go to preferenes and enable **Launch Spectacle at login**
 
-## 6. Git
+3. Programming
+==============
+
+## 3.1 Gitconfig
 
 Assuming you have a github.com account, tell your Mac about it. Follow
 [these instructions](https://help.github.com/articles/set-up-git).
@@ -168,17 +183,13 @@ Assuming you have a github.com account, tell your Mac about it. Follow
     $ git config --global user.email "your@email.com"
     $ git config --global credential.helper osxkeychain
 
-# Programming 
-
-Steps to install various programming languages.
-
 ## Python (via miniconda)
 ## Node (via NVM)
 
 Don't install node directly; use the [node version
 manager](https://github.com/nvm-sh/nvm).
 
-```
+```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 ```
 
@@ -208,7 +219,7 @@ Other good fonts:
     <>^"^$\/()|?+*[]{},.
 ```
 
-## 9. iTerm2
+## . iTerm2
 
 iTerm is a full-featured replacement for the anemic Terminal.app that
 ships with the Mac. It's also referred to as iTerm 2.
