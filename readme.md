@@ -83,6 +83,8 @@ Favorites order in the Finder pane (you can drag to re-order items):
 5. Dropbox | OneDrive
 6. Applications
 
+From the menu `View | Show Path Bar` and `View | Show Status Bar`.
+
 1.3 Rename Your Computer
 ------------------------
 
