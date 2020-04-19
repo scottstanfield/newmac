@@ -1,3 +1,10 @@
+# firmware / software notes
+
+> test: if service systemctl kill needs to run before starting
+> fix GCC warnings on the hostname, etc.
+> test: default config.txt and 
+> fix: dependency on /home/moab/runtime/src/config.txt
+
 # Some notes on RPI4 image setup
 
 ```
@@ -60,18 +67,23 @@ From http://rpf.io/configtxt
 # Larger console font 
 manpage [CONSOLE-SETUP(5)](https://manpages.debian.org/stretch/console-setup/console-setup.5.en.html)
 
-/opt/vc/bin/tvservice -s
+See current resolution:
+`/opt/vc/bin/tvservice -s`
+
+Available mod
 /opt/vc/bin/tvservice -m CEA
 
+# 
 ```bash
 echo 'FONTFACE="TerminusBold"' | sudo tee -a /etc/default/console-setup
 echo 'FONTSIZE="14x28"' | sudo tee -a /etc/default/console-setup
-sudo /etc/init.d/console-setup restart
+```
 
+Since HDMI out on RPI4 is 4k, set output to 1920x1080
+
+```
+# /boot/config.txt
 video=HDMI-A-1:1920x1080M@60
-
-# /boot/cmdline.txt
->> consider hdmi_force_hotplug=1 (added by NOOBS)
 ```
 
 setup rip with cloud-init
