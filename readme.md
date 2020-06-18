@@ -22,6 +22,8 @@ My three critical modifications:
 Hit the Apple menu, click System Preferences...and have at it:
 
 ```text
+general       -                    × Use font smoothing
+
 keyboard      keyboard             key repeat (fast)
               keyboard             delay until repeat (short)
               keyboard             modifier keys...     Caps Lock ⇪ (^ Control)
