@@ -67,6 +67,8 @@ From http://rpf.io/configtxt
 # Larger console font 
 manpage [CONSOLE-SETUP(5)](https://manpages.debian.org/stretch/console-setup/console-setup.5.en.html)
 
+also: https://www.raspberrypi.org/forums/viewtopic.php?t=185758
+
 See current resolution:
 `/opt/vc/bin/tvservice -s`
 
@@ -101,7 +103,6 @@ sudo vcgencmd measure_volts
 
 # Set timezone
 ```
-set timezone
 sudo cp /usr/share/zoneinfo/US/Pacific /etc/localtime
 ```
 
@@ -134,6 +135,7 @@ manpage [keyboard(5)](https://manpages.debian.org/stretch/keyboard-configuration
 ```
 echo 'XKBLAYOUT="us"' | sudo tee -a /etc/default/keyboard
 echo 'XKMODEL="pc104"' | sudo tee -a /etc/default/keyboard
+sudo setupcon
 
 ```
 
