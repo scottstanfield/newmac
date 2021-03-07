@@ -3,7 +3,7 @@ Mac Config for Development
 
 How I spend my first 15 minutes with a new macOS.
 
-> Last tested on macOS Catalina (Dec 2019)
+> Last tested on macOS Big Sur (Feb 2021)
 
 I'm a touch typist. I avoid the mouse whenever I can for speed. So some
 of my configuration on the Mac is geared around that.
@@ -22,12 +22,10 @@ My three critical modifications:
 Hit the Apple menu, click System Preferences...and have at it:
 
 ```text
-general       -                    × Use font smoothing
-
-keyboard      keyboard             key repeat (fast)
-              keyboard             delay until repeat (short)
-              keyboard             modifier keys...     Caps Lock ⇪ (^ Control)
-              shortcuts†           App Shortcuts --> [+] title: "System Preferences..." keys: ⌘⌥,
+Keyboard      Keyboard             Key Repeat → fast
+              Keyboard             Delay Until Repeat → short
+              Keyboard             [Modifier Keys...]  Caps Lock ⇪ Key: ^ Control
+              Shortcuts†           App Shortcuts → [+] title: "System Preferences..." keys: ⌘⌥,
 
 trackpad      point & click        ✓ Tap to Click
               point & click‡       ✓ Silent clicking
@@ -38,13 +36,13 @@ accessibility zoom                 ✓ Use scroll gesture with modifier keys to 
               pointer control◊     trackpad options... ✓ enable dragging (three finger drag)
 
 dock          -                    position on screen (left)
-              -                    ✓ minimize windows into application icon
-              -                    × disable animate opening applications
+              -                    ✓ Minimize windows into application icon
+              -                    × Animate opening applications
 
 sound         sound effects        ✓ show volume in menu bar
-              sound effects        Select an alert sound: Pop
+              sound effects        Select an alert sound: Boop
 
-spotlight     search results       × spotlight suggestions
+spotlight     search results       × Siri suggestions
 
 siri          -                    × Disable Ask Siri
 ```
@@ -114,21 +112,12 @@ Minimal set of command line and GUI apps.
 
 [Homebrew](http://brew.sh) is the App Store for the command line.
 
-> Note: if you haven't already installed the Apple development tools
-> `brew` will detect this and prompt you to do so. Install the command
-> line tools, not the entire Xcode.
-
 Instructions located at http://brew.sh
 
 Do all this from Terminal.app; we'll swap out to iTerm2 later.
 ```bash
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  brew doctor
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-
-Now that brew thinks it is working, try installing a utility that was
-already installed by the Command Line Tools, namely "git" (and a few
-other useful utilities).
 
 ```bash
   brew install bash git wget cask htop tree tmux neovim zsh less
@@ -156,24 +145,17 @@ We'll use the Cask extension for Homebrew to install some Mac apps
   brew cask install xquartz iterm2 spectacle visual-studio-code
 ```
 
-2.2 Spectacle
+2.2 Rectangle
 -------------
 
-> Note: you installed this in the previous step. Run it.
+[Rectangle](https://github.com/rxhanson/Rectangle) is a keyboard-based
+window movement tool, similar to Spectacle (retired).
 
-Wrangling windows is like hearding cats: no matter what you do, they still get
-away. Microsoft Windows has a great, built-in solution: Windows + arrow keys.
+Configure the settings as shown in my ![config](img/rectangle-config.png?raw=true "rectangle config")
 
-[Spectacle](http://spectacleapp.com/) is the best (and free) solution for the
-Mac. I've tried about a half-dozen of them. Some of the defaults conflict with
-Chrome's shortcuts to move between tabs, so I've remapped mine to something
-sane. Check out the screenshot below for mine:
+https://github.com/rxhanson/Rectangle
 
-![Spectacle Preferences](http://f.cl.ly/items/1q0x3g2N3t1u1H091J0b/spectacle.png)
-
-Let Spectacle do it's thing by enabling it in **System Preferences -> Security -> Accessibility**
-
-Also, once launched, click on it's icon, go to preferenes and enable **Launch Spectacle at login**
+Ensure it is set to Launch on login.
 
 3. Programming
 ==============
