@@ -130,19 +130,13 @@ For programming, you're gonna need these:
 
 My extra utilities:
 ```bash
-  brew install ascii hyperfine hub pigz pv dust exa xsv ripgrep httpie tldr
-  brew cask install marked
-```
-
-For SQL Server CLI tools
-```bash
-  brew install unixodbc msodbcsql17 mssql-tools
+  brew install ascii hyperfine dust exa xsv ripgrep tokei httpie
 ```
 
 We'll use the Cask extension for Homebrew to install some Mac apps
 
 ```bash
-  brew cask install xquartz iterm2 spectacle visual-studio-code
+  brew install xquartz rectangle alacritty marked
 ```
 
 2.2 Rectangle
@@ -205,34 +199,11 @@ Other good fonts:
     <>^"^$\/()|?+*[]{},.
 ```
 
-## . iTerm2
+## Alacritty
 
-iTerm is a full-featured replacement for the anemic Terminal.app that
-ships with the Mac. It's also referred to as iTerm 2.
-
-* Download the iTerm2 **Test** release or the **Stable release if it's v2** from
-  [iTerm2 downloads](http://www.iterm2.com/#/section/downloads).
-* Open the zip to extract 'iTerm.app', then drag it to your Applications
-  folder.
-* Run the app (it should be available now from Spotlight).
-* Right click on the icon and choose Options | Keep in Dock
-
-Setup iTerm
-
-* Add two new profiles: "solarized-light" and "solarized-dark".
-  Set the color contrast profile to *low*, otherwise colors will be
-  washed out.
-* Delete the **default** profile.
-* Set both color schemes to the appropriate Solarized files from previous step.
-* I use 18 pt. Menlo for font. Window: columns=100, rows=35
-* Use the same font for both 'Regular Font' and 'Non-ASCII Font'
-
-When finished, your profile seetings dialog box should look like the one
-in this [github comment](https://github.com/scottstanfield/newmac/issues/2).
-
-## Change default shell
-This whole section has changed. With macOS Catalina, the default shell
-is zsh. For that, see my DMZ script https://github.com/scottstanfield/dmz
+Use alacritty instead of iTerm2 or Terminal. It's configured in a single
+file: ~/.alacritty.yml. Easy to version control, it's fast and
+cross-platform.
 
 ## A better 'ls'
 
