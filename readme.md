@@ -208,8 +208,7 @@ https://github.com/rxhanson/Rectangle
 
 Ensure it is set to Launch on login.
 
-3. Programming
-==============
+# 3. Programming
 
 ## 3.1 Gitconfig
 
