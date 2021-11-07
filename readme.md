@@ -184,6 +184,7 @@ Run Ubuntu in a VM, because why not?
   brew install --cask utm
   mkdir ~/tmp && cd ~/tmp
   wget https://cdimage.ubuntu.com/releases/20.04/release/ubuntu-20.04.3-live-server-arm64.iso
+```
 
 
 2.2 Rectangle
