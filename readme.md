@@ -4,6 +4,7 @@ Mac Config for Development
 How I spend my first 15 minutes with a new macOS.
 
 > Last tested on macOS Big Sur (Feb 2021)
+> Last tested on macOS Monterey 12.0.1 (Nov 2021)
 
 I'm a touch typist. I avoid the mouse whenever I can for speed. So some
 of my configuration on the Mac is geared around that.
@@ -13,9 +14,11 @@ of my configuration on the Mac is geared around that.
 
 My three critical modifications:
 
-1. Mapping CAPS LOCK to CONTROL, because: [vim](http://xahlee.info/kbd/ADM-3A_terminal.html), [readline](https://spin.atomicobject.com/2017/11/10/readline-productivity/), and it's useless
-2. Scroll direction: [unnatural](https://www.lifewire.com/how-to-change-scrolling-direction-on-mac-2260835)
-3. Key repeat fast, with little delay
+1. Mapping CAPS LOCK to CONTROL, because: [vim](http://xahlee.info/kbd/ADM-3A_terminal.html), [readline](https://spin.atomicobject.com/2017/11/10/readline-productivity/), and it's useless  
+
+2. Scroll direction: [unnatural](https://www.lifewire.com/how-to-change-scrolling-direction-on-mac-2260835)  
+
+3. Key repeat fast, with little delay 
 
 ![map caps to control](img/caps-lock-mapping.png?raw=true "Map CAPS to CONTROL")
 
@@ -25,22 +28,23 @@ Hit the Apple menu, click System Preferences...and have at it:
 Keyboard      Keyboard             Key Repeat → fast
               Keyboard             Delay Until Repeat → short
               Keyboard             [Modifier Keys...]  Caps Lock ⇪ Key: ^ Control
-              Shortcuts†           App Shortcuts → [+] title: "System Preferences..." keys: ⌘⌥,
+              Text                 × Capitalize words automatically
+              Shortcuts            Mission Control → Turn Do Not Disturb On/Off: ⌘D 
+              Shortcuts            Screenshots → Copy picture of selected area to clipboard: ⌘'
+              Shortcuts†           App Shortcuts → [+] title: "System Preferences..." keys: ⌘⌥, 
 
 trackpad      point & click        ✓ Tap to Click
-              point & click‡       ✓ Silent clicking
               scroll & zoom        × Scroll direction: natural
-              more gestures        ✓ Enable App Exposé
+              more gestures‡       ✓ Enable App Exposé
 
 accessibility zoom                 ✓ Use scroll gesture with modifier keys to zoom (^ control)
               pointer control◊     trackpad options... ✓ enable dragging (three finger drag)
 
-dock          -                    position on screen (left)
+dock          -                    position on screen (left)§
               -                    ✓ Minimize windows into application icon
               -                    × Animate opening applications
 
-sound         sound effects        ✓ show volume in menu bar
-              sound effects        Select an alert sound: Boop
+sound         sound effects        Select an alert sound: Boop
 
 spotlight     search results       × Siri suggestions
 
@@ -50,8 +54,9 @@ siri          -                    × Disable Ask Siri
 Note:
 
 † **⌘,** for app preferences; **⌥⌘,** for system preferences.  
-‡ Added in macOS Mojave (v10.14).  
-◊ Hold down control and zoom in/out with the mouse wheel, it's [magic](https://discussions.apple.com/thread/6869616).
+‡ Why is this the only one disabled?
+§ Preserves the more valuable vertical space for code, since width is plentiful in 16:9.
+◊ Press control then two-finger swipe in/out on trackpad, it's [magic](https://discussions.apple.com/thread/6869616).
 
 1.2 Finder Preferences
 ----------------------
@@ -61,18 +66,22 @@ Launch Finder and go to Preferences **⌘,**
 Tab           | Option
 :-------------|:---------
 General       | ✓ Show (Hard disks & External Disks)
-Sidebar       | × All My Files†
-Sidebar       | × AirDrop
-Sidebar       | ✓ (your home) and drag to the top in the finder menu
+General       | New Finder windows shows: Desktop
+Sidebar       | × AirDrop†
+Sidebar       | ✓ (your home)
 Sidebar       | ✓ Hard Disks
+Sidebar       | × Tags
 Advanced      | ✓ Show all filename extension‡ 
-Advanced      | ✓ Keep folders on top
+Advanced      | × Show warning before changing an extension◊
+Advanced      | ✓ Remove items from trash after 30 days
+Advanced      | ✓ Keep folders on top (both options)
 Advanced      | When performing search (Search the current folder)
 
 Note:
 
-† AirDrop and AllMyFiles are accessible from the Finder "Go" menu. They're used too infrequently to deserve a top spot.
+† AirDrop is accessible from the Finder "Go" menu.
 ‡ `CMD + SHIFT + .` will toggle hidden files on and off
+◊ YOLO
 
 Favorites order in the Finder pane (you can drag to re-order items):
 
@@ -83,7 +92,18 @@ Favorites order in the Finder pane (you can drag to re-order items):
 5. Dropbox | OneDrive
 6. Applications
 
-From the menu `View | Show Path Bar` and `View | Show Status Bar`.
+From the Finder menu: 
+
+`View | as List`
+`View | Show Path Bar` 
+`View | Show Status Bar`
+
+
+1.2.1 Messages Preferences
+--------------------------
+
+Launch `Messages`, hit `CMD-,` and change the Message received sound from `Note
+(default)' to `Bamboo`. `Note` has an ADSR release of about 6 seconds: way too long.
 
 1.3 Rename Your Computer
 ------------------------
@@ -114,13 +134,44 @@ Minimal set of command line and GUI apps.
 
 Instructions located at http://brew.sh
 
-Do all this from Terminal.app; we'll swap out to iTerm2 later.
+Do all this from Terminal.app; we'll swap out to iTerm2 or Alacritty later.
 ```bash
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+
+On Intel macOS, brew installs to '/usr/local/'.
+On Apple Silicon (M1, M1 Pro and M1 Max) brew installs to '/opt/homebrew',
+which is not in the path by default. So run these two steps:
+
 ```bash
-  brew install bash git wget cask htop tree tmux neovim zsh less
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+```
+
+Install a few command line essentials (some are upgrades from macOS):
+
+```bash
+  brew install wget htop tree tmux neovim
+```
+
+```bash
+  brew install bash     # 3.2.57 --> 5.1.8
+  brew install git      # 2.30.1 --> 2.33.1
+  brew install zsh      # same: 5.8 as of November 2021
+  brew install less     # v487 --> v590
+  rehash
+```
+
+I use these all the time. Most are written in Rust:
+```bash
+  brew install ascii hyperfine dust exa xsv ripgrep tokei httpie
+```
+
+Install my core Mac apps
+
+```bash
+  brew install xquartz rectangle alacritty marked
 ```
 
 For programming, you're gonna need these:
@@ -128,16 +179,12 @@ For programming, you're gonna need these:
   brew install llvm
 ```
 
-My extra utilities:
+Run Ubuntu in a VM, because why not?
 ```bash
-  brew install ascii hyperfine dust exa xsv ripgrep tokei httpie
-```
+  brew install --cask utm
+  mkdir ~/tmp && cd ~/tmp
+  wget https://cdimage.ubuntu.com/releases/20.04/release/ubuntu-20.04.3-live-server-arm64.iso
 
-We'll use the Cask extension for Homebrew to install some Mac apps
-
-```bash
-  brew install xquartz rectangle alacritty marked
-```
 
 2.2 Rectangle
 -------------
@@ -145,7 +192,16 @@ We'll use the Cask extension for Homebrew to install some Mac apps
 [Rectangle](https://github.com/rxhanson/Rectangle) is a keyboard-based
 window movement tool, similar to Spectacle (retired).
 
-Configure the settings as shown in my ![config](img/rectangle-config.png?raw=true "rectangle config")
+Hit the gears and "Remove keyboard restrictions". Also, set Repeated commands to `cycle 1/2, 2/3 and 1/3 on
+actions".
+
+![gears](img/rectangle-gear.webp?raw=true "rectangle gears")
+
+Configure the settings as shown in the screenshot below. I find it easiest to
+just "x out" all the existing shortcuts and start over. You can ignore the stuff below the fold.
+
+![config](img/rectangle-shortcuts.webp?raw=true "rectangle shortcuts")
+
 
 https://github.com/rxhanson/Rectangle
 
