@@ -3,8 +3,8 @@ Mac Config for Development
 
 How I spend my first 15 minutes with a new macOS.
 
-> Last tested on macOS Big Sur (Feb 2021)
-> Last tested on macOS Monterey 12.0.1 (Nov 2021)
+> Last tested on macOS Big Sur (Feb 2021)  
+> Last tested on macOS Monterey 12.0.1 (Nov 2021) 
 
 I'm a touch typist. I avoid the mouse whenever I can for speed. So some
 of my configuration on the Mac is geared around that.
@@ -94,18 +94,20 @@ Favorites order in the Finder pane (you can drag to re-order items):
 
 From the Finder menu: 
 
-`View | as List`
-`View | Show Path Bar` 
-`View | Show Status Bar`
+Menu       | Option
+:----------|:---------
+View       | as List
+View       | Show Path Bar
+View       | Show Status Bar
 
 
-1.2.1 Messages Preferences
+1.3 Messages Preferences
 --------------------------
 
 Launch `Messages`, hit `CMD-,` and change the Message received sound from `Note
 (default)' to `Bamboo`. `Note` has an ADSR release of about 6 seconds: way too long.
 
-1.3 Rename Your Computer
+1.4 Rename Your Computer
 ------------------------
 
 Open `Terminal.app`.
@@ -139,7 +141,6 @@ Do all this from Terminal.app; we'll swap out to iTerm2 or Alacritty later.
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-
 On Intel macOS, brew installs to '/usr/local/'.
 On Apple Silicon (M1, M1 Pro and M1 Max) brew installs to '/opt/homebrew',
 which is not in the path by default. So run these two steps:
@@ -154,6 +155,11 @@ Install a few command line essentials (some are upgrades from macOS):
 ```bash
   brew install wget htop tree tmux neovim
 ```
+
+macOS ships with these apps, but they're other old due to GPL v3 
+licensing (bash), just old (less), or core that I want to easily update via
+brew in the future (zsh, git)
+
 
 ```bash
   brew install bash     # 3.2.57 --> 5.1.8
@@ -171,7 +177,7 @@ I use these all the time. Most are written in Rust:
 Install my core Mac apps
 
 ```bash
-  brew install xquartz rectangle alacritty marked
+  brew install xquartz rectangle marked
 ```
 
 For programming, you're gonna need these:
