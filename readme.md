@@ -179,7 +179,7 @@ I use these all the time. Most are written in Rust:
 Install my core Mac apps
 
 ```bash
-  brew install rectangle marked
+  brew install rectangle
 ```
 
 For programming, you're gonna need these:
