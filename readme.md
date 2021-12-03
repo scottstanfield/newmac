@@ -6,8 +6,8 @@ How I spend my first 15 minutes with a new macOS.
 > Last tested on macOS Big Sur (Feb 2021)  
 > Last tested on macOS Monterey 12.0.1 (Nov 2021) 
 
-I'm a touch typist. I avoid the mouse whenever I can for speed. So some
-of my configuration on the Mac is geared around that.
+I'm a touch typist. I avoid the mouse whenever I can for speed. So some of my
+configuration on the Mac is geared around that.
 
 1.1 System Preferences
 ----------------------
@@ -124,6 +124,8 @@ I use my initials then some indicator of the machine type, like `ss-mbp15` for m
   sudo scutil --set LocalHostName ss-mbp15
 ```
 
+Bonus: while in Terminal, uncheck `Edit | Marks > Automatically Mark Prompt Lines`.
+
 2. Apps
 =======
 
@@ -177,12 +179,14 @@ I use these all the time. Most are written in Rust:
 Install my core Mac apps
 
 ```bash
-  brew install xquartz rectangle marked
+  brew install rectangle marked
 ```
 
 For programming, you're gonna need these:
 ```bash
-  brew install llvm
+  brew install xquartz
+  xcode-select --install
+  softwareupdate --install-rosetta
 ```
 
 Run Ubuntu in a VM, because why not?
