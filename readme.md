@@ -120,12 +120,8 @@ Do all this from Terminal.app; we'll swap out to iTerm2 later.
 ```
 
 ```bash
-  brew install bash git wget cask htop tree tmux neovim zsh less
-```
-
-For programming, you're gonna need these:
-```bash
-  brew install llvm
+  path=(/opt/homebrew/bin $path[@])
+  brew install bash git coreutils jq wget htop tree tmux neovim zsh less
 ```
 
 My extra utilities:
@@ -166,37 +162,13 @@ Assuming you have a github.com account, tell your Mac about it. Follow
 ## Python (via miniconda)
 ## Node (via NVM)
 
-Don't install node directly; use the [node version
-manager](https://github.com/nvm-sh/nvm).
-
-```bash
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
-```
-
 ## Programming Fonts
 
-There's a big set of programmer-friendly, monospaced fonts that we can
-use. They also have a handful of extra glyphs that make certain symbols
-for git and Powerline (a vim and shell plugin) look nicer.
+I use Meslo with the Nerd Font icon patch.
 
 ```bash
     brew tap homebrew/cask-fonts
-    brew cask install font-inconsolatago-nerd-font        # clear 0 vs O
-    brew cask install font-jetbrains-mono
-```
-
-Other good fonts:
-> firacode  # Mozilla, many programming ligatures
-> dejavu # Linux, ~3300 glyphs
-> source code pro # Adobe, clear punctuation, many weights https://blog.typekit.com/2012/09/24/source-code-pro/
-> noto mono # Google, available for 209 languages
-> nerd fonts # https://www.nerdfonts.com/
-> jetbrains mono: https://www.jetbrains.com/lp/mono/
-
-> confusing characters to test:
-```text
-    1Il|iO0oB8
-    <>^"^$\/()|?+*[]{},.
+    brew install font-meslo-lg-nerd-font font-jetbrains-mono-nerd-font
 ```
 
 ## Alacritty
