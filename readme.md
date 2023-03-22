@@ -102,17 +102,10 @@ I use my initials then some indicator of the machine type, like `ss-mbp15` for m
   sudo scutil --set LocalHostName ss-mbp15
 ```
 
-2. Apps
-=======
-
-Minimal set of command line and GUI apps.
-
 2.1 Homebrew
 ------------
 
-[Homebrew](http://brew.sh) is the App Store for the command line.
-
-Instructions located at http://brew.sh
+[Homebrew](http://brew.sh) is the App Store for the command line. Instructions located at http://brew.sh
 
 Do all this from Terminal.app; we'll swap out to iTerm2 later.
 ```bash
@@ -126,7 +119,7 @@ Do all this from Terminal.app; we'll swap out to iTerm2 later.
 
 My extra utilities:
 ```bash
-  brew install ascii hyperfine dust exa xsv ripgrep tokei httpie
+  brew install ascii hyperfine dust exa xsv ripgrep tokei httpie fzf fd
 ```
 
 We'll use the Cask extension for Homebrew to install some Mac apps
@@ -138,10 +131,17 @@ We'll use the Cask extension for Homebrew to install some Mac apps
 2.2 Rectangle
 -------------
 
-[Rectangle](https://github.com/rxhanson/Rectangle) is a keyboard-based
-window movement tool, similar to Spectacle (retired).
+[Rectangle](https://github.com/rxhanson/Rectangle) is a keyboard-based, window tiling app. It's MIT licenced and
+installable from https://github.com/rxhanson/Rectangle/releases (look
+for `RectangleX.XX.dmg`). Or with `brew`:
 
-Configure the settings as shown in my ![config](img/rectangle-config.png?raw=true "rectangle config")
+```
+brew install cask --rectangle
+```
+
+Configure the settings as shown in my ![config](img/rectangle-config.png?raw=true "rectangle config"). I don't like their defaults. My
+thinking is: just mash all three of the keys in the lower left, then use
+arrows to throw the windows around.
 
 https://github.com/rxhanson/Rectangle
 
