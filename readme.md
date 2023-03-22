@@ -149,8 +149,7 @@ Home page: https://github.com/rxhanson/Rectangle
 
 Ensure it is set to Launch on login.
 
-3. Programming
-==============
+# 3. Programming
 
 ## 3.1 Gitconfig
 
@@ -160,9 +159,6 @@ Assuming you have a github.com account, tell your Mac about it. Follow
     $ git config --global user.name "your name here"
     $ git config --global user.email "your@email.com"
     $ git config --global credential.helper osxkeychain
-
-## Python (via miniconda)
-## Node (via NVM)
 
 ## Programming Fonts
 
