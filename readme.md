@@ -139,11 +139,13 @@ for `RectangleX.XX.dmg`). Or with `brew`:
 brew install cask --rectangle
 ```
 
-Configure the settings as shown in my ![config](img/rectangle-config.png?raw=true "rectangle config"). I don't like their defaults. My
+Configure the settings as shown below. I don't care for the defaults. My
 thinking is: just mash all three of the keys in the lower left, then use
 arrows to throw the windows around.
 
-https://github.com/rxhanson/Rectangle
+![config](img/rectangle-config.png?raw=true "rectangle config")
+
+Home page: https://github.com/rxhanson/Rectangle
 
 Ensure it is set to Launch on login.
 
