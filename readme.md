@@ -136,7 +136,7 @@ installable from https://github.com/rxhanson/Rectangle/releases (look
 for `RectangleX.XX.dmg`). Or with `brew`:
 
 ```
-brew install cask --rectangle
+brew install --cask rectangle
 ```
 
 Configure the settings as shown below. I don't care for the defaults. My
