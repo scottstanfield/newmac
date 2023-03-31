@@ -9,6 +9,14 @@ How I spend my first 15 minutes with a new macOS.
 I'm a touch typist. I avoid the mouse whenever I can for speed. So some
 of my configuration on the Mac is geared around that.
 
+>> Renamed master --> main: steps to update on your local clone
+```
+git branch -m master main
+git fetch origin
+git branch -u origin/main main
+git remote set-head origin -a
+```
+
 1.1 System Preferences
 ----------------------
 
