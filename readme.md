@@ -4,6 +4,7 @@ Mac Config for Development
 How I spend my first 15 minutes with a new macOS.
 
 > Last tested on macOS Big Sur (Feb 2021)
+> I've been working on this document for 11 years.
 
 I'm a touch typist. I avoid the mouse whenever I can for speed. So some
 of my configuration on the Mac is geared around that.
