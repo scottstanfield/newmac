@@ -114,6 +114,8 @@ I use my initials then some indicator of the machine type, like `ss-mbp15` for m
 2.1 Homebrew
 ------------
 
+Brew is apt for Mac.
+
 [Homebrew](http://brew.sh) is the App Store for the command line. Instructions located at http://brew.sh
 
 Do all this from Terminal.app; we'll swap out to iTerm2 later.
