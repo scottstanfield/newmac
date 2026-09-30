@@ -21,9 +21,6 @@ My three critical modifications, plus more, all in the System Settings:
 ![Apple menu | System Settings...](img/apple-menu-system-settings.jpg)
 
 
-![map caps to control](img/caps-lock-mapping.png?raw=true "Map CAPS to CONTROL")
-
-
 ```text
 Keyboard      Keyboard             Key Repeat → fast
               Keyboard             Delay Until Repeat → short
