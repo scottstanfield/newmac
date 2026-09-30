@@ -3,46 +3,39 @@ Mac Config for Development
 
 How I spend my first 15 minutes with a new macOS.
 
-> Last tested on macOS Big Sur (Feb 2021)
-> I've been working on this document for 11 years.
+> Testing in progress on macOS Tahoe 26 (Sep 2026)
+> I've been working on this document for 13 years.
 
 I'm a touch typist. I avoid the mouse whenever I can for speed. So some
 of my configuration on the Mac is geared around that.
 
->> Renamed master --> main: steps to update on your local clone
-```
-git branch -m master main
-git fetch origin
-git branch -u origin/main main
-git remote set-head origin -a
-```
-
 1.1 System Preferences
 ----------------------
 
-My three critical modifications:
+My three critical modifications, plus more, all in the System Settings:
 
 1. Mapping CAPS LOCK to CONTROL, because: [vim](http://xahlee.info/kbd/ADM-3A_terminal.html), [readline](https://spin.atomicobject.com/2017/11/10/readline-productivity/), and it's useless
 2. Scroll direction: [unnatural](https://www.lifewire.com/how-to-change-scrolling-direction-on-mac-2260835)
 3. Key repeat fast, with little delay
 
+![Apple menu | System Settings...](img/apple-menu-system-settings.jpg)
+
+
 ![map caps to control](img/caps-lock-mapping.png?raw=true "Map CAPS to CONTROL")
 
-Hit the Apple menu, click System Preferences...and have at it:
 
 ```text
 Keyboard      Keyboard             Key Repeat → fast
               Keyboard             Delay Until Repeat → short
-              Keyboard             [Modifier Keys...]  Caps Lock ⇪ Key: ^ Control
-              Shortcuts†           App Shortcuts → [+] title: "System Preferences..." keys: ⌘⌥,
+              Keyboard Shortcuts†  Modifier Keys:  Caps Lock ⇪ Key → ^Control
+              Keyboard Shortcuts   App Shortcuts: [+] title: "System Preferences..." keys: ⌥⌘,
 
 trackpad      point & click        ✓ Tap to Click
-              point & click‡       ✓ Silent clicking
-              scroll & zoom        × Scroll direction: natural
+              scroll & zoom‡       × Scroll direction: natural
               more gestures        ✓ Enable App Exposé
 
 accessibility zoom                 ✓ Use scroll gesture with modifier keys to zoom (^ control)
-              pointer control◊     trackpad options... ✓ enable dragging (three finger drag)
+              pointer control◊     [Trackpad Options...] ✓ enable dragging (three finger drag)
 
 dock          -                    position on screen (left)
               -                    ✓ Minimize windows into application icon
@@ -59,7 +52,7 @@ siri          -                    × Disable Ask Siri
 Note:
 
 † **⌘,** for app preferences; **⌥⌘,** for system preferences.  
-‡ Added in macOS Mojave (v10.14).  
+‡ Leave this enabled if you're not sure.
 ◊ Hold down control and zoom in/out with the mouse wheel, it's [magic](https://discussions.apple.com/thread/6869616).
 
 1.2 Finder Preferences
